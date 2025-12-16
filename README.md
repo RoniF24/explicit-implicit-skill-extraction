@@ -1,6 +1,6 @@
 # SkillSight
 
-Shared repo for the “Explicit-Implicit Skill Extraction” project.
+Shared repo for the “SkillSight” project.
 
 ## Structure
 - src/        core code
@@ -14,3 +14,4 @@ python -m venv .venv
 # Windows:
 .venv\\Scripts\\activate
 pip install -r requirements.txt
+
