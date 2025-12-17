@@ -1,0 +1,14 @@
+# venv
+.venv/
+
+# python cache
+__pycache__/
+**/__pycache__/
+*.pyc
+
+# generated outputs (plots, csv, caches)
+outputs/
+
+# OS junk
+.DS_Store
+Thumbs.db
