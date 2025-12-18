@@ -1,8 +1,10 @@
+from __future__ import annotations
+
 import json
 import random
 import os
 import sys
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Tuple
 from collections import Counter
 import re
 import time
@@ -14,160 +16,134 @@ ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
-
 from skills.globalVector import GLOBAL_SKILL_VECTOR
+from skills.implicitCueBank import skill_has_evidence  # להוסיף ל-imports
 from skills.skillAliases import skills as SKILL_ALIASES
+from skills.implicitCueBank import (
+    get_category,
+    skill_or_category_has_evidence,
+    build_dynamic_implicit_sentence,
+    style_hint,
+    pick_required_evidence_phrases,
+    text_contains_any_required_phrase,
+)
 
 # ---------------- CONFIG ----------------
-OPENAI_MODEL = "gpt-4.1-nano"  # or "gpt-4.1-nano-2025-04-14" for snapshot stability
+OPENAI_MODEL = "gpt-4o-mini"
 PROMPTS_DIR = os.path.join(ROOT_DIR, "Prompts")
 OUTPUT_DIR = os.path.join(ROOT_DIR, "data")
-OUTPUT_FILE_BASE = "synthetic_dataset"  # Base name without version
+OUTPUT_FILE_BASE = "synthetic_dataset"
 
-NUM_SAMPLES = 80
+NUM_SAMPLES = 2
+SEED = None  # set None for non-deterministic runs
 
+TEMPERATURE_GEN = 0.35
+MAX_TOKENS_GEN = 280
 
-def get_next_versioned_output_file() -> str:
-    """
-    Find the next available version for synthetic_dataset.
-    Returns path like: data/synthetic_dataset_v1.jsonl, data/synthetic_dataset_v2.jsonl, etc.
-    """
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    
-    # Find existing versioned files
-    existing_versions = []
-    for filename in os.listdir(OUTPUT_DIR):
-        # Match pattern: synthetic_dataset_v{N}.jsonl
-        match = re.match(rf"^{re.escape(OUTPUT_FILE_BASE)}_v(\d+)\.jsonl$", filename)
-        if match:
-            existing_versions.append(int(match.group(1)))
-    
-    # Determine next version
-    if existing_versions:
-        next_version = max(existing_versions) + 1
-    else:
-        next_version = 1
-    
-    return os.path.join(OUTPUT_DIR, f"{OUTPUT_FILE_BASE}_v{next_version}.jsonl")
-
-# generation params
-TEMPERATURE_GEN = 0.2
-MAX_TOKENS_GEN = 220  # give a bit more headroom for 4–6 sentences
-
-# fix pass params (more deterministic)
 TEMPERATURE_FIX = 0.0
-MAX_TOKENS_FIX = 260
+MAX_TOKENS_FIX = 380
 
-# retries
-MAX_GEN_RETRIES = 3
-MAX_FIX_RETRIES = 3
+MAX_GEN_RETRIES = 2
+MAX_FIX_RETRIES = 2
 
-# Prefer explicit to reduce leakage + nonselected implied failures
-P_EXPLICIT = 0.6
+TARGET_IMPLICIT_RATIO = 0.50
+BALANCE_HYSTERESIS = 0.06
+
+K_MIN_JUNIOR = (3, 6)
+K_MIN_MID = (4, 7)
+K_MIN_SENIOR = (5, 9)
 
 ROLE_FAMILIES = ["Software", "Data", "DevOps", "Security", "Product", "Management"]
 SENIORITIES = ["Intern", "Junior", "Mid", "Senior", "Lead", "Manager"]
 DOMAINS = ["FinTech", "E-commerce", "Healthcare", "Cyber", "SaaS", "Gaming"]
-
 SENIORITY_WEIGHTS = [0.12, 0.22, 0.26, 0.20, 0.12, 0.08]
 
-# Stats
 STATS = Counter()
 TOTAL_CALLS = 0
 
-class ValidationError(Exception):
-    def __init__(self, kind: str, skill: str, message: str):
-        super().__init__(message)
-        self.kind = kind
-        self.skill = skill
+NONSELECTED_REPLACEMENTS = {
+    "AWS": "a major cloud provider",
+    "Azure": "a major cloud provider",
+    "Microservices": "service-based architecture",
+    "Google Cloud": "a major cloud provider",
+    "Kubernetes": "container orchestration",
+    "Docker": "containerization",
+    "SQL": "relational databases",
+    "PostgreSQL": "relational databases",
+    "MySQL": "relational databases",
+    "MongoDB": "databases",
+    "Redis": "caching",
+    "Nginx": "a reverse proxy",
+    "Grafana": "monitoring dashboards",
+    "Prometheus": "monitoring metrics",
+    "ELK Stack": "centralized logging",
+}
+
+# Strongly recommended: do not allow implicit for languages / markup / basic runtimes
+DISALLOW_IMPLICIT_CATEGORIES = {
+    "programming_language", "scripting_language", "markup_language", "backend_runtime"
+}
+
+DISALLOW_IMPLICIT_SKILLS = {
+    # ספקי ענן — קשה “לרמוז” בלי שיתבלבל בין AWS/Azure/GCP
+    "AWS", "Azure", "Google Cloud",
+
+    # זוגות שמתבלבלים הרבה
+    "Git", "GitHub",
+    "CSS", "Tailwind CSS",
+
+    # ML קונספט כללי — עדיף explicit כדי לא להתבלבל עם frameworks
+    "Machine Learning",
+}
 
 
-def sample_context() -> Dict[str, str]:
-    seniority = random.choices(SENIORITIES, weights=SENIORITY_WEIGHTS, k=1)[0]
+# Helpful sanity check: how big is the implicit-eligible pool (derived from global vector)?
+# If this is too small, you will never reach the target implicit ratio.
+def _debug_print_implicit_pool_share() -> None:
+    pool = iter_skill_names()
+    implicit_pool = [s for s in pool if _skill_can_be_implicit(s)]
+    share = (len(implicit_pool) / len(pool)) if pool else 0.0
+    print(f"[INFO] Implicit-eligible pool size: {len(implicit_pool)}/{len(pool)} ({share:.1%})")
 
+# ---------------- GLOBAL VECTOR helper ----------------
+def iter_skill_names() -> List[str]:
+    if isinstance(GLOBAL_SKILL_VECTOR, dict):
+        return list(GLOBAL_SKILL_VECTOR.keys())
+    return list(GLOBAL_SKILL_VECTOR)
+
+# ---------------- Versioned output ----------------
+def get_next_versioned_output_file() -> str:
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    existing_versions = []
+    for filename in os.listdir(OUTPUT_DIR):
+        match = re.match(rf"^{re.escape(OUTPUT_FILE_BASE)}_v(\d+)\.jsonl$", filename)
+        if match:
+            existing_versions.append(int(match.group(1)))
+    next_version = max(existing_versions) + 1 if existing_versions else 1
+    return os.path.join(OUTPUT_DIR, f"{OUTPUT_FILE_BASE}_v{next_version}.jsonl")
+
+# ---------------- Context ----------------
+def sample_context(rng: random.Random) -> Dict[str, str]:
+    seniority = rng.choices(SENIORITIES, weights=SENIORITY_WEIGHTS, k=1)[0]
     if seniority in ["Intern", "Junior"]:
         responsibility_depth = "IC"
     elif seniority == "Mid":
-        responsibility_depth = random.choice(["IC", "TechLead"])
+        responsibility_depth = rng.choice(["IC", "TechLead"])
     elif seniority in ["Senior", "Lead"]:
-        responsibility_depth = random.choice(["IC", "TechLead"])
+        responsibility_depth = rng.choice(["IC", "TechLead"])
     else:
         responsibility_depth = "PeopleManager"
-
     return {
-        "role_family": random.choice(ROLE_FAMILIES),
+        "role_family": rng.choice(ROLE_FAMILIES),
         "seniority": seniority,
         "responsibility_depth": responsibility_depth,
-        "domain": random.choice(DOMAINS),
+        "domain": rng.choice(DOMAINS),
     }
-
-
-# --------- IMPLICIT ALLOWED (Layer 2) ---------
-IMPLICIT_ALLOWED = {
-    "AWS EC2", "AWS Lambda", "AWS RDS", "AWS S3",
-    "Azure Functions",
-    "BigQuery", "Redshift", "Snowflake",
-    "CI/CD", "GitOps", "GitHub Actions", "GitLab CI", "Jenkins",
-    "Terraform", "CloudFormation",
-    "Blue-Green Deployment", "Canary Releases", "ArgoCD",
-    "Load Balancing", "Cloud Networking", "Security Hardening",
-    "Performance Engineering",
-    "Grafana", "Prometheus", "ELK Stack",
-    "ETL", "ELT", "Airflow",
-    "Parquet", "Avro", "Star Schema",
-    "Distributed Systems", "Kafka",
-    "MLOps", "MLflow",
-    "Machine Learning", "NLP", "LLMs", "Transformers",
-}
-
-IMPLICIT_REPLACEMENTS = {
-    "AWS Lambda": "event-driven serverless functions triggered by system events and queued messages",
-    "GitOps": "declarative environment configuration synced from a repository with automated reconciliation",
-    "CI/CD": "gated releases with automated checks before deploy and a rollback plan",
-    "MLflow": "experiment tracking with a model registry and staged promotion between environments",
-    "MLOps": "versioned training artifacts with automated validation checks before promotion",
-    "Star Schema": "fact and dimension tables designed for analytics queries and reporting",
-    "Cloud Networking": "subnet routing and security rules controlling connectivity between services",
-    "Load Balancing": "request distribution across instances with health checks and failover routing",
-    "Kafka": "event streams with producers/consumers, topic partitioning, and consumer groups",
-    "Redshift": "a columnar data warehouse used for analytics with optimized reporting queries",
-    "BigQuery": "serverless analytics queries over large datasets with partitioning-aware patterns",
-    "Snowflake": "cloud data warehouse workflows with separated compute/storage for analytics",
-    "Airflow": "scheduled DAG-based workflows with dependencies, retries, and backfills",
-    "Parquet": "columnar storage files used to reduce size and speed up analytics reads",
-    "Avro": "schema-based serialization for consistent data exchange between services",
-    "Terraform": "infrastructure-as-code with planned changes, state management, and repeatable environments",
-    "CloudFormation": "infrastructure templates defining resources and repeatable updates",
-    "NLP": "text processing tasks like tokenization, normalization, and lightweight classification experiments",
-}
-
-IMPLICIT_HINT_PATTERNS = {
-    "CI/CD": [
-        r"\bci\s*/\s*cd\b",
-        r"\bcontinuous integration\b",
-        r"\bcontinuous deployment\b",
-        r"\bdeployment gates?\b",
-        r"\brelease gates?\b",
-        r"\brollback\b",
-        r"\brelease pipeline\b",
-        r"\bdeployment pipeline\b",
-        r"\bautomated test stages?\b",
-        r"\b(build|test|deploy|release)\s+pipeline(s)?\b",
-    ],
-    "GitOps": [r"\bdesired state\b", r"\bautomated sync\b", r"\bdrift\b", r"\breconciliation\b"],
-    "Kafka": [r"\btopic(s)?\b", r"\bpartition(s)?\b", r"\bconsumer group(s)?\b", r"\bproducer(s)?\b"],
-    "MLflow": [r"\bmodel registry\b", r"\bexperiment tracking\b", r"\bpromotion\b"],
-    "Machine Learning": [r"\btraining\b", r"\bclassification\b", r"\bmodel\b"],
-}
-
 
 def load_prompt_templates() -> List[str]:
     fp = os.path.join(PROMPTS_DIR, "unified_prompt.txt")
     if not os.path.exists(fp):
-        # nicer error message
-        existing = []
-        if os.path.isdir(PROMPTS_DIR):
-            existing = sorted(os.listdir(PROMPTS_DIR))
+        existing = sorted(os.listdir(PROMPTS_DIR)) if os.path.isdir(PROMPTS_DIR) else []
         raise RuntimeError(
             f"unified_prompt.txt not found in: {PROMPTS_DIR}\n"
             f"Existing files in Prompts: {existing}\n"
@@ -176,45 +152,209 @@ def load_prompt_templates() -> List[str]:
     with open(fp, "r", encoding="utf-8") as f:
         return [f.read()]
 
+# ---------------- Skill surface matching ----------------
+def _build_token_pattern(token: str) -> str:
+    token = token.strip()
+    esc = re.escape(token)
+    if re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9\.\+\-_/]*", token):
+        return rf"\b{esc}\b"
+    return rf"(?<!\w){esc}(?!\w)"
 
-def build_skills_info(selected_skills: Dict[str, float]) -> Dict[str, Any]:
-    # Keep this compact to reduce prompt tokens (important for cost + compliance)
-    skills_info = {}
+def _all_surface_forms(skill_name: str) -> List[str]:
+    info = SKILL_ALIASES.get(skill_name, {})
+    aliases = info.get("aliases", []) or []
+    forms = [skill_name] + [a for a in aliases if a and a != skill_name]
+    forms = sorted(set(forms), key=len, reverse=True)
+    return forms
+
+def count_skill_mentions(text_lower: str, skill_name: str) -> int:
+    count = 0
+    for form in _all_surface_forms(skill_name):
+        pat = _build_token_pattern(form)
+        count += len(re.findall(pat, text_lower, flags=re.IGNORECASE))
+    return count
+
+def find_nonselected_mentions(text_lower: str, selected_set: set) -> List[str]:
+    hits = []
+    for skill in iter_skill_names():
+        if skill in selected_set:
+            continue
+        if count_skill_mentions(text_lower, skill) > 0:
+            hits.append(skill)
+    return hits
+
+# ---------------- Balancer ----------------
+class SkillBalanceController:
+    def __init__(self, target: float = TARGET_IMPLICIT_RATIO, hysteresis: float = BALANCE_HYSTERESIS):
+        self.target = target
+        self.hysteresis = hysteresis
+        self.explicit = 0
+        self.implicit = 0
+
+    def implicit_ratio(self) -> float:
+        total = self.explicit + self.implicit
+        return (self.implicit / total) if total else self.target
+
+    def choose_n_implicit(self, n_total: int) -> int:
+        if n_total <= 1:
+            return 0
+        base = int(round(n_total * self.target))
+        base = max(0, min(n_total - 1, base))
+        r = self.implicit_ratio()
+        if r < self.target - self.hysteresis:
+            base = min(n_total - 1, base + 1)
+        elif r > self.target + self.hysteresis:
+            base = max(0, base - 1)
+        return base
+
+    def update(self, selected_skills: Dict[str, float]) -> None:
+        for _, label in selected_skills.items():
+            if label == 0.5:
+                self.implicit += 1
+            elif label == 1.0:
+                self.explicit += 1
+
+# ---------------- Skill sampling ----------------
+def _choose_k_by_seniority(rng: random.Random, seniority: str) -> int:
+    if seniority in ["Intern", "Junior"]:
+        lo, hi = K_MIN_JUNIOR
+    elif seniority == "Mid":
+        lo, hi = K_MIN_MID
+    else:
+        lo, hi = K_MIN_SENIOR
+    return rng.randint(lo, hi)
+
+ML_CATEGORIES = {"ml_concept", "ml_framework", "ml_library"}
+
+def _skill_can_be_implicit(skill_name: str) -> bool:
+    if skill_name in DISALLOW_IMPLICIT_SKILLS:
+        return False
+
+    cat = get_category(SKILL_ALIASES, skill_name)
+    if not cat or cat in DISALLOW_IMPLICIT_CATEGORIES:
+        return False
+
+    # ML: רק אם יש evidence ספציפי לסקיל (לא category כללי)
+    if cat in ML_CATEGORIES:
+        return skill_has_evidence(skill_name)
+
+    # שאר הקטגוריות: כמו עכשיו
+    return skill_or_category_has_evidence(skill_name, cat)
+
+def pick_random_skills(
+    rng: random.Random,
+    controller: SkillBalanceController,
+    ctx: Dict[str, str],
+) -> Dict[str, float]:
+    """
+    Pick 3–6 skills and label them Explicit (1.0) vs Implicit (0.5).
+
+    Key behavior:
+    - We sample implicit and explicit skills from separate pools so we can maintain ~50/50 balance.
+    - The implicit pool is *derived from the global skill vector* (no separate implicit vector file),
+      using _skill_can_be_implicit() eligibility.
+    """
+    k = _choose_k_by_seniority(rng, ctx["seniority"])
+    all_pool = iter_skill_names()
+
+    implicit_pool = [s for s in all_pool if _skill_can_be_implicit(s)]
+    explicit_pool = all_pool  # explicit is allowed for any global skill
+
+    n_implicit = controller.choose_n_implicit(k)
+
+    # If the implicit pool is too small for the desired ratio, cap gracefully.
+    n_implicit = min(n_implicit, len(implicit_pool))
+    n_explicit = k - n_implicit
+
+    implicit_names = set(rng.sample(implicit_pool, n_implicit)) if n_implicit else set()
+
+    # Avoid duplicates: explicit picks must exclude already picked implicit skills.
+    remaining_for_explicit = [s for s in explicit_pool if s not in implicit_names]
+    explicit_names = set(rng.sample(remaining_for_explicit, n_explicit)) if n_explicit else set()
+
+    chosen = list(implicit_names | explicit_names)
+    rng.shuffle(chosen)
+
+    return {s: (0.5 if s in implicit_names else 1.0) for s in chosen}
+
+# ---------------- Prompt building ----------------
+def build_skills_info_and_requirements(
+    rng: random.Random,
+    selected_skills: Dict[str, float]
+) -> Tuple[Dict[str, Any], Dict[str, List[str]]]:
+    """
+    Returns:
+    - skills_info JSON to inject into the prompt
+    - implicit_requirements: skill -> required_evidence phrases
+    """
+    skills_info: Dict[str, Any] = {}
+    implicit_requirements: Dict[str, List[str]] = {}
+
     for skill_name, label in selected_skills.items():
-        aliases = SKILL_ALIASES.get(skill_name, {}).get("aliases", [])
+        aliases = (SKILL_ALIASES.get(skill_name, {}) or {}).get("aliases", [])[:8]
+        banned_terms = [skill_name] + aliases
+
+        if label == 1.0:
+            skills_info[skill_name] = {"target_label": 1.0, "aliases": aliases}
+            continue
+
+        cat = get_category(SKILL_ALIASES, skill_name) or "unknown"
+
+        # Generate varied "implicit_cues" sentences (NOT used for validation)
+        cues = []
+        for _ in range(rng.randint(2, 3)):
+            cues.append(build_dynamic_implicit_sentence(rng, cat, skill_name))
+
+        # REQUIRED evidence (this IS validated)
+        required = pick_required_evidence_phrases(rng, skill_name, cat, 1, 2)
+        implicit_requirements[skill_name] = required
+
         skills_info[skill_name] = {
-            "target_label": label,
-            "aliases": aliases,
+            "target_label": 0.5,
+            "category": cat,
+            "implicit_cues": cues,
+            "required_evidence": required,
+            "banned_terms": banned_terms,
         }
-    return skills_info
 
+    return skills_info, implicit_requirements
 
-def generate_prompt(selected_skills: Dict[str, float], template: str) -> str:
-    skills_info = build_skills_info(selected_skills)
+def generate_prompt(
+    rng: random.Random,
+    selected_skills: Dict[str, float],
+    template: str,
+    ctx: Dict[str, str],
+    skills_info: Dict[str, Any],
+) -> str:
     skills_block = json.dumps(skills_info, indent=2, ensure_ascii=False)
-
     base_prompt = template.replace("[PASTE_SKILLS_DICT_HERE]", skills_block)
 
-    ctx = sample_context()
     for k, v in ctx.items():
         base_prompt = base_prompt.replace("{" + k + "}", v)
 
-    # Keep a small high-priority wrapper; the template already contains the detailed rules
+    s_hint = style_hint(rng)
+
     return f"""
 Return ONLY ONE resume-style paragraph (4–6 sentences), plain text.
 No JSON. No code. No markdown. No headings. No meta language.
 
+Hard rules:
+- For target_label 1.0: MUST mention the canonical skill name OR an alias at least once.
+- For target_label 0.5: MUST NOT mention the canonical name NOR any alias; MUST include at least one required_evidence phrase.
+- Do NOT mention any skills beyond the provided list.
+
+Style hint:
+- {s_hint}
+
 {base_prompt}
 """.strip()
 
-
+# ---------------- OpenAI call ----------------
 def call_openai(prompt: str, temperature: float, max_tokens: int) -> str:
     global TOTAL_CALLS
     TOTAL_CALLS += 1
 
     client = OpenAI()
-
-    # retry for transient errors / rate limits
     backoff = 1.0
     for attempt in range(6):
         try:
@@ -225,44 +365,18 @@ def call_openai(prompt: str, temperature: float, max_tokens: int) -> str:
                 max_output_tokens=max_tokens,
             )
             return (resp.output_text or "").strip()
-        except Exception as e:
-            # last attempt -> raise
+        except Exception:
             if attempt == 5:
                 raise
             time.sleep(backoff)
             backoff = min(12.0, backoff * 2)
 
-
+# ---------------- Text utilities ----------------
 def _count_sentences(text: str) -> int:
     parts = [s.strip() for s in re.split(r"[.!?]+", text) if s.strip()]
     return len(parts)
 
-
-def cleanup_after_deletions(text: str) -> str:
-    t = text
-    t = re.sub(r"\s{2,}", " ", t)
-    t = re.sub(r"\s+,", ",", t)
-    t = re.sub(r",\s*,", ",", t)
-    t = re.sub(r"\band\s*,", "", t, flags=re.IGNORECASE)
-    t = re.sub(r"\bof\s+and\b", "of", t, flags=re.IGNORECASE)
-    t = re.sub(r"\(\s*\)", "", t)
-    t = re.sub(r"\s+\.", ".", t)
-    t = re.sub(r"\s+\!", "!", t)
-    t = re.sub(r"\s+\?", "?", t)
-    return t.strip()
-
-STRICT_NONSELECTED_EXPLICIT = {
-    "Machine Learning",
-    "Load Balancing",
-    "Distributed Systems",
-    "CI/CD",
-    "Cloud Networking",
-}
-
-
 def _split_sentences_keep_punct(text: str) -> List[str]:
-    # Split into sentences while keeping punctuation end markers.
-    # Example: ["Did X.", "Built Y!", "Tested Z?"]
     sents = re.findall(r"[^.!?]+[.!?]+|[^.!?]+$", text.strip())
     return [s.strip() for s in sents if s and s.strip()]
 
@@ -271,39 +385,63 @@ def trim_to_max_sentences(text: str, max_sentences: int = 6) -> str:
     if len(sents) <= max_sentences:
         return text.strip()
     trimmed = " ".join(sents[:max_sentences]).strip()
-    # Ensure it ends with punctuation
     if trimmed and trimmed[-1] not in ".!?":
         trimmed += "."
     return trimmed
 
-def _build_token_pattern(token: str) -> str:
-    token = token.strip().lower()
-    esc = re.escape(token)
-    # If token is "word-like" -> use word boundaries
-    if re.fullmatch(r"[a-z0-9][a-z0-9\.\+\-_/]*[a-z0-9]?", token):
-        return rf"\b{esc}\b"
-    # Otherwise fallback to non-word boundaries
-    return rf"(?<!\w){esc}(?!\w)"
+def cleanup_text(text: str) -> str:
+    t = text
+    t = re.sub(r"\s{2,}", " ", t)
+    t = re.sub(r"\s+,", ",", t)
+    t = re.sub(r",\s*,", ",", t)
+    t = re.sub(r"\(\s*\)", "", t)
+    t = re.sub(r"\s+\.", ".", t)
+    t = re.sub(r"\s+\!", "!", t)
+    t = re.sub(r"\s+\?", "?", t)
+    t = re.sub(r"\b(\w+)\s+\1\b", r"\1", t, flags=re.IGNORECASE)
+    return t.strip()
 
-def validate_text(text: str, selected_skills: Dict[str, float]) -> str:
-    if not text or len(text.strip()) < 30:
+def enforce_no_as_a_opening(text: str, rng: random.Random, allow_prob: float = 0.1) -> str:
+    if not text:
+        return text
+    stripped = text.lstrip()
+    if stripped.lower().startswith("as a") and rng.random() > allow_prob:
+        text = re.sub(r"(?i)^\s*as a[^,.]*[,.]\s*", "", text).strip()
+    return text
+
+def post_process(text: str, rng: random.Random) -> str:
+    text = enforce_no_as_a_opening(text, rng, allow_prob=0.1)
+    text = cleanup_text(text)
+    return text
+
+# ---------------- Validation + Repairs ----------------
+class ValidationError(Exception):
+    def __init__(self, kind: str, skill: str, message: str):
+        super().__init__(message)
+        self.kind = kind
+        self.skill = skill
+
+def validate_text(
+    text: str,
+    selected_skills: Dict[str, float],
+    implicit_requirements: Dict[str, List[str]],
+) -> str:
+    if not text or len(text.strip()) < 40:
         raise ValidationError("text_invalid", "", "Text is empty/too short")
 
     text = text.strip()
     low = text.lower()
 
     banned_substrings = [
-        "```", "import ", "def ", "class ", "print(", "json", "python script",
-        "please provide", "based on the input json", "here is", "i'll", "i will",
-        "corrected paragraph", "output json", "```python",
+        "```", "import ", "def ", "class ", "print(", "here is", "output json", "```python",
+        "based on the input", "corrected paragraph",
     ]
     if any(b in low for b in banned_substrings):
-        raise ValidationError("text_invalid", "", "Meta/code/JSON detected in output")
+        raise ValidationError("text_invalid", "", "Meta/code detected in output")
 
     if any(ch in text for ch in ["{", "}", "[", "]"]):
         raise ValidationError("text_invalid", "", "Braces/brackets detected (likely JSON/code)")
 
-    # ✅ Sentence count: trim instead of FAIL when too many
     n_sent = _count_sentences(text)
     if n_sent > 6:
         text = trim_to_max_sentences(text, 6)
@@ -313,140 +451,52 @@ def validate_text(text: str, selected_skills: Dict[str, float]) -> str:
     if n_sent < 4:
         raise ValidationError("text_invalid", "", f"Too few sentences: {n_sent} (expected 4–6)")
 
-    # Explicit / implicit checks for SELECTED skills
+    # Selected skills checks
     for skill_name, label in selected_skills.items():
-        canon = skill_name.lower()
-        aliases = [a.lower() for a in SKILL_ALIASES.get(skill_name, {}).get("aliases", [])]
+        mentions = count_skill_mentions(low, skill_name)
 
         if label == 1.0:
-            if not (canon in low or any(a in low for a in aliases)):
+            if mentions == 0:
                 raise ValidationError("explicit_missing", skill_name, f"Explicit skill missing: {skill_name}")
-        elif label == 0.5:
-            if canon in low or any(a in low for a in aliases):
+            if mentions > 4:
+                raise ValidationError("explicit_too_many", skill_name, f"Explicit skill too many times: {skill_name} ({mentions})")
+
+        else:
+            # implicit must not be named
+            if mentions > 0:
                 raise ValidationError("implicit_leaked", skill_name, f"Implicit skill leaked: {skill_name}")
 
+            required = implicit_requirements.get(skill_name, [])
+            if required and not text_contains_any_required_phrase(text, required):
+                raise ValidationError("implicit_no_evidence", skill_name, f"No implicit evidence for: {skill_name}")
+
+    # No extra skills
     selected_set = set(selected_skills.keys())
-
-    # ✅ Non-selected explicit mentions: only enforce strict set (NOT all skills)
-    # This prevents constant failures on generic words like "Azure", "cloud", etc.
-    strict_targets = [s for s in STRICT_NONSELECTED_EXPLICIT if s not in selected_set]
-
-    for other_skill in strict_targets:
-        info = SKILL_ALIASES.get(other_skill, {})
-        candidates = [other_skill] + info.get("aliases", [])
-        for cand in candidates:
-            if not cand:
-                continue
-            token = cand.strip().lower()
-            # Skip ultra-short / noisy tokens
-            if re.fullmatch(r"[a-z]+", token) and len(token) <= 2:
-                continue
-
-            pat = _build_token_pattern(token)
-            if re.search(pat, low):
-                # Special case: Machine Learning is super common -> treat as strict (you chose it),
-                # so still FAIL here. If later you want "sanitize not fail", tell me and I'll adjust.
-                raise ValidationError("nonselected_explicit", other_skill, f"Mentions non-selected STRICT skill: {other_skill}")
-
-    # ✅ Non-selected implied: only enforce a small strict implied set (as you already do)
-    STRICT_NONSELECTED_IMPLIED = {"CI/CD", "GitOps", "MLflow", "Machine Learning"}
-    for hinted_skill, pats in IMPLICIT_HINT_PATTERNS.items():
-        if hinted_skill not in STRICT_NONSELECTED_IMPLIED:
-            continue
-        if hinted_skill in selected_set:
-            continue
-        for pat in pats:
-            if re.search(pat, low):
-                raise ValidationError("nonselected_implied", hinted_skill, f"Implies non-selected skill: {hinted_skill}")
+    nonselected_hits = find_nonselected_mentions(low, selected_set)
+    if nonselected_hits:
+        raise ValidationError("nonselected_mentioned", nonselected_hits[0], f"Mentions non-selected skill: {nonselected_hits[0]}")
 
     return text
 
+def sanitize_skill_mention(text: str, skill: str) -> str:
+    replacement = NONSELECTED_REPLACEMENTS.get(skill, "standard engineering practices")
+    candidates = _all_surface_forms(skill)
+    out = text
+    for cand in candidates:
+        pat = r"(?i)(?<!\w)" + re.escape(cand) + r"(?!\w)"
+        out = re.sub(pat, replacement, out)
+    return cleanup_text(out)
 
-def pick_random_skills(k_min: int = 3, k_max: int = 6) -> Dict[str, float]:
-    k = random.randint(k_min, k_max)
-    selected_names = random.sample(GLOBAL_SKILL_VECTOR, k)
-
-    skills_with_labels = {}
-    for name in selected_names:
-        category = SKILL_ALIASES.get(name, {}).get("category", "")
-
-        # Programming languages cannot be implicit
-        if category == "programming_language":
-            skills_with_labels[name] = 1.0
-            continue
-
-        if name not in IMPLICIT_ALLOWED:
-            skills_with_labels[name] = 1.0
-        else:
-            skills_with_labels[name] = 1.0 if random.random() < P_EXPLICIT else 0.5
-
-    return skills_with_labels
-
-
-def force_add_missing_explicit(text: str, missing_skill: str) -> str:
-    # IMPORTANT: do NOT use the banned phrase ("using <skill> in day-to-day...")
-    t = text.strip()
-    if not t:
-        return f"Delivered project work with {missing_skill}."
-
-    m = re.search(r"^(.*?)([.!?])\s*$", t)
-    if not m:
-        return (t + f", with {missing_skill} applied to implementation and maintenance.").strip()
-
-    body, punct = m.group(1), m.group(2)
-    if missing_skill.lower() in t.lower():
-        return t
-
-    injected = f"{body}, with {missing_skill} applied to implementation and maintenance{punct}"
-    injected = re.sub(r"\s{2,}", " ", injected).strip()
-    return injected
-
-
-def sanitize_implicit_leak(text: str, leaked_skill: str) -> str:
-    aliases = SKILL_ALIASES.get(leaked_skill, {}).get("aliases", [])
-    repl = IMPLICIT_REPLACEMENTS.get(leaked_skill, "production-grade engineering work")
-    candidates = [leaked_skill] + aliases
-
-    for cand in sorted([c for c in candidates if c], key=len, reverse=True):
-        token = cand.strip()
-        if not token:
-            continue
-
-        # Works for single-word and multi-word skills (e.g., "AWS EC2")
-        pat = r"(?i)(?<!\w)" + re.escape(token) + r"(?!\w)"
-        text = re.sub(pat, repl, text)
-
-    return cleanup_after_deletions(text)
-
-
-
-def enforce_no_as_a_opening(text: str, allow_prob: float = 0.1) -> str:
-    if not text:
-        return text
-    stripped = text.lstrip()
-    if stripped.lower().startswith("as a"):
-        if random.random() > allow_prob:
-            text = re.sub(r"(?i)^\s*as a[^,.]*[,.]\s*", "", text).strip()
-    return text
-
-
-def _post_process(text: str) -> str:
-    text = enforce_no_as_a_opening(text, allow_prob=0.1)
-    text = cleanup_after_deletions(text)
-    return text
-
-
-def build_fix_prompt(original_text: str, selected_skills: Dict[str, float]) -> str:
-    skills_info = build_skills_info(selected_skills)
+def build_fix_prompt(original_text: str, skills_info: Dict[str, Any]) -> str:
     skills_block = json.dumps(skills_info, indent=2, ensure_ascii=False)
-
     return f"""
 Return ONLY the corrected paragraph (plain text), 4–6 sentences.
 No JSON. No code. No markdown. No headings. No meta text.
 
 Rules:
-- label 1.0: MUST mention canonical skill name OR one alias verbatim.
-- label 0.5: MUST NOT mention canonical name NOR any alias; imply via responsibilities.
+- target_label 1.0: MUST mention canonical name OR one alias at least ONCE.
+- target_label 0.5: MUST NOT mention canonical name NOR any alias from banned_terms.
+- target_label 0.5: MUST include at least ONE phrase from required_evidence exactly as written (case-insensitive OK).
 - Do NOT add any skills beyond the list.
 
 skills_info:
@@ -456,11 +506,36 @@ Original paragraph:
 {original_text}
 """.strip()
 
+def force_add_missing_explicit(text: str, missing_skill: str) -> str:
+    sents = _split_sentences_keep_punct(text)
+    injection = f"I used {missing_skill} in production work and ongoing maintenance."
+    if len(sents) < 2:
+        return cleanup_text(text + " " + injection)
+    insert_at = max(1, len(sents) - 1)
+    new_sents = sents[:insert_at] + [injection] + sents[insert_at:]
+    return cleanup_text(" ".join(new_sents))
 
-def generate_sample(templates: List[str]) -> Optional[Dict[str, Any]]:
-    selected_skills = pick_random_skills()
-    template = random.choice(templates)
-    prompt = generate_prompt(selected_skills, template)
+# ---------------- Generation ----------------
+def _choose_k_by_seniority(rng: random.Random, seniority: str) -> int:
+    if seniority in ["Intern", "Junior"]:
+        lo, hi = K_MIN_JUNIOR
+    elif seniority == "Mid":
+        lo, hi = K_MIN_MID
+    else:
+        lo, hi = K_MIN_SENIOR
+    return rng.randint(lo, hi)
+
+def generate_sample(
+    rng: random.Random,
+    templates: List[str],
+    controller: SkillBalanceController
+) -> Optional[Dict[str, Any]]:
+    ctx = sample_context(rng)
+    selected_skills = pick_random_skills(rng, controller, ctx)
+    template = rng.choice(templates)
+
+    skills_info, implicit_requirements = build_skills_info_and_requirements(rng, selected_skills)
+    prompt = generate_prompt(rng, selected_skills, template, ctx, skills_info)
 
     last_err: Optional[Exception] = None
     text = ""
@@ -469,91 +544,140 @@ def generate_sample(templates: List[str]) -> Optional[Dict[str, Any]]:
     for _ in range(MAX_GEN_RETRIES):
         try:
             text = call_openai(prompt, TEMPERATURE_GEN, MAX_TOKENS_GEN)
-            text = _post_process(text)
-            text = validate_text(text, selected_skills)  # ✅ validate the right variable
+            text = post_process(text, rng)
+            text = validate_text(text, selected_skills, implicit_requirements)
             STATS["pass_initial"] += 1
+            controller.update(selected_skills)
             return {"job_description": text, "skills": selected_skills}
         except ValidationError as ve:
             last_err = ve
         except Exception as e:
             last_err = e
 
-    # 2) local repair loop
+    # 2) cheap local repair loop
     repaired_text = text
-    for _ in range(3):
+    for _ in range(12):
         try:
-            repaired_text = _post_process(repaired_text)
-            repaired_text = validate_text(repaired_text, selected_skills)  # ✅ validate repaired_text
+            repaired_text = post_process(repaired_text, rng)
+            repaired_text = validate_text(repaired_text, selected_skills, implicit_requirements)
             STATS["pass_repair"] += 1
+            controller.update(selected_skills)
             return {"job_description": repaired_text, "skills": selected_skills}
+
         except ValidationError as ve:
+            last_err = ve
+
             if ve.kind == "explicit_missing" and ve.skill:
                 STATS["repair_add_explicit"] += 1
                 repaired_text = force_add_missing_explicit(repaired_text, ve.skill)
-                repaired_text = cleanup_after_deletions(repaired_text)
                 continue
-            if ve.kind == "implicit_leaked" and ve.skill:
-                STATS["repair_sanitize_implicit"] += 1
-                repaired_text = sanitize_implicit_leak(repaired_text, ve.skill)
-                repaired_text = cleanup_after_deletions(repaired_text)
+
+            if ve.kind == "explicit_too_many" and ve.skill:
+                STATS["repair_soften_repeats"] += 1
+                repaired_text = sanitize_skill_mention(repaired_text, ve.skill)
+                repaired_text = force_add_missing_explicit(repaired_text, ve.skill)
                 continue
-            last_err = ve
+
+            if ve.kind in {"implicit_leaked", "nonselected_mentioned"} and ve.skill:
+                STATS["repair_sanitize"] += 1
+                repaired_text = sanitize_skill_mention(repaired_text, ve.skill)
+                continue
+
+            
+            if ve.kind == "implicit_no_evidence" and ve.skill:
+                # Drop the implicit skill (no hallucinated 0.5). Do NOT validate+return here,
+                # because the text may still contain other violations (e.g., non-selected skills).
+                STATS["repair_drop_implicit_skill"] += 1
+                selected_skills.pop(ve.skill, None)
+                implicit_requirements.pop(ve.skill, None)
+                continue
+
+
             break
+
         except Exception as e:
             last_err = e
             break
 
-    # 3) LLM fix passes
-    fix_prompt = build_fix_prompt(repaired_text, selected_skills)
+    # 3) LLM fix pass
+    fix_prompt = build_fix_prompt(repaired_text, skills_info)
     fixed_text = repaired_text
 
     for _ in range(MAX_FIX_RETRIES):
         try:
             fixed_text = call_openai(fix_prompt, TEMPERATURE_FIX, MAX_TOKENS_FIX)
-            fixed_text = _post_process(fixed_text)
-            fixed_text = validate_text(fixed_text, selected_skills)  # ✅ validate fixed_text
+            fixed_text = post_process(fixed_text, rng)
+            fixed_text = validate_text(fixed_text, selected_skills, implicit_requirements)
             STATS["pass_fix_llm"] += 1
+            controller.update(selected_skills)
             return {"job_description": fixed_text, "skills": selected_skills}
+
         except ValidationError as ve:
             last_err = ve
+
             if ve.kind == "explicit_missing" and ve.skill:
                 STATS["fix_add_explicit"] += 1
                 fixed_text = force_add_missing_explicit(fixed_text, ve.skill)
-                fix_prompt = build_fix_prompt(fixed_text, selected_skills)
+                fix_prompt = build_fix_prompt(fixed_text, skills_info)
                 continue
-            if ve.kind == "implicit_leaked" and ve.skill:
-                STATS["fix_sanitize_implicit"] += 1
-                fixed_text = sanitize_implicit_leak(fixed_text, ve.skill)
-                fix_prompt = build_fix_prompt(fixed_text, selected_skills)
+
+            if ve.kind in {"implicit_leaked", "nonselected_mentioned"} and ve.skill:
+                STATS["fix_sanitize"] += 1
+                fixed_text = sanitize_skill_mention(fixed_text, ve.skill)
+                fix_prompt = build_fix_prompt(fixed_text, skills_info)
                 continue
+
+            if ve.kind == "implicit_no_evidence" and ve.skill:
+                STATS["fix_drop_implicit_skill"] += 1
+                selected_skills.pop(ve.skill, None)
+                implicit_requirements.pop(ve.skill, None)
+                fixed_text = validate_text(fixed_text, selected_skills, implicit_requirements)
+                controller.update(selected_skills)
+                return {"job_description": fixed_text, "skills": selected_skills}
+
         except Exception as e:
             last_err = e
             break
 
     STATS["skip"] += 1
-    msg = str(last_err) if last_err else "unknown"
-    print(f"[SKIP] Failed. Reason: {msg}")
+    print(f"[SKIP] Failed: {str(last_err) if last_err else 'unknown'}")
     return None
 
+def pick_random_skills(
+    rng: random.Random,
+    controller: SkillBalanceController,
+    ctx: Dict[str, str],
+) -> Dict[str, float]:
+    k = _choose_k_by_seniority(rng, ctx["seniority"])
+    pool = iter_skill_names()
+    chosen = rng.sample(pool, k)
 
+    implicit_eligible = [s for s in chosen if _skill_can_be_implicit(s)]
+    n_implicit = controller.choose_n_implicit(len(chosen))
+    n_implicit = min(n_implicit, len(implicit_eligible))
+
+    implicit_names = set(rng.sample(implicit_eligible, n_implicit)) if n_implicit else set()
+    return {s: (0.5 if s in implicit_names else 1.0) for s in chosen}
 
 def main():
+    rng = random.Random(SEED) if SEED is not None else random.Random()
+
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     templates = load_prompt_templates()
-    
-    # Get next versioned output file
+    controller = SkillBalanceController()
     output_file = get_next_versioned_output_file()
 
     print(f"Model: {OPENAI_MODEL}")
     print(f"Prompts dir: {PROMPTS_DIR}")
     print(f"Output: {output_file}")
     print(f"Loaded {len(templates)} templates")
+    print(f"Target implicit ratio: {TARGET_IMPLICIT_RATIO:.0%}")
 
     generated = 0
     with open(output_file, "w", encoding="utf-8") as f:
         pbar = tqdm(total=NUM_SAMPLES)
         while generated < NUM_SAMPLES:
-            sample = generate_sample(templates)
+            sample = generate_sample(rng, templates, controller)
             if sample:
                 json.dump(sample, f, ensure_ascii=False)
                 f.write("\n")
@@ -561,14 +685,16 @@ def main():
                 pbar.update(1)
         pbar.close()
 
-    print(f"Done. Wrote {generated} samples to {output_file}")
-
-    print("\n--- STATS ---")
+    print(f"\nDone. Wrote {generated} samples to {output_file}")
+    total_labels = controller.explicit + controller.implicit
+    if total_labels:
+        print(f"Implicit labels: {controller.implicit} | Explicit labels: {controller.explicit} | Implicit ratio: {controller.implicit/total_labels:.2%}")
+    else:
+        print("Implicit labels: 0 | Explicit labels: 0 | Implicit ratio: N/A")
     print(f"Total model calls: {TOTAL_CALLS}")
-    print(f"Success rate: {generated}/{max(1, TOTAL_CALLS)} = {generated / max(1, TOTAL_CALLS):.2%}")
     for k, v in STATS.most_common():
         print(f"  {k}: {v}")
 
-
 if __name__ == "__main__":
+    _debug_print_implicit_pool_share()
     main()
