@@ -4,85 +4,32 @@ from __future__ import annotations
 import os
 import sys
 import json
-import re
 import hashlib
 from pathlib import Path
 from typing import Dict, List, Any, Optional
-
-import requests
 
 # Make project root importable
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
-from skills.skillAliases import skills as SKILL_ALIASES
-from skills.globalVector import GLOBAL_SKILL_VECTOR
+from openai import OpenAI
+
+# ---------------- OpenAI config ----------------
+OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4.1-nano")
+TEMPERATURE = float(os.getenv("OPENAI_TEMPERATURE", "0"))
+
+# Cache (so reruns don't re-pay / re-wait)
+CACHE_DIR = Path(os.getenv("ZERO_SHOT_CACHE_DIR", "outputs/cache/zero_shot_openai"))
+CACHE_DIR.mkdir(parents=True, exist_ok=True)
+CACHE_PATH = CACHE_DIR / f"zero_shot_cache__{OPENAI_MODEL.replace(':','_').replace('/','_')}.json"
+
+client = OpenAI()
 
 
-# ---------------- Ollama config ----------------
-OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/generate")
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3.1:8b")  # change if needed
-TEMPERATURE = float(os.getenv("OLLAMA_TEMPERATURE", "0"))
-
-# Cache to avoid re-calling for same text
-CACHE_PATH = Path(os.getenv("ZERO_SHOT_CACHE", "outputs/cache/zero_shot_ollama_cache.json"))
-CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
-
-
-def _normalize_text(t: str) -> str:
-    return (t or "").strip()
-
-
-def _word_boundary_pattern(phrase: str) -> re.Pattern:
-    # Match phrase with token boundaries (case-insensitive)
-    esc = re.escape(phrase.lower())
-    return re.compile(rf"(?<!\w){esc}(?!\w)")
-
-
-def _build_alias_patterns() -> Dict[str, List[re.Pattern]]:
-    """
-    For each canonical skill, build patterns for canonical + aliases.
-    We skip very short aliases (len < 2) to reduce false positives.
-    """
-    patterns: Dict[str, List[re.Pattern]] = {}
-    for canon, meta in SKILL_ALIASES.items():
-        items = [canon] + list(meta.get("aliases", []))
-        filtered: List[str] = []
-        for a in items:
-            a = (a or "").strip()
-            if len(a) < 2:
-                continue
-            filtered.append(a)
-        patterns[canon] = [_word_boundary_pattern(x) for x in filtered]
-    return patterns
-
-
-_ALIAS_PATTERNS = _build_alias_patterns()
-
-
-def extract_candidates_from_text(text: str, max_candidates: int = 30) -> List[str]:
-    """
-    Build a SHORTLIST from the text only (no GT leakage):
-    candidates = skills whose canonical/alias appears in the text.
-
-    This is the shortlist we send to the LLM.
-    """
-    t = (text or "").lower()
-    hits: List[str] = []
-    for skill, pats in _ALIAS_PATTERNS.items():
-        for p in pats:
-            if p.search(t):
-                hits.append(skill)
-                break
-
-    # stable order: by appearance count is expensive; just sort
-    hits = sorted(set(hits))
-    return hits[:max_candidates]
-
-
-def _hash_text(text: str) -> str:
-    return hashlib.md5(text.encode("utf-8")).hexdigest()
+def _hash_key(text: str, candidates: List[str]) -> str:
+    blob = text.strip() + "||" + "||".join(candidates)
+    return hashlib.md5(blob.encode("utf-8")).hexdigest()
 
 
 def _load_cache() -> Dict[str, Any]:
@@ -99,9 +46,7 @@ def _save_cache(cache: Dict[str, Any]) -> None:
 
 
 def _extract_json_object(s: str) -> Optional[dict]:
-    """
-    Try to find and parse the first JSON object in model output.
-    """
+    """Try to find and parse the first JSON object in model output."""
     if not s:
         return None
     start = s.find("{")
@@ -115,45 +60,29 @@ def _extract_json_object(s: str) -> Optional[dict]:
         return None
 
 
-def _ollama_generate(prompt: str) -> str:
-    payload = {
-        "model": OLLAMA_MODEL,
-        "prompt": prompt,
-        "stream": False,
-        "options": {
-            "temperature": TEMPERATURE,
-        },
-    }
-    r = requests.post(OLLAMA_URL, json=payload, timeout=120)
-    r.raise_for_status()
-    data = r.json()
-    return data.get("response", "") or ""
-
-
-def _build_prompt(text: str, candidates: List[str]) -> str:
-    """
-    We ask Ollama to label ONLY the provided candidate skills.
-    Output must be JSON only.
-    """
+def _build_prompt(idx: int, text: str, candidates: List[str]) -> str:
+    # Candidates are ONLY the skills from this row (GT keys), without labels.
+    # Output must NOT invent new skills, and must NOT output 0.
     cand_str = ", ".join(candidates)
 
     return f"""
-You are doing skill evidence labeling for a CLOSED set of candidate skills.
+You are labeling skills for ONE example.
 
-LABELS (strict):
-- 1.0 (EXPLICIT): the skill name appears clearly in the text (or obvious direct mention).
-- 0.5 (IMPLICIT): the skill is strongly implied by responsibilities/processes, even if the name does NOT appear.
-- 0.0 (NONE): not supported.
+You MUST choose only from the given candidate skills list (closed list).
+Do NOT add new skills.
 
-TASK:
-Given the job description text, output labels ONLY for the candidate skills list provided below.
+Return ONLY skills that have evidence:
+- EXPLICIT (1.0): the skill name appears clearly in the text.
+- IMPLICIT (0.5): the skill is strongly implied by responsibilities/processes, but NOT mentioned by name.
 
-IMPORTANT RULES:
-- Only use skills from the candidate list.
-- Do NOT invent new skills.
+IMPORTANT:
+- Do NOT output 0.0 skills at all (omit them).
+- If the skill name appears in the text, it MUST be EXPLICIT (1.0), not IMPLICIT.
 - Output JSON ONLY. No extra text.
 
-CANDIDATE SKILLS:
+Example id (idx): {idx}
+
+CANDIDATE SKILLS (closed list):
 [{cand_str}]
 
 JOB DESCRIPTION:
@@ -161,83 +90,133 @@ JOB DESCRIPTION:
 
 Return exactly this JSON schema:
 {{
-  "predicted_skills": {{
-    "Skill A from candidate list": 0.0 or 0.5 or 1.0,
-    "Skill B from candidate list": 0.0 or 0.5 or 1.0
-  }}
+  "idx": {idx},
+  "explicit": ["skill1", "skill2"],
+  "implicit": ["skill3", "skill4"]
 }}
 """.strip()
 
 
-def predict_zero_shot_baseline(text: str, max_candidates: int = 30) -> Dict[str, float]:
-    """
-    Returns FULL dict over GLOBAL_SKILL_VECTOR with values in {0.0, 0.5, 1.0}.
-    We only ask the LLM about a shortlist (from text), then fill the rest with 0.0.
-    """
-    text = _normalize_text(text)
-    out: Dict[str, float] = {s: 0.0 for s in GLOBAL_SKILL_VECTOR}
+def _openai_generate(prompt: str) -> str:
+    # Responses API
+    resp = client.responses.create(
+        model=OPENAI_MODEL,
+        input=[
+            {"role": "system", "content": "You are a careful JSON-only classifier. Follow the schema exactly."},
+            {"role": "user", "content": prompt},
+        ],
+        temperature=TEMPERATURE,
+    )
+    # SDK exposes a convenience text accessor
+    return getattr(resp, "output_text", "") or ""
 
-    if not text:
+
+def predict_from_row(idx: int, job_description: str, candidate_skills: List[str]) -> Dict[str, Any]:
+    """
+    Returns:
+      {
+        "idx": idx,
+        "explicit": [...],   # each implies label 1.0
+        "implicit": [...],   # each implies label 0.5
+      }
+    """
+    text = (job_description or "").strip()
+    candidates = [c.strip() for c in candidate_skills if isinstance(c, str) and c.strip()]
+    # de-dup but keep stable order
+    seen = set()
+    candidates = [c for c in candidates if not (c in seen or seen.add(c))]
+
+    out = {"idx": idx, "explicit": [], "implicit": []}
+
+    if not text or not candidates:
         return out
 
-    # shortlist candidates based on matches in the text (no GT leakage)
-    candidates = extract_candidates_from_text(text, max_candidates=max_candidates)
-
-    # If no candidates were found, nothing to label
-    if not candidates:
-        return out
-
-    key = _hash_text(text) + f":{max_candidates}"
     cache = _load_cache()
-    if key in cache:
-        cached_pred = cache[key]
-        # cached_pred is already a dict of skill->value
-        for s, v in cached_pred.items():
-            if s in out:
-                out[s] = float(v)
+    key = _hash_key(text, candidates)
+
+    if key in cache and isinstance(cache[key], dict):
+        cached = cache[key]
+        # ensure schema exists
+        out["explicit"] = list(cached.get("explicit", [])) if isinstance(cached.get("explicit", []), list) else []
+        out["implicit"] = list(cached.get("implicit", [])) if isinstance(cached.get("implicit", []), list) else []
         return out
 
-    prompt = _build_prompt(text, candidates)
-    raw = _ollama_generate(prompt)
-
+    prompt = _build_prompt(idx, text, candidates)
+    raw = _openai_generate(prompt)
     parsed = _extract_json_object(raw)
-    if not parsed or "predicted_skills" not in parsed or not isinstance(parsed["predicted_skills"], dict):
-        # fallback: if parsing fails, return all zeros for safety
-        cache[key] = {}
+
+    if not parsed or not isinstance(parsed, dict):
+        cache[key] = out
         _save_cache(cache)
         return out
 
-    pred_small: Dict[str, float] = {}
-    for s, v in parsed["predicted_skills"].items():
-        if s not in candidates:
-            continue
-        try:
-            fv = float(v)
-        except Exception:
-            continue
-        # clamp to allowed set
-        if fv not in (0.0, 0.5, 1.0):
-            # small tolerance
-            if abs(fv - 1.0) < 0.11:
-                fv = 1.0
-            elif abs(fv - 0.5) < 0.11:
-                fv = 0.5
-            else:
-                fv = 0.0
-        pred_small[s] = fv
-        out[s] = fv
+    explicit = parsed.get("explicit", [])
+    implicit = parsed.get("implicit", [])
 
-    # cache only the non-zero predictions (or the full small dict)
-    cache[key] = pred_small
+    if not isinstance(explicit, list):
+        explicit = []
+    if not isinstance(implicit, list):
+        implicit = []
+
+    # enforce closed list + no overlaps
+    cand_set = set(candidates)
+    explicit_clean = [s for s in explicit if isinstance(s, str) and s in cand_set]
+    implicit_clean = [s for s in implicit if isinstance(s, str) and s in cand_set]
+
+    exp_set = set(explicit_clean)
+    implicit_clean = [s for s in implicit_clean if s not in exp_set]
+
+    out["explicit"] = explicit_clean
+    out["implicit"] = implicit_clean
+
+    cache[key] = out
     _save_cache(cache)
     return out
 
 
+def _read_jsonl(path: str) -> List[dict]:
+    rows = []
+    with open(path, "r", encoding="utf-8") as f:
+        for i, line in enumerate(f, start=1):
+            line = line.strip()
+            if not line:
+                continue
+            obj = json.loads(line)
+            rows.append((i, obj))
+    return rows
+
+
+def main():
+    import argparse
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--in_path", required=True, help="Input JSONL dataset (each line has job_description + skills dict)")
+    ap.add_argument("--out_path", required=True, help="Where to write predictions JSONL")
+    ap.add_argument("--limit", type=int, default=0, help="Run only first N rows (0 = all)")
+    args = ap.parse_args()
+
+    inp = args.in_path
+    outp = Path(args.out_path)
+    outp.parent.mkdir(parents=True, exist_ok=True)
+
+    rows = _read_jsonl(inp)
+    if args.limit and args.limit > 0:
+        rows = rows[: args.limit]
+
+    n = 0
+    with outp.open("w", encoding="utf-8") as wf:
+        for idx, obj in rows:
+            text = obj.get("job_description") or obj.get("resume_chunk_text") or obj.get("text") or ""
+            skills_dict = obj.get("skills", {}) if isinstance(obj.get("skills", {}), dict) else {}
+            candidates = list(skills_dict.keys())
+
+            pred = predict_from_row(idx=idx, job_description=str(text), candidate_skills=candidates)
+            wf.write(json.dumps(pred, ensure_ascii=False) + "\n")
+            n += 1
+
+    print(f"Wrote predictions: {n} -> {outp.resolve()}")
+    print(f"Cache file: {CACHE_PATH.resolve()}")
+
+
 if __name__ == "__main__":
-    sample = (
-        "I designed and implemented infrastructure automation scripts using Terraform. "
-        "I developed backend services with Express.js and optimized API response times."
-    )
-    pred = predict_zero_shot_baseline(sample, max_candidates=30)
-    hits = [k for k, v in pred.items() if v > 0]
-    print("Non-zero hits:", hits)
+    main()

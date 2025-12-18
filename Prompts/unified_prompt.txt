@@ -1,55 +1,43 @@
-You are generating ONE resume-style paragraph for an NLP dataset.
+You are generating ONE resume-style job description paragraph for a synthetic NLP dataset.
 
-Goal:
-Write a realistic resume paragraph that describes concrete work activities.
-The paragraph is used to train a model to identify technical skills from text.
+You will receive a JSON object named "skills_info" (embedded below). Each skill has:
+- target_label 1.0 = EXPLICIT: you MUST mention the canonical skill name OR one alias at least once.
+- target_label 0.5 = IMPLICIT: you MUST NOT mention the canonical name NOR any alias; instead, imply it using concrete work details.
 
-Context:
-- role_family: {role_family}
-- seniority: {seniority}
-- responsibility_depth: {responsibility_depth}
-- domain: {domain}
+ABSOLUTE OUTPUT FORMAT
+- Output ONLY ONE paragraph of plain English text (4–6 sentences).
+- No JSON. No lists. No bullets. No code. No markdown. No headings. No meta commentary.
 
-Skills specification (JSON dict: skill -> label):
+GLOBAL CONSTRAINTS (VERY IMPORTANT)
+1) Do NOT mention any technologies/tools/skills that are NOT present in skills_info.
+   - If you need to describe something related, use generic wording (e.g., "a major cloud provider", "a relational database", "containerization", "monitoring dashboards").
+2) Keep the paragraph coherent: one person, one role context, one domain context.
+3) Prefer concrete actions + outcomes (latency, reliability, uptime, throughput, correctness, compliance, incident response).
+4) Avoid vague filler ("worked on", "helped with", "responsible for"). Use specific verbs and mechanisms.
+
+HOW TO USE skills_info
+For each skill entry:
+
+A) If target_label = 1.0 (EXPLICIT)
+- Mention the skill explicitly at least once (canonical name OR one alias).
+- Avoid repeating it more than 1–2 times.
+
+B) If target_label = 0.5 (IMPLICIT)
+- STRICTLY FORBIDDEN: any appearance of the canonical name or any alias from banned_terms.
+- You MUST include at least ONE phrase from required_evidence EXACTLY as written (case-insensitive match is OK).
+- Use implicit_cues as inspiration, but do NOT copy them verbatim.
+
+CONTENT QUALITY REQUIREMENTS
+- Include at least one reliability/performance detail (timeouts, retries, rollback, monitoring, health checks, rate limiting).
+- Include at least one outcome (reduced p95 latency, reduced error rate, improved uptime, improved data quality, improved auditability).
+- Use 4–6 sentences only. Do not exceed 6 sentences.
+
+CONTEXT VARIABLES
+Role family: {role_family}
+Seniority: {seniority}
+Responsibility depth: {responsibility_depth}
+Domain: {domain}
+
+Now generate the paragraph using ONLY the following skills_info:
+
 [PASTE_SKILLS_DICT_HERE]
-
-Output format:
-- ONE paragraph, plain text only
-- 4–6 sentences
-- Each sentence describes ONE concrete action or responsibility
-- No bullet points, no lists, no headings
-- Do NOT include quotes, JSON, or any prefacing text
-
-Skill labeling rules:
-- For each skill with label 1.0 (EXPLICIT):
-  * Mention the canonical skill name OR exactly one alias verbatim
-  * Mention it EXACTLY ONCE in the entire paragraph
-  * Embed it naturally inside a work sentence
-  * Do not repeat it via abbreviations, parentheses, or variations
-
-- For each skill with label 0.5 (IMPLICIT):
-  * Do NOT mention the skill name, any alias, or near-synonyms
-  * Imply it only through a specific, realistic responsibility
-  * Use one clear implication per implicit skill
-
-Hard constraints:
-- Use ONLY the skills provided (plus generic words like “server”, “logs”, “database” are ok)
-- Do NOT introduce any tools/technologies/frameworks not listed
-- Do NOT name companies, products, or proprietary systems unless explicitly in the skills list
-
-Writing style:
-- Write like a real {seniority} resume
-- Use direct, action-first sentences (e.g., “Implemented…”, “Built…”, “Analyzed…”)
-- Avoid marketing language and buzzwords
-- Avoid repeating the same idea across sentences
-- Avoid these phrases (do not use them):
-  “production-grade”, “world-class”, “cutting-edge”, “highly scalable”, “synergy”,
-  “worked on”, “responsible for”, “in order to”, “various tasks”, “cross-functional”
-- Prefer measurable outcomes if possible WITHOUT adding new tools (e.g., “reduced latency”, “improved uptime”)
-
-Silent final check (do not print the check):
-- Every 1.0 skill appears exactly once
-- No 0.5 skill name/alias/near-synonym appears
-- No unlisted tools appear
-
-Now write the paragraph.
