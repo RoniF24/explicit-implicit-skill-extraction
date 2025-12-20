@@ -1,0 +1,37 @@
+You are generating ONE resume-style paragraph for an NLP dataset.
+
+You will be given:
+- A TEMPLATE (a short instruction).
+- A SKILLS specification (JSON dict: skill -> info).
+
+Each skill has:
+- target_label: 1.0 (Explicit) or 0.5 (Implicit)
+- aliases: list of strings (only for Explicit)
+- banned_terms: list of strings (for Implicit skills only)
+- required_evidence: list of strings (for Implicit skills only)
+- implicit_cues: list of example sentences (for Implicit skills only; for inspiration only)
+
+[TEMPLATE]
+[STYLE_HINT]
+
+SKILLS specification (JSON dict: skill -> info):
+[PASTE_SKILLS_DICT_HERE]
+
+Rules:
+1) Output a single paragraph of 4–6 sentences.
+2) Do NOT mention any tool/skill that is not in the SKILLS specification.
+2) Do NOT mention any tool/skill that is n ot in the SKILLS specification.
+3) For each skill with target_label = 1.0 (Explicit):
+   - Mention the canonical skill name at least once OR an alias (if provided).
+   - Do not mention it more than 4 times.
+
+4) For each skill with target_label = 0.5 (Implicit):
+   - DO NOT use any banned_terms (no direct name/alias mentions).
+   - You MUST include at least one phrase from required_evidence EXACTLY as written (must appear as a substring).
+   - Keep the evidence subtle (describe behavior/activities, not the skill name).
+
+Style constraints:
+- Natural resume tone (past tense).
+- No bullet points, no JSON output, no headings.
+- Avoid marketing language and buzzwords.
+- Avoid mentioning "resume", "dataset", or "training data".

@@ -1,0 +1,4039 @@
+{
+  "205605d6f11e476fa41466cf95956fbb": {
+    "idx": 1,
+    "skills": {
+      "Terraform": 1.0,
+      "Redis": 1.0,
+      "Bash": 1.0
+    }
+  },
+  "3b1c2c5ecee82b3ab60cfbc30957e4b2": {
+    "idx": 2,
+    "skills": {
+      "Neo4j": 1.0,
+      "Airflow": 1.0
+    }
+  },
+  "68692ddb48a8d2a1df6507e8bb617fdf": {
+    "idx": 3,
+    "skills": {
+      "NestJS": 1.0,
+      "MongoDB": 1.0,
+      "CSS": 1.0
+    }
+  },
+  "11960438bb0758e87353dfe6da574bf6": {
+    "idx": 4,
+    "skills": {
+      "CSS": 1.0,
+      "MongoDB": 1.0,
+      "Bash": 1.0,
+      "Kotlin": 1.0,
+      "Kafka": 1.0
+    }
+  },
+  "dc91ec5aa6f14a66bed937351460ac0f": {
+    "idx": 5,
+    "skills": {
+      "Avro": 1.0,
+      "Neo4j": 1.0,
+      "PyTorch": 1.0
+    }
+  },
+  "9fe5d56496313b473f4c88611c0235e4": {
+    "idx": 6,
+    "skills": {
+      "FastAPI": 1.0,
+      "PostgreSQL": 1.0,
+      "Azure": 1.0,
+      "PyTorch": 1.0
+    }
+  },
+  "4f682cedc48aa782abaf033254146b20": {
+    "idx": 7,
+    "skills": {
+      "BigQuery": 1.0,
+      "MLflow": 1.0,
+      "NumPy": 1.0
+    }
+  },
+  "9543b097dcf677b6012cd177c6b0e199": {
+    "idx": 8,
+    "skills": {
+      "JavaScript": 1.0,
+      "Bash": 1.0,
+      "Pandas": 1.0
+    }
+  },
+  "8c83a376603f340300bcfbd186710936": {
+    "idx": 9,
+    "skills": {
+      "Agile": 1.0,
+      "AWS": 1.0,
+      "Helm": 1.0,
+      "Laravel": 1.0
+    }
+  },
+  "9dccc48e29cc7acaa18c4a23a5729cec": {
+    "idx": 10,
+    "skills": {
+      "InfluxDB": 1.0,
+      "JavaScript": 1.0,
+      "Parquet": 1.0
+    }
+  },
+  "dc91f97e8554ac9217b0008d0848e960": {
+    "idx": 11,
+    "skills": {
+      "Tailwind CSS": 1.0,
+      "Airflow": 1.0
+    }
+  },
+  "3d4d54387e974615393b7ef6d55f5c51": {
+    "idx": 12,
+    "skills": {
+      "Django": 1.0,
+      "Python": 1.0,
+      "CSS": 1.0,
+      "InfluxDB": 1.0
+    }
+  },
+  "aca964acc0bbd208e7e3505463982e77": {
+    "idx": 13,
+    "skills": {
+      "Terraform": 1.0,
+      "BigQuery": 1.0,
+      "Hugging Face": 1.0,
+      "Kotlin": 1.0
+    }
+  },
+  "b53c7165d20dd19af6be722703cfbdef": {
+    "idx": 14,
+    "skills": {
+      "Hugging Face": 1.0,
+      "Neo4j": 1.0,
+      "Tailwind CSS": 1.0
+    }
+  },
+  "14fd5121312e708d9ee04cd8570298c7": {
+    "idx": 15,
+    "skills": {
+      "Flask": 1.0,
+      "Rust": 1.0,
+      "Unit Testing": 0.5
+    }
+  },
+  "500015b24d8af7fae6a4cc54447e531d": {
+    "idx": 16,
+    "skills": {
+      "MySQL": 1.0,
+      "Redis": 1.0
+    }
+  },
+  "6ec8bcff6f22c1ae377a10bd8f4d5d49": {
+    "idx": 17,
+    "skills": {
+      "Load Balancing": 1.0,
+      "MySQL": 1.0,
+      "Kafka": 1.0,
+      "TensorFlow": 1.0,
+      "Ruby on Rails": 1.0
+    }
+  },
+  "9e44adde46cf6f371f038a38e2f7aae8": {
+    "idx": 18,
+    "skills": {
+      "Docker": 1.0,
+      "Agile": 0.5
+    }
+  },
+  "1a7b77be0b94a051b5870e5d1a3ec59c": {
+    "idx": 19,
+    "skills": {
+      "Django": 1.0,
+      "AWS": 1.0,
+      "BigQuery": 1.0,
+      "Distributed Systems": 0.5
+    }
+  },
+  "4eaa5bd3821df30e48e8cc84b9beb117": {
+    "idx": 20,
+    "skills": {
+      "TensorFlow": 1.0,
+      "Spring Boot": 1.0,
+      "Ansible": 1.0,
+      "Confluence": 1.0,
+      "C#": 1.0
+    }
+  },
+  "cd2bda8d7a4af1f42929ee04929010e8": {
+    "idx": 21,
+    "skills": {
+      "Elasticsearch": 1.0,
+      "ArgoCD": 1.0,
+      "Machine Learning": 1.0,
+      "NumPy": 1.0
+    }
+  },
+  "baf25c94fc5b4d8331acb099ab5f2b69": {
+    "idx": 22,
+    "skills": {
+      "Kotlin": 1.0,
+      "Swagger/OpenAPI": 1.0,
+      "Nginx": 1.0,
+      "Ruby on Rails": 1.0
+    }
+  },
+  "d6ce5a372e1b920c83aee6eac978b6e2": {
+    "idx": 23,
+    "skills": {
+      "ArgoCD": 1.0,
+      "GitLab CI": 1.0,
+      "Node.js": 1.0,
+      "Airflow": 1.0,
+      "Hugging Face": 1.0
+    }
+  },
+  "2209aa381ecdafd6356f20874c6e5ba7": {
+    "idx": 24,
+    "skills": {
+      "HTML": 1.0
+    }
+  },
+  "3568ffa73320eb9bfc4b3f8b760b63cb": {
+    "idx": 25,
+    "skills": {
+      "Pandas": 1.0,
+      "Rust": 1.0,
+      "Helm": 1.0
+    }
+  },
+  "016f5ae218bf9f4a82d683f9cbfbd62a": {
+    "idx": 26,
+    "skills": {
+      "JavaScript": 1.0,
+      "Google Cloud": 1.0,
+      "Confluence": 1.0,
+      "Ruby on Rails": 1.0,
+      "Svelte": 1.0
+    }
+  },
+  "652b7ea88619c3e06474a05fe8596055": {
+    "idx": 27,
+    "skills": {
+      "Kotlin": 1.0,
+      "Swift": 1.0
+    }
+  },
+  "5bda16cc40b36b990e6ba3046948af57": {
+    "idx": 28,
+    "skills": {
+      "Cassandra": 1.0,
+      "FastAPI": 1.0,
+      "MySQL": 1.0,
+      "React": 1.0
+    }
+  },
+  "c7116ec2570c2d71cd4dd38cd3128d8f": {
+    "idx": 29,
+    "skills": {
+      "Ruby on Rails": 1.0,
+      "Azure": 1.0,
+      "Laravel": 1.0,
+      "scikit-learn": 1.0
+    }
+  },
+  "cdb2daaaabe83544cabde300f24dcad9": {
+    "idx": 30,
+    "skills": {
+      "Kotlin": 1.0,
+      "MySQL": 1.0
+    }
+  },
+  "c90f1934b605ac237fa5eed0e61abece": {
+    "idx": 31,
+    "skills": {
+      "FastAPI": 1.0,
+      "Vault": 1.0,
+      "Machine Learning": 1.0
+    }
+  },
+  "973c2181986dcdcfdd8c60612ad7fe37": {
+    "idx": 32,
+    "skills": {
+      "Pandas": 1.0,
+      "Keras": 1.0,
+      "GitHub": 1.0,
+      "Kafka": 1.0,
+      "PyTorch": 1.0,
+      "TensorFlow": 1.0
+    }
+  },
+  "0666ef0863177e8c4bbab1a0197605a4": {
+    "idx": 33,
+    "skills": {
+      "Apache Spark": 1.0,
+      "Svelte": 1.0
+    }
+  },
+  "6dce62e597be1ab23d84747f722ed29d": {
+    "idx": 34,
+    "skills": {
+      "Go": 1.0,
+      "REST APIs": 1.0,
+      "Swagger/OpenAPI": 1.0,
+      "ASP.NET Core": 1.0
+    }
+  },
+  "562c6da77b305ce4460f3f8f457f65c3": {
+    "idx": 35,
+    "skills": {
+      "TensorFlow": 1.0,
+      "Swagger/OpenAPI": 1.0
+    }
+  },
+  "350ac3004c0076a0b7c33df805af6e75": {
+    "idx": 36,
+    "skills": {
+      "Azure": 1.0,
+      "TypeScript": 1.0,
+      "React": 1.0,
+      "Svelte": 1.0,
+      "Avro": 1.0
+    }
+  },
+  "6fcca4c22d9247016b849a211f04fe28": {
+    "idx": 37,
+    "skills": {
+      "Ruby on Rails": 1.0,
+      "Nginx": 1.0,
+      "Kafka": 1.0,
+      "CSS": 1.0
+    }
+  },
+  "6e4f16e3df45b3b910e7d493b4f3a9be": {
+    "idx": 38,
+    "skills": {
+      "Elasticsearch": 1.0,
+      "MySQL": 1.0,
+      "Machine Learning": 1.0,
+      "Azure": 1.0
+    }
+  },
+  "79e0ef300b5e61c9885bc83dc26d38cd": {
+    "idx": 39,
+    "skills": {
+      "MLflow": 1.0,
+      "MySQL": 1.0,
+      "scikit-learn": 1.0,
+      "Vault": 1.0,
+      "Laravel": 1.0
+    }
+  },
+  "973d52d248816b2efeab119f50ad5e76": {
+    "idx": 40,
+    "skills": {
+      "BigQuery": 1.0,
+      "InfluxDB": 1.0,
+      "Parquet": 1.0
+    }
+  },
+  "87d2efa8318093064b765a40bdd6acfa": {
+    "idx": 41,
+    "skills": {
+      "Flutter": 1.0
+    }
+  },
+  "12f2b40dbf1934d7db2524e4ee8b7266": {
+    "idx": 42,
+    "skills": {
+      "Airflow": 1.0,
+      "Azure": 1.0,
+      "Express.js": 1.0,
+      "MongoDB": 1.0,
+      "C#": 1.0
+    }
+  },
+  "09915200031952163ce3a44b797510fd": {
+    "idx": 43,
+    "skills": {
+      "Angular": 1.0,
+      "Bash": 1.0,
+      "FastAPI": 1.0,
+      "JavaScript": 1.0,
+      "NestJS": 1.0
+    }
+  },
+  "f213d572dc9ad8b202658789acb59550": {
+    "idx": 44,
+    "skills": {
+      "Machine Learning": 1.0,
+      "Unit Testing": 0.5,
+      "CSS": 1.0,
+      "TypeScript": 1.0
+    }
+  },
+  "7b31dc0452e4292115ae78c88a5bf7c6": {
+    "idx": 45,
+    "skills": {
+      "Machine Learning": 1.0,
+      "SQL": 1.0
+    }
+  },
+  "e80c88ce8d1fb8cb76be2a1099395d9e": {
+    "idx": 46,
+    "skills": {
+      "InfluxDB": 1.0,
+      "Flask": 1.0,
+      "JavaScript": 1.0,
+      "Flutter": 1.0
+    }
+  },
+  "b16da57145cc01bb250b35a39fdc1501": {
+    "idx": 47,
+    "skills": {
+      "Redis": 1.0,
+      "Android SDK": 1.0
+    }
+  },
+  "f881cf0263dc7e3b5704bb9af4a18bc7": {
+    "idx": 48,
+    "skills": {
+      "Redis": 1.0,
+      "HTML": 1.0,
+      "NumPy": 1.0,
+      "TensorFlow": 1.0,
+      "Pandas": 1.0
+    }
+  },
+  "52a5728f29ce5169e2337ab44e3d27c2": {
+    "idx": 49,
+    "skills": {
+      "Laravel": 1.0,
+      "Redis": 1.0,
+      "Go": 1.0,
+      "CSS": 1.0
+    }
+  },
+  "77c5b0c58099b1f7cc79a573c84cd8e1": {
+    "idx": 50,
+    "skills": {
+      "Avro": 1.0
+    }
+  },
+  "e20111c739d8253177e321548571a334": {
+    "idx": 51,
+    "skills": {
+      "Django": 1.0,
+      "ArgoCD": 1.0
+    }
+  },
+  "a255beaa67e69915026aa23d26cbfddf": {
+    "idx": 52,
+    "skills": {
+      "Kafka": 1.0,
+      "Docker": 1.0,
+      "JavaScript": 1.0,
+      "ArgoCD": 1.0
+    }
+  },
+  "a6c79862bece48cc548d252c7dc32578": {
+    "idx": 53,
+    "skills": {
+      "Avro": 1.0,
+      "SQL": 1.0,
+      "Redis": 1.0,
+      "TensorFlow": 1.0,
+      "Vault": 1.0
+    }
+  },
+  "7bdcf95258f7cf9476fb3e7669b27499": {
+    "idx": 54,
+    "skills": {
+      "Node.js": 1.0,
+      "SQLite": 1.0
+    }
+  },
+  "72e2cef7e7bcfb7ceb4de318c8096051": {
+    "idx": 55,
+    "skills": {
+      "Node.js": 1.0
+    }
+  },
+  "681eae5388959913e13ddda0423bf5f8": {
+    "idx": 56,
+    "skills": {
+      "Load Balancing": 1.0,
+      "InfluxDB": 1.0,
+      "GitHub": 1.0,
+      "Vue.js": 1.0,
+      "Flutter": 1.0
+    }
+  },
+  "d86d8ef9faace9f8f7793303dce8e3fe": {
+    "idx": 57,
+    "skills": {
+      "Avro": 1.0,
+      "Android SDK": 1.0
+    }
+  },
+  "b3149897a04f90625690d8101cbee080": {
+    "idx": 58,
+    "skills": {
+      "Bash": 1.0,
+      "Node.js": 1.0,
+      "Redis": 1.0
+    }
+  },
+  "82f2952d71b1641d468e290e376ca324": {
+    "idx": 59,
+    "skills": {
+      "Cassandra": 1.0,
+      "Node.js": 1.0,
+      "Keras": 1.0
+    }
+  },
+  "6ace93ebd5a4c0b6ba6171f874810330": {
+    "idx": 60,
+    "skills": {
+      "Git": 1.0,
+      "Django": 1.0,
+      "AWS": 1.0,
+      "Avro": 1.0,
+      "HTML": 1.0
+    }
+  },
+  "89b72edee2c3844e7f88f7c73b409c3d": {
+    "idx": 61,
+    "skills": {
+      "Ansible": 1.0,
+      "MLflow": 1.0,
+      "PostgreSQL": 1.0,
+      "NumPy": 1.0,
+      "TensorFlow": 1.0
+    }
+  },
+  "e0bfc80ec6d18bc74e6bfd22d4f43012": {
+    "idx": 62,
+    "skills": {
+      "Kafka": 1.0,
+      "PyTorch": 1.0,
+      "ArgoCD": 1.0,
+      "Avro": 1.0
+    }
+  },
+  "dfe3d6e949cb9c5948857b4c35236428": {
+    "idx": 63,
+    "skills": {
+      "Java": 1.0,
+      "Load Balancing": 1.0,
+      "Integration Testing": 0.5
+    }
+  },
+  "d9ddde7a2a39b0fc15c4f75541b74d97": {
+    "idx": 64,
+    "skills": {
+      "GitLab CI": 1.0,
+      "iOS SDK": 1.0,
+      "Rust": 1.0
+    }
+  },
+  "f6eaf36de9e75b043c07aeed26b9d2ff": {
+    "idx": 65,
+    "skills": {
+      "Rust": 1.0,
+      "Python": 1.0,
+      "TypeScript": 1.0,
+      "Redis": 1.0,
+      "Java": 1.0,
+      "Neo4j": 1.0
+    }
+  },
+  "c7782d8defea3f0c4019b8ff5519efc2": {
+    "idx": 66,
+    "skills": {
+      "Avro": 1.0,
+      "Flask": 1.0,
+      "REST APIs": 1.0,
+      "Swagger/OpenAPI": 1.0
+    }
+  },
+  "40b2233615317ed1be37e0ff1eac200d": {
+    "idx": 67,
+    "skills": {
+      "ArgoCD": 1.0,
+      "MySQL": 1.0
+    }
+  },
+  "568b48f130702d300cdda0ccff9b7724": {
+    "idx": 68,
+    "skills": {
+      "Flask": 1.0,
+      "CSS": 1.0
+    }
+  },
+  "01ec1aa3b91b4cfee7549d3ff55b3dd2": {
+    "idx": 69,
+    "skills": {
+      "Caching": 1.0,
+      "MySQL": 1.0,
+      "Kotlin": 1.0,
+      "Swift": 1.0
+    }
+  },
+  "9d88c00bc246e41bf0bd22984db6e37b": {
+    "idx": 70,
+    "skills": {
+      "Hugging Face": 1.0
+    }
+  },
+  "37bfb6321f82b8e057614ff7317d23f5": {
+    "idx": 71,
+    "skills": {
+      "Node.js": 1.0,
+      "LLMs": 1.0
+    }
+  },
+  "a7f015ec93b69b9c3e7aeb5576a52f97": {
+    "idx": 72,
+    "skills": {
+      "Laravel": 1.0,
+      "Caching": 1.0,
+      "Bash": 1.0,
+      "Keras": 1.0
+    }
+  },
+  "a85d8a50924bbf25a7c986ed8337bfdc": {
+    "idx": 73,
+    "skills": {
+      "CSS": 1.0,
+      "Django": 1.0,
+      "Cassandra": 1.0
+    }
+  },
+  "c2af43d57dc70be04cf109d98e468e34": {
+    "idx": 74,
+    "skills": {
+      "Flask": 1.0,
+      "Kotlin": 1.0
+    }
+  },
+  "44e5a95c78a910ecd2dfd62ac94d56e2": {
+    "idx": 75,
+    "skills": {
+      "Nginx": 1.0,
+      "Hugging Face": 1.0
+    }
+  },
+  "981e257354493e9b76c2d0dfec35eb06": {
+    "idx": 76,
+    "skills": {
+      "Flask": 1.0,
+      "MongoDB": 1.0,
+      "ArgoCD": 1.0,
+      "LLMs": 1.0
+    }
+  },
+  "ab50547e3b6bf6bea306d8f101af5081": {
+    "idx": 77,
+    "skills": {
+      "Parquet": 1.0,
+      "ArgoCD": 1.0,
+      "Svelte": 1.0,
+      "Confluence": 1.0,
+      "LLMs": 1.0,
+      "MongoDB": 1.0
+    }
+  },
+  "f5cf944b9398534c391d2c051bc9f698": {
+    "idx": 78,
+    "skills": {
+      "NumPy": 1.0,
+      "Express.js": 1.0
+    }
+  },
+  "6b74829e0073c6fe004f0d88e0432904": {
+    "idx": 79,
+    "skills": {
+      "Bash": 1.0,
+      "CSS": 1.0,
+      "Pandas": 1.0,
+      "scikit-learn": 1.0
+    }
+  },
+  "8acba0f5a0978f59767bae375f77d8d4": {
+    "idx": 80,
+    "skills": {
+      "Elasticsearch": 1.0,
+      "AWS": 1.0,
+      "Agile": 0.5,
+      "Caching": 1.0,
+      "Svelte": 1.0,
+      "Swagger/OpenAPI": 1.0
+    }
+  },
+  "072343f022641e33d01f856407a09ef8": {
+    "idx": 81,
+    "skills": {
+      "Ansible": 1.0,
+      "PostgreSQL": 1.0
+    }
+  },
+  "ca28ce68feeb609d6f65a083eb8e5062": {
+    "idx": 82,
+    "skills": {
+      "Google Cloud": 1.0,
+      "Docker": 1.0,
+      "scikit-learn": 1.0
+    }
+  },
+  "0c2a0f9915aca1a481d56dbfd40a39fe": {
+    "idx": 83,
+    "skills": {
+      "FastAPI": 1.0,
+      "Vault": 1.0,
+      "scikit-learn": 1.0,
+      "Svelte": 1.0,
+      "Ruby on Rails": 1.0
+    }
+  },
+  "c2302819bdf1547857db56350e7bb9a7": {
+    "idx": 84,
+    "skills": {
+      "Android SDK": 1.0,
+      "TensorFlow": 1.0,
+      "Keras": 1.0,
+      "Git": 1.0
+    }
+  },
+  "4f8caceb4e0c704e63f874231a998d6e": {
+    "idx": 85,
+    "skills": {
+      "Swagger/OpenAPI": 1.0,
+      "Ruby on Rails": 1.0,
+      "PostgreSQL": 1.0,
+      "Vault": 1.0
+    }
+  },
+  "8b3f631432f6141024789182caf028dd": {
+    "idx": 86,
+    "skills": {
+      "Angular": 1.0,
+      "Load Balancing": 1.0,
+      "Network Security": 1.0
+    }
+  },
+  "513357041748a3735468ff909eef7340": {
+    "idx": 87,
+    "skills": {
+      "Go": 1.0,
+      "InfluxDB": 1.0
+    }
+  },
+  "4bdeb92a7426da8f813445441bf1ced2": {
+    "idx": 88,
+    "skills": {
+      "Kotlin": 1.0,
+      "InfluxDB": 1.0,
+      "MySQL": 1.0,
+      "Keras": 1.0,
+      "Parquet": 1.0
+    }
+  },
+  "3388a6018336e0a99fc211630c5a1a43": {
+    "idx": 89,
+    "skills": {
+      "ASP.NET Core": 1.0,
+      "React": 1.0
+    }
+  },
+  "5c08fc77fdbc774b40d7f703da34c0fb": {
+    "idx": 90,
+    "skills": {
+      "C#": 1.0,
+      "scikit-learn": 1.0,
+      "NestJS": 1.0,
+      "Rust": 1.0
+    }
+  },
+  "5cd6d0bba46f703aba490099cc6b86f6": {
+    "idx": 91,
+    "skills": {
+      "Ansible": 1.0,
+      "Laravel": 1.0,
+      "MLflow": 1.0
+    }
+  },
+  "397a06badeaecb4c9b60b2aebf6fd5ec": {
+    "idx": 92,
+    "skills": {
+      "Flutter": 1.0,
+      "Google Cloud": 1.0,
+      "SQL": 1.0,
+      "React": 1.0
+    }
+  },
+  "864886265fc90f63e2b42ee8e417dd2d": {
+    "idx": 93,
+    "skills": {
+      "CSS": 1.0
+    }
+  },
+  "1ff6e1c5119869e4c67739376224209a": {
+    "idx": 94,
+    "skills": {
+      "Spring Boot": 1.0,
+      "Ruby on Rails": 1.0,
+      "scikit-learn": 1.0
+    }
+  },
+  "3f63dfc97326f7fbbacd73340422e7d0": {
+    "idx": 95,
+    "skills": {
+      "Flutter": 1.0,
+      "Airflow": 1.0,
+      "Docker": 1.0
+    }
+  },
+  "6389b47df919ae1d8b7922cf8a22fdf7": {
+    "idx": 96,
+    "skills": {
+      "Spring Boot": 1.0,
+      "Ruby on Rails": 1.0,
+      "scikit-learn": 1.0
+    }
+  },
+  "9360c997541459c9f3496eb8aef25fed": {
+    "idx": 97,
+    "skills": {
+      "Docker": 1.0,
+      "Flutter": 1.0,
+      "Airflow": 1.0
+    }
+  },
+  "a351dcb13b60f2e986f6993c1efada9d": {
+    "idx": 98,
+    "skills": {
+      "Avro": 1.0,
+      "Terraform": 1.0,
+      "Vue.js": 1.0
+    }
+  },
+  "0f7a5ea9a16b3c30424fb7060b3968f1": {
+    "idx": 99,
+    "skills": {
+      "Rust": 1.0,
+      "Airflow": 1.0,
+      "Azure": 1.0,
+      "C++": 1.0,
+      "ArgoCD": 1.0
+    }
+  },
+  "9b7afcc9df05e53700d4bace94e3be95": {
+    "idx": 100,
+    "skills": {
+      "Spring Boot": 1.0,
+      "ELK Stack": 1.0
+    }
+  },
+  "4bfcc39a6caffeabfe0472ddaf288701": {
+    "idx": 101,
+    "skills": {
+      "Django": 1.0,
+      "BigQuery": 1.0,
+      "MLflow": 1.0
+    }
+  },
+  "64c4793e4ed3ed97f3e87276b4723024": {
+    "idx": 102,
+    "skills": {
+      "C#": 1.0,
+      "BigQuery": 1.0
+    }
+  },
+  "1293b319614f0fff21dd73b3cf4f3bcb": {
+    "idx": 103,
+    "skills": {
+      "Redis": 1.0,
+      "TypeScript": 1.0,
+      "MongoDB": 1.0,
+      "Java": 1.0
+    }
+  },
+  "d96fe5d5bc42940b5f30df836d603426": {
+    "idx": 104,
+    "skills": {
+      "Agile": 1.0,
+      "BigQuery": 1.0,
+      "Helm": 1.0
+    }
+  },
+  "badeef8a4bab9d84dc0ae98af66743ed": {
+    "idx": 105,
+    "skills": {
+      "BigQuery": 1.0,
+      "Pandas": 1.0,
+      "Parquet": 1.0,
+      "Snowflake": 1.0,
+      "Vault": 1.0
+    }
+  },
+  "debee93fb164a46bb50a3256f636779d": {
+    "idx": 106,
+    "skills": {
+      "ArgoCD": 1.0,
+      "TypeScript": 1.0,
+      "Bash": 1.0,
+      "React": 1.0
+    }
+  },
+  "8cb32f7ba506a4c4e5ecdaf12948c912": {
+    "idx": 107,
+    "skills": {
+      "Google Cloud": 1.0,
+      "PostgreSQL": 1.0,
+      "Svelte": 1.0,
+      "Parquet": 1.0,
+      "Elasticsearch": 1.0
+    }
+  },
+  "21753cf08fe384b59540056e1fd6af63": {
+    "idx": 108,
+    "skills": {
+      "Express.js": 1.0,
+      "Swift": 1.0,
+      "Avro": 1.0
+    }
+  },
+  "d93fc912d6ba79dfcc7e504969e3f067": {
+    "idx": 109,
+    "skills": {
+      "GitLab CI": 1.0,
+      "Avro": 1.0,
+      "Vue.js": 1.0,
+      "HTML": 1.0,
+      "Hugging Face": 1.0
+    }
+  },
+  "3a4134e5a081e56dc24bc73cbc6abcb6": {
+    "idx": 110,
+    "skills": {
+      "Hugging Face": 1.0,
+      "Caching": 1.0,
+      "Airflow": 1.0,
+      "C#": 1.0
+    }
+  },
+  "c454bd0331ab5b839b8c4bbb66042b99": {
+    "idx": 111,
+    "skills": {
+      "Docker": 1.0,
+      "ArgoCD": 1.0,
+      "Confluence": 1.0,
+      "iOS SDK": 1.0,
+      "Laravel": 1.0
+    }
+  },
+  "abfaa8afc29d871d6250f897a41dc362": {
+    "idx": 112,
+    "skills": {
+      "React": 1.0,
+      "Tailwind CSS": 1.0,
+      "Scrum": 1.0,
+      "Unit Testing": 0.5,
+      "Kafka": 1.0,
+      "Ansible": 1.0
+    }
+  },
+  "86e8796b1b41923d00295695bcf5b6ca": {
+    "idx": 113,
+    "skills": {
+      "Airflow": 1.0,
+      "Docker": 1.0,
+      "Flask": 1.0,
+      "Confluence": 1.0
+    }
+  },
+  "17131aa270f252c6fea33e141a2497ed": {
+    "idx": 114,
+    "skills": {
+      "FastAPI": 1.0,
+      "Python": 1.0
+    }
+  },
+  "59a9dda8f66fa6850a148ce1205e4b3d": {
+    "idx": 115,
+    "skills": {
+      "Kubernetes": 1.0,
+      "SQLite": 1.0,
+      "Cassandra": 1.0,
+      "NumPy": 1.0,
+      "Redis": 1.0,
+      "C#": 1.0
+    }
+  },
+  "142ae8ac1cd7ccb55226e8d2a162cf41": {
+    "idx": 116,
+    "skills": {
+      "Airflow": 1.0,
+      "Cassandra": 1.0,
+      "Python": 1.0,
+      "React": 1.0
+    }
+  },
+  "26cc1fa57c60ec977dbaf79c3e448881": {
+    "idx": 117,
+    "skills": {
+      "REST APIs": 1.0,
+      "PostgreSQL": 1.0,
+      "Google Cloud": 1.0,
+      "React": 1.0
+    }
+  },
+  "f24f3e498f5758d312060aeef6ab81e2": {
+    "idx": 118,
+    "skills": {
+      "Node.js": 1.0,
+      "Rust": 1.0
+    }
+  },
+  "e522ec6b5f4a8c512da9804d9d63b1fb": {
+    "idx": 119,
+    "skills": {
+      "Agile": 1.0,
+      "Confluence": 1.0,
+      "Distributed Systems": 0.5,
+      "End-to-End Testing": 1.0,
+      "Integration Testing": 0.5,
+      "Jira": 0.5,
+      "React": 1.0,
+      "Scrum": 0.5,
+      "Selenium": 0.5,
+      "Unit Testing": 0.5
+    }
+  },
+  "e6f01f4b0e2cd2d4c3161c40e1fec87c": {
+    "idx": 120,
+    "skills": {
+      "NestJS": 1.0,
+      "REST APIs": 1.0,
+      "Google Cloud": 1.0,
+      "Unit Testing": 1.0
+    }
+  },
+  "d38a3686a5ca6c9123e07f266d6da55d": {
+    "idx": 121,
+    "skills": {
+      "ASP.NET Core": 1.0,
+      "Keras": 1.0,
+      "Azure": 1.0
+    }
+  },
+  "bb7e669ca6f0ab0f35f5f3d0301f7852": {
+    "idx": 122,
+    "skills": {
+      "Caching": 1.0,
+      "MLflow": 1.0,
+      "Spring Boot": 1.0
+    }
+  },
+  "91b74c7f9dcfb975e16519551ad26864": {
+    "idx": 123,
+    "skills": {
+      "Docker": 1.0,
+      "Confluence": 1.0,
+      "Avro": 1.0
+    }
+  },
+  "52664d5d9f708c7491e5dca2e5360b41": {
+    "idx": 124,
+    "skills": {
+      "TypeScript": 1.0,
+      "React": 1.0,
+      "SQLite": 1.0,
+      "C#": 1.0,
+      "iOS SDK": 1.0,
+      "Elasticsearch": 1.0
+    }
+  },
+  "ddde176384244fd3f965f4b5b85bd7f7": {
+    "idx": 125,
+    "skills": {
+      "JavaScript": 1.0,
+      "TensorFlow": 1.0,
+      "Avro": 1.0
+    }
+  },
+  "5fe3a940f953d1ec01a0c00d9299f22c": {
+    "idx": 126,
+    "skills": {
+      "Agile": 1.0,
+      "Helm": 1.0,
+      "NumPy": 1.0,
+      "Swift": 1.0,
+      "Swagger/OpenAPI": 1.0
+    }
+  },
+  "e46a94e0d38a7befacea91ae83bb078d": {
+    "idx": 127,
+    "skills": {
+      "Svelte": 1.0,
+      "GitLab CI": 1.0
+    }
+  },
+  "9519bbef08fd8636a874fb31e1905277": {
+    "idx": 128,
+    "skills": {
+      "Spring Boot": 1.0,
+      "Flask": 1.0,
+      "JavaScript": 1.0,
+      "Rust": 1.0
+    }
+  },
+  "8daa16cf69a689a4b28f2d6608ce38ae": {
+    "idx": 129,
+    "skills": {
+      "Svelte": 1.0,
+      "Load Balancing": 1.0,
+      "GitLab CI": 1.0,
+      "Rust": 1.0,
+      "Neo4j": 1.0
+    }
+  },
+  "99ab13c13f03b3eb5eaa2c1df8cf4a55": {
+    "idx": 130,
+    "skills": {
+      "Cassandra": 1.0,
+      "SQL": 1.0,
+      "GraphQL": 1.0,
+      "Avro": 1.0,
+      "Redis": 1.0
+    }
+  },
+  "4a9adab3d1573a0ae1acb82eff1b7857": {
+    "idx": 131,
+    "skills": {
+      "Google Cloud": 1.0,
+      "C#": 1.0
+    }
+  },
+  "a1ea2210f5687e2817888b75eeb77e16": {
+    "idx": 132,
+    "skills": {
+      "React": 1.0,
+      "Express.js": 1.0,
+      "REST APIs": 1.0
+    }
+  },
+  "17e9a6a28096580c4414da5eb8a5fbdf": {
+    "idx": 133,
+    "skills": {
+      "ASP.NET Core": 1.0,
+      "REST APIs": 1.0,
+      "Express.js": 1.0,
+      "FastAPI": 1.0
+    }
+  },
+  "0a1c9aabf7986f52a8e366f84d86fd87": {
+    "idx": 134,
+    "skills": {
+      "Angular": 1.0,
+      "ASP.NET Core": 1.0,
+      "C++": 1.0
+    }
+  },
+  "e696f0d9f4b166e0bb9e6b55e33a6778": {
+    "idx": 135,
+    "skills": {
+      "Docker": 1.0,
+      "Swagger/OpenAPI": 1.0,
+      "Svelte": 1.0,
+      "Airflow": 1.0
+    }
+  },
+  "f33e4141ed1bebd750ee156ff898b28a": {
+    "idx": 136,
+    "skills": {
+      "Go": 1.0,
+      "C++": 1.0,
+      "Nginx": 1.0,
+      "Tailwind CSS": 1.0
+    }
+  },
+  "f6b8a90483ea86e4ff78cd18f4699769": {
+    "idx": 137,
+    "skills": {
+      "Apache Spark": 1.0,
+      "MLflow": 1.0,
+      "Angular": 1.0
+    }
+  },
+  "61d60502515df394341950916f36b4a1": {
+    "idx": 138,
+    "skills": {
+      "Tailwind CSS": 1.0,
+      "Go": 1.0,
+      "Apache Spark": 1.0,
+      "Vault": 1.0
+    }
+  },
+  "02f083043d77eef4f0b825450729b30b": {
+    "idx": 139,
+    "skills": {
+      "Agile": 1.0,
+      "Ansible": 1.0
+    }
+  },
+  "0f45db0320e12d386d0eda3cad2ac0c8": {
+    "idx": 140,
+    "skills": {
+      "Vue.js": 1.0,
+      "Bash": 1.0,
+      "NumPy": 1.0,
+      "GraphQL": 1.0
+    }
+  },
+  "00c10d5431897eee01c7e02e88d31aba": {
+    "idx": 141,
+    "skills": {
+      "Agile": 1.0,
+      "Caching": 1.0,
+      "Ansible": 1.0
+    }
+  },
+  "ec2af0ed4cd83cbc7d7ce0ff6c0f8a33": {
+    "idx": 142,
+    "skills": {
+      "TensorFlow": 1.0,
+      "JavaScript": 1.0,
+      "SQL": 1.0
+    }
+  },
+  "d4c4bc60930bfa7b7c0f75a57c5ec739": {
+    "idx": 143,
+    "skills": {}
+  },
+  "9d2540187c720502ceab863b2cb152c5": {
+    "idx": 144,
+    "skills": {}
+  },
+  "9698a6b633a5c6d62d423e26490d24e0": {
+    "idx": 145,
+    "skills": {
+      "MongoDB": 1.0,
+      "Terraform": 1.0
+    }
+  },
+  "79d4a7e4199ddfeee27fc4ff355b43b8": {
+    "idx": 146,
+    "skills": {
+      "Helm": 1.0,
+      "GraphQL": 1.0,
+      "Caching": 1.0,
+      "gRPC": 1.0,
+      "Tailwind CSS": 1.0
+    }
+  },
+  "2dd0acfe01518bd66b8d27615d64afc7": {
+    "idx": 147,
+    "skills": {
+      "PostgreSQL": 1.0,
+      "Android SDK": 1.0,
+      "JUnit": 1.0,
+      "Vault": 1.0
+    }
+  },
+  "7ca5c34b59c6672dfb79807d1f65b04b": {
+    "idx": 148,
+    "skills": {
+      "NestJS": 1.0,
+      "Python": 1.0
+    }
+  },
+  "3da631396618ebd80b556bd8b7f8a573": {
+    "idx": 149,
+    "skills": {
+      "MySQL": 1.0,
+      "Ansible": 1.0,
+      "GitHub": 1.0
+    }
+  },
+  "7b17d8c27085149bb5e9096b0dc08daf": {
+    "idx": 150,
+    "skills": {
+      "Agile": 1.0,
+      "CSS": 1.0,
+      "MLflow": 1.0,
+      "React": 1.0,
+      "Tailwind CSS": 1.0
+    }
+  },
+  "6039aa148e5987255cb4a8c9c3fa46d6": {
+    "idx": 151,
+    "skills": {
+      "HTML": 1.0,
+      "Java": 1.0,
+      "Keras": 1.0
+    }
+  },
+  "0c47386dc0c859cd3958b4e82ada1463": {
+    "idx": 152,
+    "skills": {
+      "GraphQL": 1.0,
+      "TypeScript": 1.0,
+      "AWS": 1.0,
+      "Snowflake": 1.0,
+      "InfluxDB": 1.0,
+      "Angular": 1.0
+    }
+  },
+  "01827eb24b9606abb770bbfc45a6fb50": {
+    "idx": 153,
+    "skills": {
+      "React": 1.0,
+      "Flask": 1.0,
+      "SQLite": 1.0,
+      "Parquet": 1.0,
+      "Android SDK": 1.0,
+      "Swift": 1.0
+    }
+  },
+  "d317aa570271ab8061cffb3693f3945f": {
+    "idx": 154,
+    "skills": {
+      "Agile": 1.0,
+      "Azure": 1.0
+    }
+  },
+  "56ad44292a9284eb67521aa0fd7aa1be": {
+    "idx": 155,
+    "skills": {
+      "AWS": 1.0,
+      "Airflow": 1.0,
+      "Swift": 1.0,
+      "Go": 1.0,
+      "LLMs": 1.0
+    }
+  },
+  "ffb76fa3640c412a197b8b2908ca4146": {
+    "idx": 156,
+    "skills": {
+      "Ruby on Rails": 1.0,
+      "TypeScript": 1.0,
+      "MySQL": 1.0,
+      "Swagger/OpenAPI": 1.0
+    }
+  },
+  "e55dff09473f852e3811acf0c3f70439": {
+    "idx": 157,
+    "skills": {
+      "Load Balancing": 1.0,
+      "HTML": 1.0,
+      "Node.js": 1.0,
+      "Spring Boot": 1.0
+    }
+  },
+  "68def51e308dab73eaee54e2297fb3d8": {
+    "idx": 158,
+    "skills": {
+      "Svelte": 1.0,
+      "MLflow": 1.0,
+      "Parquet": 1.0
+    }
+  },
+  "e235ffa629beb5be52f91e4c795acd44": {
+    "idx": 159,
+    "skills": {
+      "FastAPI": 1.0,
+      "MLflow": 1.0
+    }
+  },
+  "bf3d3d664f7a179bb9c64880da463038": {
+    "idx": 160,
+    "skills": {
+      "gRPC": 1.0,
+      "scikit-learn": 1.0,
+      "Neo4j": 1.0
+    }
+  },
+  "41492b48926e78ec96d156b263150fd0": {
+    "idx": 161,
+    "skills": {
+      "Kafka": 1.0,
+      "InfluxDB": 1.0,
+      "Helm": 1.0,
+      "Rust": 1.0
+    }
+  },
+  "c831cd75458d06e019464afc45ddf586": {
+    "idx": 162,
+    "skills": {
+      "OAuth2": 1.0,
+      "Laravel": 1.0,
+      "AWS": 1.0,
+      "GitHub": 1.0
+    }
+  },
+  "eeb065ef4384b017da43aeb2348c9c51": {
+    "idx": 163,
+    "skills": {
+      "Django": 1.0,
+      "Caching": 1.0,
+      "Java": 1.0
+    }
+  },
+  "09d4df0d5c7becd770084b7532115ee9": {
+    "idx": 164,
+    "skills": {
+      "C#": 1.0,
+      "Load Balancing": 1.0,
+      "AWS": 1.0
+    }
+  },
+  "cb452e2f375282e3aa13389e4ae2f738": {
+    "idx": 165,
+    "skills": {
+      "Pandas": 1.0,
+      "Ruby on Rails": 1.0,
+      "Flutter": 1.0
+    }
+  },
+  "b57a60085a8be93314e9c8f5dec0eefb": {
+    "idx": 166,
+    "skills": {
+      "ASP.NET Core": 1.0,
+      "Flask": 1.0,
+      "Helm": 1.0,
+      "GitHub": 1.0
+    }
+  },
+  "da269f08ff5dd4598064cae7f387dd3f": {
+    "idx": 167,
+    "skills": {
+      "Kotlin": 1.0,
+      "Keras": 1.0,
+      "MLflow": 1.0,
+      "Transformers": 1.0
+    }
+  },
+  "2a94e2cb04b617fb721ab352393819f2": {
+    "idx": 168,
+    "skills": {
+      "Azure": 1.0,
+      "Avro": 1.0,
+      "dbt": 1.0
+    }
+  },
+  "bd74a174552f8e37a274209d393ff6b9": {
+    "idx": 169,
+    "skills": {
+      "Caching": 1.0,
+      "Nginx": 1.0,
+      "dbt": 1.0,
+      "Tailwind CSS": 1.0
+    }
+  },
+  "7b252137b5abd7910949972e03598ae3": {
+    "idx": 170,
+    "skills": {
+      "Kafka": 1.0,
+      "Hugging Face": 1.0,
+      "Spring Boot": 1.0,
+      "MySQL": 1.0,
+      "Bash": 1.0
+    }
+  },
+  "9e81a66d1e78398bdfdd9132d64d5985": {
+    "idx": 171,
+    "skills": {
+      "gRPC": 1.0,
+      "REST APIs": 1.0,
+      "Pandas": 1.0,
+      "Kotlin": 1.0,
+      "Azure": 1.0,
+      "Helm": 1.0
+    }
+  },
+  "8330cb44cf959595b3dec1bcf6511db6": {
+    "idx": 172,
+    "skills": {
+      "Laravel": 1.0,
+      "HTML": 1.0,
+      "Flutter": 1.0
+    }
+  },
+  "3b3ddde5695bfb4d7d42f7f004707ef6": {
+    "idx": 173,
+    "skills": {
+      "Keras": 1.0,
+      "Spring Boot": 1.0,
+      "Redis": 1.0
+    }
+  },
+  "fd88531fb8c6724abf7fc2e9ca2fb598": {
+    "idx": 174,
+    "skills": {
+      "Django": 1.0,
+      "Redis": 1.0,
+      "Java": 1.0,
+      "Azure": 1.0,
+      "GitHub": 1.0
+    }
+  },
+  "85335cf01cd7298ea1fc29512e34c60f": {
+    "idx": 175,
+    "skills": {
+      "Apache Spark": 1.0,
+      "Cassandra": 1.0,
+      "Helm": 1.0,
+      "Java": 1.0,
+      "Ruby on Rails": 1.0,
+      "SQLite": 1.0
+    }
+  },
+  "988b6341251a3c0195195cdd02027ffe": {
+    "idx": 176,
+    "skills": {
+      "C++": 1.0,
+      "TypeScript": 1.0
+    }
+  },
+  "47b32a0775700d83437b8f0a30672939": {
+    "idx": 177,
+    "skills": {
+      "Agile": 1.0,
+      "Apache Spark": 1.0,
+      "Keras": 1.0,
+      "Machine Learning": 1.0,
+      "MLOps": 1.0
+    }
+  },
+  "2afbc1f31bc8fd7940ad04a4913e164f": {
+    "idx": 178,
+    "skills": {
+      "Keras": 1.0,
+      "PyTorch": 1.0,
+      "Cassandra": 1.0
+    }
+  },
+  "004b322361191e76e874eda5dd8478b2": {
+    "idx": 179,
+    "skills": {
+      "GraphQL": 1.0,
+      "Airflow": 1.0
+    }
+  },
+  "9ee0f10b10e9050a3d3441cf2efa1aac": {
+    "idx": 180,
+    "skills": {
+      "FastAPI": 1.0,
+      "GraphQL": 1.0,
+      "Rust": 1.0,
+      "Go": 1.0,
+      "SQLite": 1.0,
+      "CSS": 1.0
+    }
+  },
+  "b1cf757e88846b5848f88bc3ac010b9d": {
+    "idx": 181,
+    "skills": {
+      "JUnit": 1.0,
+      "iOS SDK": 1.0,
+      "Angular": 1.0,
+      "TensorFlow": 1.0
+    }
+  },
+  "2ecc026c1c79f8b8a23d74b13e78878d": {
+    "idx": 182,
+    "skills": {
+      "iOS SDK": 1.0
+    }
+  },
+  "d0c52e2df2b7301d4a7a3b1f63a5f308": {
+    "idx": 183,
+    "skills": {
+      "InfluxDB": 1.0,
+      "Selenium": 1.0,
+      "Android SDK": 1.0,
+      "Swagger/OpenAPI": 1.0
+    }
+  },
+  "3851b9a5bcb8579fafde2fa527b4e7a3": {
+    "idx": 184,
+    "skills": {
+      "Keras": 1.0,
+      "PyTorch": 1.0,
+      "Docker": 1.0,
+      "Go": 1.0
+    }
+  },
+  "27a1ee2545f220fff1e006d3060b7123": {
+    "idx": 185,
+    "skills": {
+      "ASP.NET Core": 1.0,
+      "MySQL": 1.0,
+      "Distributed Systems": 1.0
+    }
+  },
+  "c4f67b39e62836acc2a5f303d1615c02": {
+    "idx": 186,
+    "skills": {
+      "C#": 1.0,
+      "SQL": 1.0,
+      "gRPC": 1.0,
+      "Snowflake": 1.0
+    }
+  },
+  "7e6485e13f1fae4c216fa58c0b1a22b1": {
+    "idx": 187,
+    "skills": {
+      "Load Balancing": 1.0,
+      "Kotlin": 1.0
+    }
+  },
+  "b85bd7ebdc5d9097db9591935c7a2d88": {
+    "idx": 188,
+    "skills": {
+      "Helm": 1.0,
+      "Ruby on Rails": 1.0
+    }
+  },
+  "bded2423da9608b5b8041888d3920294": {
+    "idx": 189,
+    "skills": {
+      "Django": 1.0,
+      "HTML": 1.0,
+      "Docker": 1.0,
+      "Neo4j": 1.0,
+      "Hugging Face": 1.0
+    }
+  },
+  "30d3701d27cfd2335ce6cb5aba86a475": {
+    "idx": 190,
+    "skills": {
+      "Laravel": 1.0,
+      "Nginx": 1.0,
+      "Avro": 1.0,
+      "Confluence": 1.0
+    }
+  },
+  "63d4304acb86ef4fc22f8b2645ccaf00": {
+    "idx": 191,
+    "skills": {
+      "C#": 1.0,
+      "Spring Boot": 1.0
+    }
+  },
+  "4f99f567781e70d427749228339f1c4a": {
+    "idx": 192,
+    "skills": {
+      "Cassandra": 1.0,
+      "Redis": 1.0,
+      "Spring Boot": 1.0,
+      "Pandas": 1.0,
+      "Swagger/OpenAPI": 1.0
+    }
+  },
+  "cf71dda4ee184a5039460a39a4131b4d": {
+    "idx": 193,
+    "skills": {
+      "Kotlin": 1.0,
+      "React": 1.0,
+      "Ansible": 1.0,
+      "Scrum": 1.0,
+      "Azure": 1.0,
+      "NLP": 1.0,
+      "MLOps": 1.0
+    }
+  },
+  "af0b1c25585f76e5d6453a46b685162e": {
+    "idx": 194,
+    "skills": {
+      "gRPC": 1.0,
+      "Ruby on Rails": 1.0,
+      "scikit-learn": 1.0,
+      "Parquet": 1.0
+    }
+  },
+  "17d3844f1f2f59620966289c1b3d5674": {
+    "idx": 1,
+    "skills": {
+      "Spring Boot": 1.0,
+      "Ruby on Rails": 1.0,
+      "scikit-learn": 1.0
+    }
+  },
+  "be20c2dd57de3d6f6834d9376f068fb7": {
+    "idx": 2,
+    "skills": {
+      "AWS": 1.0,
+      "Elasticsearch": 1.0,
+      "C#": 1.0,
+      "Apache Spark": 1.0,
+      "Svelte": 1.0
+    }
+  },
+  "158350a4c3606a881249552ba22b679d": {
+    "idx": 3,
+    "skills": {
+      "gRPC": 1.0,
+      "Airflow": 1.0,
+      "C#": 1.0,
+      "Terraform": 1.0
+    }
+  },
+  "47893d8ed96bd1f6f1af68bb031cd2d3": {
+    "idx": 4,
+    "skills": {
+      "Agile": 1.0,
+      "BigQuery": 1.0,
+      "C#": 1.0
+    }
+  },
+  "f65838f7b1760fd26d804f93f9c7589b": {
+    "idx": 5,
+    "skills": {
+      "Redis": 1.0,
+      "TypeScript": 1.0,
+      "MongoDB": 1.0
+    }
+  },
+  "2148bf6e86d76eaf09056e1a1d48b89b": {
+    "idx": 6,
+    "skills": {
+      "Agile": 1.0,
+      "Kotlin": 1.0,
+      "BigQuery": 1.0,
+      "Helm": 1.0
+    }
+  },
+  "ee678343fc74cad5cc50ba8d119cf624": {
+    "idx": 7,
+    "skills": {
+      "BigQuery": 1.0,
+      "Pandas": 1.0,
+      "Parquet": 1.0,
+      "Snowflake": 1.0,
+      "Vault": 1.0
+    }
+  },
+  "4901aee547acfa9a5fdcf161295e8831": {
+    "idx": 8,
+    "skills": {
+      "ArgoCD": 1.0,
+      "TypeScript": 1.0,
+      "Bash": 1.0,
+      "React": 1.0
+    }
+  },
+  "c60ca556839fceeb1d3f1d823d11d83f": {
+    "idx": 9,
+    "skills": {
+      "Distributed Systems": 0.5,
+      "Elasticsearch": 1.0,
+      "Google Cloud": 1.0,
+      "Microservices": 0.5,
+      "Parquet": 1.0,
+      "PostgreSQL": 1.0,
+      "Python": 0.5,
+      "Svelte": 1.0
+    }
+  },
+  "84db74e15d3c81670e5187891621fb1d": {
+    "idx": 10,
+    "skills": {
+      "Avro": 1.0,
+      "Express.js": 1.0,
+      "Network Security": 1.0,
+      "Secrets Management": 1.0,
+      "Swift": 1.0
+    }
+  },
+  "97daf0e53cbc6afaee2a08652eb9a60c": {
+    "idx": 11,
+    "skills": {
+      "Avro": 1.0,
+      "GitLab CI": 1.0,
+      "Hugging Face": 1.0,
+      "HTML": 1.0
+    }
+  },
+  "3095fb4ad6c10eee5b16c2ddc2262eed": {
+    "idx": 12,
+    "skills": {
+      "Caching": 1.0,
+      "Airflow": 1.0,
+      "Hugging Face": 1.0,
+      "C#": 1.0
+    }
+  },
+  "d0f659b3a51f3a9904fbe815441a3f83": {
+    "idx": 13,
+    "skills": {
+      "Caching": 1.0,
+      "Pandas": 1.0,
+      "iOS SDK": 1.0,
+      "C++": 1.0
+    }
+  },
+  "cde57e01482163964c257afb60415861": {
+    "idx": 14,
+    "skills": {
+      "Ansible": 1.0,
+      "FastAPI": 1.0,
+      "TypeScript": 1.0,
+      "Python": 1.0
+    }
+  },
+  "581df10af2280c0eb9ea0bd1558501b5": {
+    "idx": 195,
+    "skills": {
+      "Svelte": 1.0
+    }
+  },
+  "21f2e782fa28a07dd7058ad47169fc82": {
+    "idx": 196,
+    "skills": {
+      "Vault": 1.0,
+      "MongoDB": 1.0,
+      "Python": 1.0,
+      "FastAPI": 1.0,
+      "PyTorch": 1.0
+    }
+  },
+  "72272c52fb2a91113e9f779cd9f39850": {
+    "idx": 197,
+    "skills": {
+      "AWS": 1.0,
+      "Caching": 1.0,
+      "Java": 1.0,
+      "Nginx": 1.0,
+      "REST APIs": 1.0
+    }
+  },
+  "1701ea6cefb10c3645e66769b75ae8e2": {
+    "idx": 198,
+    "skills": {
+      "Rust": 1.0,
+      "NumPy": 1.0,
+      "gRPC": 1.0
+    }
+  },
+  "159330fc947813bf8d64a38e520d8bcc": {
+    "idx": 199,
+    "skills": {
+      "SQL": 1.0
+    }
+  },
+  "7257280fe323a60b18b21abec6508f51": {
+    "idx": 214,
+    "skills": {
+      "FastAPI": 1.0,
+      "Elasticsearch": 1.0,
+      "Kafka": 1.0,
+      "Parquet": 1.0,
+      "Angular": 1.0
+    }
+  },
+  "c3561538f415cb8b16550a13ed84cc2b": {
+    "idx": 215,
+    "skills": {
+      "Ansible": 1.0,
+      "Confluence": 1.0,
+      "Flask": 1.0,
+      "Node.js": 1.0,
+      "REST APIs": 1.0,
+      "Spring Boot": 1.0,
+      "Tailwind CSS": 1.0,
+      "Vue.js": 1.0
+    }
+  },
+  "f2fee4414f20dab6aa42b39a57183ce8": {
+    "idx": 216,
+    "skills": {
+      "HTML": 1.0,
+      "CSS": 1.0,
+      "REST APIs": 1.0,
+      "Redis": 1.0,
+      "MLflow": 1.0
+    }
+  },
+  "48728b6208dea1204da3841783256f69": {
+    "idx": 217,
+    "skills": {
+      "Laravel": 1.0,
+      "Tailwind CSS": 1.0,
+      "Caching": 1.0,
+      "SQL": 1.0,
+      "Django": 1.0
+    }
+  },
+  "5380b60283617014e0caf0ff1ee2e9ef": {
+    "idx": 218,
+    "skills": {
+      "Agile": 1.0,
+      "Cassandra": 1.0,
+      "Go": 1.0,
+      "Helm": 1.0,
+      "NestJS": 1.0,
+      "Redis": 1.0,
+      "Scrum": 1.0
+    }
+  },
+  "b7dbda958df6ab1383a900c0a5072b34": {
+    "idx": 219,
+    "skills": {
+      "Agile": 1.0,
+      "Angular": 1.0,
+      "GraphQL": 1.0
+    }
+  },
+  "d2ba1959063cabd54008d54cf5457dd8": {
+    "idx": 220,
+    "skills": {
+      "Ansible": 1.0,
+      "Pandas": 1.0,
+      "Load Balancing": 1.0,
+      "Vault": 1.0
+    }
+  },
+  "cbf29b928acbe16e7400f2e4a41b6c2d": {
+    "idx": 221,
+    "skills": {
+      "Hugging Face": 1.0,
+      "Keras": 1.0
+    }
+  },
+  "45d654b757a2d0befae494bf3433059e": {
+    "idx": 222,
+    "skills": {
+      "React": 1.0,
+      "ArgoCD": 1.0,
+      "Go": 1.0,
+      "Confluence": 1.0,
+      "MongoDB": 1.0,
+      "Nginx": 1.0
+    }
+  },
+  "fa6abba32674e011d4428a60d3b83d32": {
+    "idx": 223,
+    "skills": {
+      "Avro": 1.0,
+      "Kubernetes": 1.0,
+      "Caching": 1.0,
+      "PostgreSQL": 1.0
+    }
+  },
+  "1776c4d1202560ef3701ff51d47d7b1c": {
+    "idx": 224,
+    "skills": {
+      "Caching": 1.0,
+      "Snowflake": 1.0,
+      "Svelte": 1.0
+    }
+  },
+  "e0bf76721978ce31ab798a5857a6e79a": {
+    "idx": 225,
+    "skills": {
+      "NumPy": 1.0,
+      "Integration Testing": 1.0,
+      "Unit Testing": 0.5
+    }
+  },
+  "609e87f1e84d731e9a3837910488dd35": {
+    "idx": 226,
+    "skills": {}
+  },
+  "8e625323d67565ded6dafbd789a44005": {
+    "idx": 227,
+    "skills": {
+      "Azure": 1.0,
+      "Flutter": 1.0,
+      "Vault": 1.0
+    }
+  },
+  "7848c44dd45ac869ac49e00b8b2dc169": {
+    "idx": 228,
+    "skills": {
+      "Airflow": 1.0,
+      "C++": 1.0,
+      "Android SDK": 1.0
+    }
+  },
+  "27eb59860949827f1da9f9f00834d305": {
+    "idx": 229,
+    "skills": {
+      "Swagger/OpenAPI": 1.0,
+      "Svelte": 1.0,
+      "Airflow": 1.0,
+      "Docker": 1.0,
+      "CSS": 1.0
+    }
+  },
+  "e21702cd87d5dc7024f02f80e1c80367": {
+    "idx": 230,
+    "skills": {
+      "C++": 1.0,
+      "Tailwind CSS": 1.0
+    }
+  },
+  "4dcbbd29acf6ae8b869ca98352bed88b": {
+    "idx": 231,
+    "skills": {
+      "Apache Spark": 1.0,
+      "MLflow": 1.0,
+      "Angular": 1.0
+    }
+  },
+  "020191c164c5d7101ac55d3e6e5c42b4": {
+    "idx": 232,
+    "skills": {
+      "Tailwind CSS": 1.0,
+      "Go": 1.0,
+      "Apache Spark": 1.0,
+      "Vault": 1.0
+    }
+  },
+  "e881a624e780b30fb806b9608186f79a": {
+    "idx": 233,
+    "skills": {
+      "AWS": 1.0,
+      "Python": 1.0,
+      "Parquet": 1.0,
+      "ArgoCD": 1.0
+    }
+  },
+  "8c8d132da8c78a2d9dff35141d623bb3": {
+    "idx": 234,
+    "skills": {
+      "Java": 1.0,
+      "Hugging Face": 1.0
+    }
+  },
+  "d3ac7d43a6b02ef3d4fd73f3a2d0edf7": {
+    "idx": 235,
+    "skills": {
+      "Prometheus": 1.0,
+      "Rust": 1.0,
+      "Scrum": 1.0,
+      "Google Cloud": 1.0,
+      "Spring Boot": 1.0
+    }
+  },
+  "c78a0c9a64e7d0dab6f1373a913593a4": {
+    "idx": 236,
+    "skills": {
+      "Go": 1.0,
+      "Flask": 1.0
+    }
+  },
+  "774b5585fd07d62cb1b3302c9eed9667": {
+    "idx": 237,
+    "skills": {
+      "Laravel": 1.0,
+      "Pandas": 1.0,
+      "Ansible": 1.0,
+      "AWS": 1.0
+    }
+  },
+  "9f1703f0bcf0ff266806a3f4e080a2d1": {
+    "idx": 238,
+    "skills": {
+      "Selenium": 1.0
+    }
+  },
+  "42f77c0e5f326589432c09fccfa74cc0": {
+    "idx": 239,
+    "skills": {
+      "Kubernetes": 1.0,
+      "Azure": 1.0,
+      "Git": 1.0,
+      "Neo4j": 1.0
+    }
+  },
+  "cdb954adb74145f68242a41c8e708523": {
+    "idx": 240,
+    "skills": {
+      "Ruby on Rails": 1.0,
+      "Avro": 1.0,
+      "Google Cloud": 1.0,
+      "Laravel": 1.0
+    }
+  },
+  "3d599d30cfbe18dcafe765252c70243a": {
+    "idx": 241,
+    "skills": {
+      "Rust": 1.0,
+      "JavaScript": 1.0,
+      "Tailwind CSS": 1.0,
+      "Swagger/OpenAPI": 1.0
+    }
+  },
+  "f1a90f105c1e21e9bad5c6adb9cae27e": {
+    "idx": 242,
+    "skills": {
+      "React": 1.0,
+      "MLflow": 1.0,
+      "MongoDB": 1.0,
+      "Helm": 1.0,
+      "Terraform": 1.0
+    }
+  },
+  "ebd766b56521ad0a1696d3692597d66f": {
+    "idx": 243,
+    "skills": {
+      "iOS SDK": 1.0,
+      "C++": 1.0
+    }
+  },
+  "14308af97de818d0f00c13e596670231": {
+    "idx": 244,
+    "skills": {
+      "ASP.NET Core": 1.0,
+      "C#": 1.0,
+      "REST APIs": 1.0,
+      "Snowflake": 1.0
+    }
+  },
+  "19ef2f9331c9ca4826fc09fc7190d484": {
+    "idx": 245,
+    "skills": {
+      "Java": 1.0,
+      "PyTorch": 1.0,
+      "Flutter": 1.0,
+      "Neo4j": 1.0,
+      "Avro": 1.0
+    }
+  },
+  "9768bb20cd4ed9056b9983cc8df01f4c": {
+    "idx": 246,
+    "skills": {
+      "Azure": 1.0,
+      "TensorFlow": 1.0,
+      "gRPC": 1.0,
+      "scikit-learn": 1.0
+    }
+  },
+  "ad47efda78c0b606eb495bd89b7310f3": {
+    "idx": 247,
+    "skills": {
+      "MLflow": 1.0,
+      "Swagger/OpenAPI": 1.0,
+      "SQL": 1.0,
+      "Load Balancing": 1.0,
+      "Keras": 1.0
+    }
+  },
+  "e751d466913666d0d324d265392fe76c": {
+    "idx": 248,
+    "skills": {
+      "C++": 1.0,
+      "Django": 1.0,
+      "Load Balancing": 1.0,
+      "MySQL": 1.0
+    }
+  },
+  "8930fe10f585fbe075c1100525099932": {
+    "idx": 249,
+    "skills": {
+      "Agile": 1.0,
+      "Django": 1.0,
+      "Neo4j": 1.0
+    }
+  },
+  "c04d1d6465d646ec2b4639251dbc25d1": {
+    "idx": 250,
+    "skills": {
+      "TypeScript": 1.0,
+      "MongoDB": 1.0,
+      "Redis": 1.0,
+      "JUnit": 1.0,
+      "Swagger/OpenAPI": 1.0
+    }
+  },
+  "5ceb2ddffb831773c88546f819a9fdbd": {
+    "idx": 251,
+    "skills": {
+      "Neo4j": 1.0,
+      "Airflow": 1.0
+    }
+  },
+  "3520333f6a2d5c24a6c80a53cdb22651": {
+    "idx": 252,
+    "skills": {
+      "Django": 1.0
+    }
+  },
+  "7bddc498d37e87874273f20b89eccba2": {
+    "idx": 253,
+    "skills": {
+      "Neo4j": 1.0,
+      "Python": 1.0,
+      "Swift": 1.0,
+      "Docker": 1.0,
+      "C#": 1.0
+    }
+  },
+  "12dc23995a4e957c4c0986e7507e80a8": {
+    "idx": 254,
+    "skills": {
+      "MySQL": 1.0
+    }
+  },
+  "c70371e87338f4493860b8d495cd1d11": {
+    "idx": 255,
+    "skills": {
+      "BigQuery": 1.0,
+      "Redis": 1.0,
+      "Laravel": 1.0
+    }
+  },
+  "fe8bfab598fbad9154662192f575c5bb": {
+    "idx": 256,
+    "skills": {
+      "Django": 1.0,
+      "ASP.NET Core": 1.0
+    }
+  },
+  "e223700131a04a9ec0c6fba0b8e7f6f6": {
+    "idx": 257,
+    "skills": {
+      "Neo4j": 1.0,
+      "GitLab CI": 1.0,
+      "Caching": 1.0,
+      "ArgoCD": 1.0
+    }
+  },
+  "9230aedd04e2251b83ca523b09e1f460": {
+    "idx": 258,
+    "skills": {
+      "ASP.NET Core": 1.0,
+      "InfluxDB": 1.0,
+      "Tailwind CSS": 1.0
+    }
+  },
+  "dd6c104df5eebc26d1989cedbf5dd476": {
+    "idx": 259,
+    "skills": {
+      "Laravel": 1.0
+    }
+  },
+  "af09ad355e34090e6aa86bf5b883f816": {
+    "idx": 260,
+    "skills": {
+      "NestJS": 1.0,
+      "Redis": 1.0,
+      "PyTorch": 1.0
+    }
+  },
+  "36ef099d510f68dd72c9b8b55c92036d": {
+    "idx": 261,
+    "skills": {
+      "Go": 1.0,
+      "Git": 1.0,
+      "InfluxDB": 1.0,
+      "Avro": 1.0,
+      "Load Balancing": 1.0
+    }
+  },
+  "15d46ce7042707f9576a8c90a8ad547e": {
+    "idx": 262,
+    "skills": {
+      "FastAPI": 1.0,
+      "MLflow": 1.0,
+      "Swift": 1.0
+    }
+  },
+  "4c4df1197b29980b897899f4dce4ac78": {
+    "idx": 263,
+    "skills": {
+      "AWS": 1.0,
+      "MongoDB": 1.0,
+      "Pandas": 1.0
+    }
+  },
+  "32a895029592d9c9464be225317527c2": {
+    "idx": 264,
+    "skills": {
+      "Kotlin": 1.0,
+      "SQL": 1.0
+    }
+  },
+  "e6b850517791f8dd0b32295dd8b2e887": {
+    "idx": 265,
+    "skills": {
+      "Load Balancing": 1.0,
+      "CSS": 1.0,
+      "HTML": 1.0,
+      "Machine Learning": 1.0
+    }
+  },
+  "3869976017af06d0e4805b39ac88afff": {
+    "idx": 266,
+    "skills": {
+      "Laravel": 1.0,
+      "Spring Boot": 1.0
+    }
+  },
+  "d7ca22947fcdc6df27129a14c5b6b9c4": {
+    "idx": 267,
+    "skills": {
+      "Express.js": 1.0,
+      "Go": 1.0,
+      "NumPy": 1.0
+    }
+  },
+  "eecf61fb5428f7cd2ae958e5c6ccb7e8": {
+    "idx": 268,
+    "skills": {
+      "Helm": 1.0,
+      "NumPy": 1.0
+    }
+  },
+  "760484bde05b1d33ac1cc7007015dcb7": {
+    "idx": 269,
+    "skills": {
+      "Vue.js": 1.0,
+      "Machine Learning": 1.0
+    }
+  },
+  "e1e243f17be5aacf2b1d66ea927ac96a": {
+    "idx": 270,
+    "skills": {
+      "Snowflake": 1.0,
+      "Terraform": 1.0,
+      "Redis": 1.0
+    }
+  },
+  "bfaa4336b8741f4b7892df7551f0adf3": {
+    "idx": 271,
+    "skills": {
+      "Airflow": 1.0,
+      "Go": 1.0,
+      "Helm": 1.0,
+      "SQLite": 1.0
+    }
+  },
+  "0395b709157e128e8c48ecd08f43bec4": {
+    "idx": 272,
+    "skills": {
+      "ASP.NET Core": 1.0
+    }
+  },
+  "d7fd6e8768c520f8b6ddce97ac01dced": {
+    "idx": 273,
+    "skills": {
+      "React": 1.0,
+      "Bash": 1.0,
+      "scikit-learn": 1.0
+    }
+  },
+  "dfbd911810e0089765d0c940cee0bc6c": {
+    "idx": 274,
+    "skills": {
+      "Microservices": 1.0,
+      "Neo4j": 1.0
+    }
+  },
+  "e786d7a4bc3d4e729589fb5d359253a3": {
+    "idx": 275,
+    "skills": {
+      "iOS SDK": 1.0,
+      "Terraform": 1.0
+    }
+  },
+  "d4035d9257e4ecb72f467714582e640a": {
+    "idx": 276,
+    "skills": {
+      "Load Balancing": 1.0,
+      "Svelte": 1.0
+    }
+  },
+  "7300d7a2fb7ccadb1ecc79d853bc4ed5": {
+    "idx": 277,
+    "skills": {
+      "Airflow": 1.0,
+      "Java": 1.0,
+      "NumPy": 1.0
+    }
+  },
+  "e08c7ea18d9a6e80f56212202ccf85db": {
+    "idx": 278,
+    "skills": {
+      "iOS SDK": 1.0,
+      "Cassandra": 1.0,
+      "C#": 1.0,
+      "Laravel": 1.0
+    }
+  },
+  "47e0c2cddcaaab09bd7cdb70875820fc": {
+    "idx": 279,
+    "skills": {
+      "Elasticsearch": 1.0,
+      "Java": 1.0,
+      "NumPy": 1.0
+    }
+  },
+  "c8c8a0d1526ccd333df324e7d377d768": {
+    "idx": 280,
+    "skills": {
+      "Transformers": 1.0,
+      "Distributed Systems": 1.0,
+      "CSS": 1.0,
+      "Pandas": 1.0
+    }
+  },
+  "5c78b4e91924431ce727ea813c8a0445": {
+    "idx": 281,
+    "skills": {
+      "Swift": 1.0,
+      "GitHub": 1.0,
+      "Swagger/OpenAPI": 1.0
+    }
+  },
+  "200a81b0f6b1bc5953efd7bdb0990172": {
+    "idx": 282,
+    "skills": {
+      "Kotlin": 1.0,
+      "Android SDK": 1.0
+    }
+  },
+  "5f6c6775caac5f5e7a558c785537b779": {
+    "idx": 283,
+    "skills": {
+      "Cassandra": 1.0,
+      "Flutter": 1.0,
+      "Neo4j": 1.0
+    }
+  },
+  "787067ee21c837f26b114abfb1aef743": {
+    "idx": 284,
+    "skills": {
+      "Machine Learning": 1.0,
+      "Swift": 1.0,
+      "BigQuery": 1.0,
+      "TypeScript": 1.0
+    }
+  },
+  "26401d383ad49ca75fd3ca670d8cdc19": {
+    "idx": 285,
+    "skills": {
+      "Spring Boot": 1.0,
+      "MySQL": 1.0,
+      "SQL": 1.0,
+      "Pandas": 1.0
+    }
+  },
+  "09c32d23f5d2ac95e22e3e51bc6e3460": {
+    "idx": 286,
+    "skills": {
+      "Rust": 1.0,
+      "TypeScript": 1.0,
+      "Django": 1.0,
+      "REST APIs": 1.0,
+      "GitHub": 1.0,
+      "Spring Boot": 1.0
+    }
+  },
+  "64a34d55571357b4a88f6ce9e6aa8337": {
+    "idx": 287,
+    "skills": {
+      "Flutter": 1.0,
+      "Python": 1.0,
+      "Keras": 1.0,
+      "TypeScript": 1.0
+    }
+  },
+  "23bd6a72d84458ae041c9aca1b848df7": {
+    "idx": 288,
+    "skills": {
+      "JavaScript": 1.0
+    }
+  },
+  "aaffd6c2a37ab8339f625f7087653fb2": {
+    "idx": 289,
+    "skills": {
+      "Airflow": 1.0,
+      "Flask": 1.0,
+      "Swift": 1.0
+    }
+  },
+  "24e8422feedc342f7f9e9b1d52f0250a": {
+    "idx": 290,
+    "skills": {
+      "Spring Boot": 1.0,
+      "PostgreSQL": 1.0,
+      "SQL": 1.0
+    }
+  },
+  "433e8c2694597e2a9aca1aa1a88af657": {
+    "idx": 291,
+    "skills": {
+      "Load Balancing": 1.0
+    }
+  },
+  "fa0f6da3f78e71631da074238f591ca5": {
+    "idx": 292,
+    "skills": {
+      "MongoDB": 1.0,
+      "Bash": 1.0,
+      "Avro": 1.0,
+      "Flutter": 1.0
+    }
+  },
+  "05c3c8b078f31b0d6cfa18bf835b51bf": {
+    "idx": 293,
+    "skills": {
+      "Google Cloud": 1.0,
+      "GitHub": 1.0,
+      "React": 1.0,
+      "Azure": 1.0,
+      "NumPy": 1.0
+    }
+  },
+  "1d319a0492267be7f24838cd14f32de0": {
+    "idx": 294,
+    "skills": {
+      "Azure": 1.0,
+      "NestJS": 1.0,
+      "REST APIs": 1.0,
+      "Nginx": 1.0,
+      "Express.js": 1.0
+    }
+  },
+  "926c7c210662ca80519a8952bfd578d4": {
+    "idx": 295,
+    "skills": {
+      "Flutter": 1.0,
+      "Spring Boot": 1.0,
+      "NestJS": 1.0
+    }
+  },
+  "0c1b72e2eb9360795d54e00dc5c1fa32": {
+    "idx": 296,
+    "skills": {
+      "Laravel": 1.0,
+      "Caching": 1.0,
+      "Redis": 1.0
+    }
+  },
+  "e9c7d14049449fa060d2f0014a7b74d5": {
+    "idx": 297,
+    "skills": {
+      "Go": 1.0,
+      "Hugging Face": 1.0,
+      "Avro": 1.0,
+      "Flutter": 1.0
+    }
+  },
+  "d81bfc1c11d69a9606e6dc3da51b23b1": {
+    "idx": 298,
+    "skills": {
+      "GitHub": 1.0
+    }
+  },
+  "a6c9bd29e9e8844078650db1d2eef34a": {
+    "idx": 299,
+    "skills": {
+      "React": 1.0,
+      "Kotlin": 1.0
+    }
+  },
+  "0901b1c8ff53c6694009e0e3395159c7": {
+    "idx": 300,
+    "skills": {
+      "Android SDK": 1.0,
+      "Apache Spark": 1.0,
+      "Bash": 1.0,
+      "Flutter": 1.0,
+      "MySQL": 1.0
+    }
+  },
+  "650b88d0691b4b523fdc5f96e255e9a9": {
+    "idx": 301,
+    "skills": {
+      "Django": 1.0,
+      "Git": 1.0,
+      "Hugging Face": 1.0
+    }
+  },
+  "366ee3d164135e5827137d27fa7bc3f5": {
+    "idx": 302,
+    "skills": {
+      "Ansible": 1.0,
+      "MySQL": 1.0,
+      "NumPy": 1.0,
+      "Pandas": 1.0
+    }
+  },
+  "fc454e18bc86116e333de7a016db2ccb": {
+    "idx": 303,
+    "skills": {
+      "Kafka": 1.0
+    }
+  },
+  "5ceb2b752ae471c3501ce4b32b2b865d": {
+    "idx": 304,
+    "skills": {
+      "Vue.js": 1.0,
+      "Spring Boot": 1.0,
+      "MySQL": 1.0,
+      "Kotlin": 1.0,
+      "Swift": 1.0
+    }
+  },
+  "6a48d76ff56902b60fb98b5561ffa701": {
+    "idx": 305,
+    "skills": {
+      "JavaScript": 1.0,
+      "Git": 1.0,
+      "MySQL": 1.0
+    }
+  },
+  "46122e130808453f40085405fc813516": {
+    "idx": 306,
+    "skills": {
+      "C#": 1.0,
+      "MongoDB": 1.0,
+      "ArgoCD": 1.0
+    }
+  },
+  "1887907111f59cba3e577cad82b1289f": {
+    "idx": 307,
+    "skills": {
+      "Flask": 1.0,
+      "Neo4j": 1.0,
+      "NumPy": 1.0
+    }
+  },
+  "2ac3802bd0c281ae45a2c19ee305ee40": {
+    "idx": 308,
+    "skills": {
+      "Python": 1.0,
+      "TensorFlow": 1.0
+    }
+  },
+  "bb6b8676e9b85e2d4d626cbe0d73ec6a": {
+    "idx": 309,
+    "skills": {
+      "Ruby on Rails": 1.0,
+      "TypeScript": 1.0
+    }
+  },
+  "abd07908823c1024300c533374a60a2b": {
+    "idx": 310,
+    "skills": {
+      "Java": 1.0,
+      "SQL": 1.0,
+      "Parquet": 1.0
+    }
+  },
+  "31fd55794a1d81348c7b7933c0b64672": {
+    "idx": 311,
+    "skills": {
+      "React": 1.0,
+      "NestJS": 1.0,
+      "Google Cloud": 1.0
+    }
+  },
+  "cfe93d5ec3bc39ea9da9c2a97c6acafc": {
+    "idx": 312,
+    "skills": {
+      "Kubernetes": 1.0,
+      "Redis": 1.0,
+      "Flutter": 1.0
+    }
+  },
+  "a53b5d58eb093ad7f54d478e57b1c035": {
+    "idx": 313,
+    "skills": {
+      "React": 1.0,
+      "Kotlin": 1.0,
+      "Agile": 0.5
+    }
+  },
+  "bca8d16b37396b7bb6228846a5474b66": {
+    "idx": 314,
+    "skills": {
+      "Caching": 1.0,
+      "Bash": 1.0,
+      "MongoDB": 1.0,
+      "Redis": 1.0
+    }
+  },
+  "e29b9033140a18b33e597213d6570a18": {
+    "idx": 315,
+    "skills": {
+      "AWS": 1.0,
+      "Docker": 1.0,
+      "Kubernetes": 1.0
+    }
+  },
+  "a98f3e026149098c46b735bdd2f4b18e": {
+    "idx": 316,
+    "skills": {
+      "Load Balancing": 1.0,
+      "Python": 1.0,
+      "Caching": 1.0,
+      "Flutter": 1.0,
+      "GitHub": 1.0,
+      "Spring Boot": 1.0
+    }
+  },
+  "88e1ac80650489c08382e05078e95784": {
+    "idx": 317,
+    "skills": {
+      "Load Balancing": 1.0,
+      "Bash": 1.0,
+      "Helm": 1.0,
+      "Java": 1.0
+    }
+  },
+  "feee3cd8817ea8b70fbb952418cbf2a5": {
+    "idx": 318,
+    "skills": {
+      "Machine Learning": 1.0,
+      "PyTorch": 1.0
+    }
+  },
+  "53345df0bfc64b6d59dc1d2e6d7bfb5c": {
+    "idx": 319,
+    "skills": {
+      "C#": 1.0,
+      "MySQL": 1.0,
+      "Elasticsearch": 1.0,
+      "BigQuery": 1.0
+    }
+  },
+  "31fedf44136ebf1853ddb4e842daac66": {
+    "idx": 320,
+    "skills": {
+      "Flutter": 1.0,
+      "Nginx": 1.0,
+      "Elasticsearch": 1.0
+    }
+  },
+  "645b26368088ff8ef5ffa79c5d0230f4": {
+    "idx": 321,
+    "skills": {
+      "Elasticsearch": 1.0,
+      "Flask": 1.0,
+      "Cassandra": 1.0,
+      "Android SDK": 1.0,
+      "Kotlin": 1.0
+    }
+  },
+  "1c22539f30f10f5342be2dea19ec7468": {
+    "idx": 322,
+    "skills": {
+      "Machine Learning": 1.0,
+      "Django": 1.0,
+      "TensorFlow": 1.0,
+      "Kafka": 1.0,
+      "HTML": 1.0,
+      "Vue.js": 1.0
+    }
+  },
+  "d78a13f45a8e567728500d635b5472fb": {
+    "idx": 323,
+    "skills": {
+      "FastAPI": 1.0,
+      "PostgreSQL": 1.0,
+      "Redis": 1.0,
+      "MLflow": 1.0
+    }
+  },
+  "0e929b9c67e56bc84ffa585c797ae067": {
+    "idx": 324,
+    "skills": {
+      "Redis": 1.0,
+      "SQL": 1.0,
+      "SQLite": 1.0
+    }
+  },
+  "2e370f14a05f1fec8db53d63501b7631": {
+    "idx": 325,
+    "skills": {
+      "Agile": 1.0,
+      "ASP.NET Core": 1.0,
+      "CSS": 1.0,
+      "Elasticsearch": 1.0
+    }
+  },
+  "00d0b3c1e7f01b34699613f23e74b5dd": {
+    "idx": 326,
+    "skills": {
+      "Terraform": 1.0,
+      "Vault": 1.0,
+      "Kotlin": 1.0,
+      "Svelte": 1.0,
+      "Apache Spark": 1.0
+    }
+  },
+  "8f6192d6ed9712fed3aac4d67496595d": {
+    "idx": 327,
+    "skills": {
+      "MLflow": 1.0,
+      "Helm": 1.0
+    }
+  },
+  "d5e05c77181d9ad47c11528083f2e0da": {
+    "idx": 328,
+    "skills": {
+      "Secrets Management": 1.0
+    }
+  },
+  "d4b3b1ea3b034f9ea52d4ec50a9a804c": {
+    "idx": 329,
+    "skills": {
+      "Ansible": 1.0,
+      "Pandas": 1.0,
+      "Redis": 1.0
+    }
+  },
+  "799e54640794d44cdee7c162dcd46498": {
+    "idx": 330,
+    "skills": {
+      "Jenkins": 1.0,
+      "Jira": 1.0
+    }
+  },
+  "343e3dc2d7b0c92bbdd8f5fc2f846545": {
+    "idx": 331,
+    "skills": {
+      "Ruby on Rails": 1.0,
+      "Go": 1.0
+    }
+  },
+  "ef6db4e86a63a3028e2870f8baa20cbd": {
+    "idx": 332,
+    "skills": {
+      "Docker": 1.0,
+      "Python": 1.0,
+      "Ansible": 1.0
+    }
+  },
+  "61e9239696ebde1804c9e57168231dab": {
+    "idx": 333,
+    "skills": {
+      "C#": 1.0,
+      "Spring Boot": 1.0,
+      "Ansible": 1.0
+    }
+  },
+  "d7ca6b066d90762018713af5299c132e": {
+    "idx": 334,
+    "skills": {
+      "Git": 1.0,
+      "Load Balancing": 1.0,
+      "PostgreSQL": 1.0,
+      "Parquet": 1.0
+    }
+  },
+  "9f431d1c62a5bf92b7a03816d53c7684": {
+    "idx": 335,
+    "skills": {
+      "Go": 1.0,
+      "Caching": 1.0,
+      "InfluxDB": 1.0,
+      "SQL": 1.0
+    }
+  },
+  "ea760cf09a854c0e3dbd5792ec522e5e": {
+    "idx": 336,
+    "skills": {
+      "FastAPI": 1.0,
+      "Git": 1.0,
+      "Caching": 1.0,
+      "React": 1.0
+    }
+  },
+  "775a5e23584ab8da6a8273cad9fce491": {
+    "idx": 337,
+    "skills": {
+      "Agile": 1.0,
+      "Ansible": 0.5,
+      "AWS": 0.5,
+      "Caching": 0.5,
+      "Confluence": 1.0,
+      "Distributed Systems": 0.5,
+      "ELK Stack": 0.5,
+      "Elasticsearch": 0.5,
+      "Git": 0.5,
+      "GitHub": 0.5,
+      "IAM": 0.5,
+      "Integration Testing": 0.5,
+      "Jenkins": 0.5,
+      "Kubernetes": 0.5,
+      "Load Balancing": 0.5,
+      "Microservices": 0.5,
+      "Network Security": 1.0,
+      "OAuth2": 0.5,
+      "OWASP Top 10": 0.5,
+      "PostgreSQL": 0.5,
+      "Prometheus": 0.5,
+      "PyTorch": 0.5,
+      "Python": 0.5,
+      "REST APIs": 0.5,
+      "Scrum": 1.0,
+      "Secrets Management": 0.5,
+      "Selenium": 0.5,
+      "SQL": 0.5,
+      "SQLite": 0.5,
+      "Terraform": 0.5
+    }
+  },
+  "edab1f7d9ca2e26618cfef28543466ba": {
+    "idx": 338,
+    "skills": {
+      "Bash": 1.0
+    }
+  },
+  "fcb508ed5ba5d5ee4496a28de5573eb1": {
+    "idx": 339,
+    "skills": {
+      "Ansible": 1.0,
+      "Go": 1.0,
+      "Java": 1.0
+    }
+  },
+  "f03ece06bedb2eba35d458e3cbba9ca1": {
+    "idx": 340,
+    "skills": {
+      "Airflow": 1.0,
+      "Docker": 1.0,
+      "HTML": 1.0,
+      "Svelte": 1.0
+    }
+  },
+  "18872870850fb85efae71b6d0b205029": {
+    "idx": 341,
+    "skills": {
+      "Caching": 1.0,
+      "Google Cloud": 1.0,
+      "Swift": 1.0
+    }
+  },
+  "395c0b28abf606e40018361738df35f1": {
+    "idx": 342,
+    "skills": {
+      "Spring Boot": 1.0,
+      "SQLite": 1.0,
+      "Load Balancing": 1.0
+    }
+  },
+  "0f6010cec3e51b2a672a954fb0d5a004": {
+    "idx": 343,
+    "skills": {
+      "Django": 1.0,
+      "Tailwind CSS": 1.0
+    }
+  },
+  "3750b0e42ff4de609a895e85382fadac": {
+    "idx": 344,
+    "skills": {
+      "Kafka": 1.0,
+      "Laravel": 1.0,
+      "Ansible": 1.0,
+      "Node.js": 1.0,
+      "TensorFlow": 1.0
+    }
+  },
+  "2067dd6deb5b176d05201e254ded9fdb": {
+    "idx": 345,
+    "skills": {
+      "iOS SDK": 1.0,
+      "GitHub": 1.0,
+      "TypeScript": 1.0,
+      "Spring Boot": 1.0
+    }
+  },
+  "e8e843903142407e9f950d6e60e19243": {
+    "idx": 346,
+    "skills": {
+      "Svelte": 1.0,
+      "Caching": 1.0,
+      "MongoDB": 1.0,
+      "Django": 1.0,
+      "Java": 1.0,
+      "Kotlin": 1.0
+    }
+  },
+  "eb6a4869de08dc1988f8467f40826f0a": {
+    "idx": 347,
+    "skills": {
+      "Swagger/OpenAPI": 1.0,
+      "Kotlin": 1.0
+    }
+  },
+  "1d93067d5d06d19f18f07bd12219e57d": {
+    "idx": 348,
+    "skills": {
+      "Swift": 1.0
+    }
+  },
+  "5f110166c858939e9af6028de84aca6f": {
+    "idx": 349,
+    "skills": {
+      "Airflow": 1.0,
+      "scikit-learn": 1.0
+    }
+  },
+  "85617c39d008dcb7ad7df7006ed0bc30": {
+    "idx": 350,
+    "skills": {
+      "Helm": 1.0,
+      "FastAPI": 1.0,
+      "Android SDK": 1.0,
+      "Swagger/OpenAPI": 1.0
+    }
+  },
+  "ded3723afb7686c5a2dd64d5a3f030ff": {
+    "idx": 351,
+    "skills": {
+      "Helm": 1.0,
+      "Swagger/OpenAPI": 1.0,
+      "MLflow": 1.0
+    }
+  },
+  "9bbc13485cc398af2cc16b7b43da153b": {
+    "idx": 352,
+    "skills": {
+      "Android SDK": 1.0,
+      "Spring Boot": 1.0,
+      "InfluxDB": 1.0,
+      "Caching": 1.0,
+      "Helm": 1.0,
+      "Python": 1.0
+    }
+  },
+  "9183bd74c79b9fc2b3439b3c58191e83": {
+    "idx": 353,
+    "skills": {
+      "Terraform": 1.0,
+      "PyTorch": 1.0,
+      "SQLite": 1.0,
+      "Pandas": 1.0,
+      "NestJS": 1.0
+    }
+  },
+  "a9f1f07b23a5e75b8f772ef3dbd848fe": {
+    "idx": 354,
+    "skills": {
+      "Svelte": 1.0
+    }
+  },
+  "d845017e275875f06d68d383831cf179": {
+    "idx": 355,
+    "skills": {
+      "Load Balancing": 1.0,
+      "Unit Testing": 0.5,
+      "Distributed Systems": 0.5,
+      "PostgreSQL": 1.0,
+      "Android SDK": 1.0,
+      "TensorFlow": 1.0
+    }
+  },
+  "54ad2cbd45814b9aad24d5e16c3b39b7": {
+    "idx": 356,
+    "skills": {
+      "Angular": 1.0
+    }
+  },
+  "1457e18d92338ffb6d8b33210b7cd6bb": {
+    "idx": 357,
+    "skills": {
+      "Django": 1.0,
+      "Avro": 1.0,
+      "scikit-learn": 1.0,
+      "Neo4j": 1.0,
+      "C#": 1.0,
+      "Vault": 1.0
+    }
+  },
+  "ebdf226eb37ae34c0f407e80a853bf0f": {
+    "idx": 358,
+    "skills": {
+      "C#": 1.0,
+      "Apache Spark": 1.0,
+      "MLflow": 1.0,
+      "CSS": 1.0
+    }
+  },
+  "df5404d8dad4c421fa6964038201c5f4": {
+    "idx": 359,
+    "skills": {
+      "Kafka": 1.0,
+      "Docker": 1.0,
+      "SQL": 1.0
+    }
+  },
+  "b9bb8dc28432cb3e7b42da7828563d23": {
+    "idx": 360,
+    "skills": {
+      "Ruby on Rails": 1.0,
+      "MongoDB": 1.0,
+      "Android SDK": 1.0,
+      "NestJS": 1.0
+    }
+  },
+  "3776fa330e036c918af46958ec70398a": {
+    "idx": 361,
+    "skills": {
+      "Ansible": 1.0,
+      "Machine Learning": 1.0
+    }
+  },
+  "88a47bbc9f486783d9a42014f5ef7a18": {
+    "idx": 362,
+    "skills": {
+      "BigQuery": 1.0,
+      "Git": 1.0,
+      "Node.js": 1.0,
+      "Terraform": 1.0
+    }
+  },
+  "172f0b49cbd618867654c20abc35e7f1": {
+    "idx": 363,
+    "skills": {
+      "AWS": 1.0,
+      "Terraform": 1.0,
+      "iOS SDK": 1.0
+    }
+  },
+  "ff237842ad64b7e8e7c1f5b19fab3c4d": {
+    "idx": 364,
+    "skills": {
+      "SQL": 1.0,
+      "Redis": 1.0,
+      "Java": 1.0
+    }
+  },
+  "84fc0d697e145ff5efd9b717a3316318": {
+    "idx": 365,
+    "skills": {
+      "TypeScript": 1.0,
+      "C#": 1.0
+    }
+  },
+  "dc41c2267e07140bd886d64a3c4a2e8d": {
+    "idx": 366,
+    "skills": {
+      "ArgoCD": 1.0,
+      "Avro": 1.0
+    }
+  },
+  "a57fb39c94560dc803e6ee71a8209c86": {
+    "idx": 367,
+    "skills": {
+      "Spring Boot": 1.0,
+      "TypeScript": 1.0,
+      "BigQuery": 1.0
+    }
+  },
+  "90fbad4842544c5bd52c84c4f6ffcaa4": {
+    "idx": 368,
+    "skills": {
+      "Java": 1.0,
+      "FastAPI": 1.0,
+      "Kotlin": 1.0,
+      "TensorFlow": 1.0,
+      "Airflow": 1.0
+    }
+  },
+  "e6fc4c80d6aa7556a19448f0d173a274": {
+    "idx": 369,
+    "skills": {
+      "Cassandra": 1.0,
+      "Angular": 1.0,
+      "Redis": 1.0
+    }
+  },
+  "8043c3f3c2f6cd7d879779f43f5ffd1a": {
+    "idx": 370,
+    "skills": {
+      "Java": 1.0,
+      "Docker": 1.0,
+      "scikit-learn": 1.0,
+      "Redis": 1.0,
+      "GitHub": 1.0
+    }
+  },
+  "8c98b90b196b95764d028b233f673fe9": {
+    "idx": 371,
+    "skills": {
+      "Django": 1.0,
+      "TypeScript": 1.0,
+      "Neo4j": 1.0,
+      "Agile": 0.5,
+      "Machine Learning": 0.5,
+      "MLOps": 0.5,
+      "TensorFlow": 1.0,
+      "Avro": 1.0,
+      "SQL": 1.0
+    }
+  },
+  "c5be71c1b2b4e30a39be3fcc94ccdfb6": {
+    "idx": 372,
+    "skills": {
+      "Terraform": 1.0,
+      "Git": 1.0,
+      "Flutter": 1.0,
+      "Kafka": 1.0
+    }
+  },
+  "7e9146a8e080fadc0f254ad6af98d9cf": {
+    "idx": 373,
+    "skills": {
+      "Terraform": 1.0,
+      "Node.js": 1.0
+    }
+  },
+  "690e9d051fa3b1193d70928390b9600c": {
+    "idx": 374,
+    "skills": {
+      "TensorFlow": 1.0,
+      "Pandas": 1.0,
+      "Vault": 1.0
+    }
+  },
+  "32005ff217388baaa49e72620d009555": {
+    "idx": 375,
+    "skills": {
+      "Apache Spark": 1.0,
+      "ArgoCD": 1.0,
+      "Vault": 1.0,
+      "Rust": 1.0
+    }
+  },
+  "fd834e48ea46fd89f9f2840c53b2dc8b": {
+    "idx": 376,
+    "skills": {
+      "Flask": 1.0,
+      "Python": 1.0,
+      "REST APIs": 1.0,
+      "Git": 1.0
+    }
+  },
+  "76761c9a6b5d9fd9ceeb6be0aaf2ef29": {
+    "idx": 377,
+    "skills": {
+      "CSS": 1.0,
+      "Kotlin": 1.0
+    }
+  },
+  "59e3ee16d2d63b6027c4e6e12776bd7e": {
+    "idx": 378,
+    "skills": {
+      "Helm": 1.0,
+      "Kubernetes": 1.0,
+      "MySQL": 1.0,
+      "Avro": 1.0
+    }
+  },
+  "921572b8efe99b25fff78874cab084e9": {
+    "idx": 379,
+    "skills": {
+      "Go": 1.0
+    }
+  },
+  "b700353407d446815fc060f15336be7c": {
+    "idx": 380,
+    "skills": {
+      "CSS": 1.0
+    }
+  },
+  "6a3108732c0a74b0ec7f46bb16dd5d4f": {
+    "idx": 381,
+    "skills": {
+      "Swagger/OpenAPI": 1.0,
+      "Express.js": 1.0
+    }
+  },
+  "69e404f4fc406a32b0a8487b7c65d7d4": {
+    "idx": 382,
+    "skills": {
+      "Load Balancing": 1.0,
+      "Hugging Face": 1.0,
+      "iOS SDK": 1.0,
+      "Angular": 1.0,
+      "Avro": 1.0
+    }
+  },
+  "e39597b8b9cb2c3504f590f1f67b1662": {
+    "idx": 383,
+    "skills": {
+      "SQL": 1.0,
+      "Google Cloud": 1.0,
+      "Agile": 1.0
+    }
+  },
+  "7cbc8cb0c0221b0535cda4827bb1a303": {
+    "idx": 384,
+    "skills": {
+      "Neo4j": 1.0,
+      "React": 1.0
+    }
+  },
+  "3d16725e6d5dcd19a8ef5546448eca70": {
+    "idx": 385,
+    "skills": {
+      "Redis": 1.0,
+      "Svelte": 1.0
+    }
+  },
+  "218b091206e79f044253673fdd4c549b": {
+    "idx": 386,
+    "skills": {
+      "GitLab CI": 1.0,
+      "Kotlin": 1.0,
+      "Swagger/OpenAPI": 1.0,
+      "Hugging Face": 1.0,
+      "Azure": 1.0
+    }
+  },
+  "0a88a9cd62b44e00aade1f86ca8e9402": {
+    "idx": 387,
+    "skills": {
+      "NestJS": 1.0,
+      "Angular": 1.0,
+      "scikit-learn": 1.0,
+      "Svelte": 1.0
+    }
+  },
+  "77b3fc44c1599dc42866349a15437e44": {
+    "idx": 388,
+    "skills": {
+      "SQL": 1.0,
+      "ASP.NET Core": 1.0
+    }
+  },
+  "b0fdeab74edc8d410bce82f1b312c936": {
+    "idx": 389,
+    "skills": {
+      "Apache Spark": 0.5,
+      "BigQuery": 0.5,
+      "Caching": 1.0,
+      "Distributed Systems": 0.5,
+      "ELK Stack": 0.5,
+      "Elasticsearch": 0.5,
+      "End-to-End Testing": 1.0,
+      "Integration Testing": 1.0,
+      "JUnit": 1.0,
+      "Machine Learning": 0.5,
+      "Microservices": 0.5,
+      "NLP": 1.0,
+      "Parquet": 1.0,
+      "PostgreSQL": 0.5,
+      "PyTorch": 0.5,
+      "Python": 1.0,
+      "SQL": 0.5
+    }
+  },
+  "b48ac3f0057683015c5714041c759db7": {
+    "idx": 390,
+    "skills": {
+      "TypeScript": 1.0,
+      "Elasticsearch": 1.0,
+      "FastAPI": 1.0,
+      "LLMs": 1.0,
+      "Machine Learning": 1.0
+    }
+  },
+  "f8e8028c2043019c75df5ad55af1061d": {
+    "idx": 391,
+    "skills": {
+      "Git": 1.0,
+      "GitHub": 1.0,
+      "Swagger/OpenAPI": 1.0
+    }
+  },
+  "2926f1a62adb8090406fa7a2905bc059": {
+    "idx": 392,
+    "skills": {
+      "Apache Spark": 1.0,
+      "Flask": 1.0,
+      "Swagger/OpenAPI": 1.0,
+      "Pandas": 1.0,
+      "Java": 1.0,
+      "Neo4j": 1.0
+    }
+  },
+  "0ba33e20ee583c3b86eff2a782688441": {
+    "idx": 393,
+    "skills": {
+      "JavaScript": 1.0,
+      "Docker": 1.0,
+      "Load Balancing": 1.0
+    }
+  },
+  "c18795a6977c1aafa35781537227f0ae": {
+    "idx": 394,
+    "skills": {
+      "Angular": 1.0,
+      "Helm": 1.0,
+      "Flask": 1.0
+    }
+  },
+  "f76944744025425f5317f5c5d19e4c1d": {
+    "idx": 395,
+    "skills": {
+      "HTML": 1.0,
+      "NumPy": 1.0
+    }
+  },
+  "c35a9fc004eff3cc82359091dcb4f19a": {
+    "idx": 396,
+    "skills": {
+      "SQL": 1.0,
+      "Load Balancing": 1.0,
+      "Redis": 1.0,
+      "Android SDK": 1.0
+    }
+  },
+  "7bc99a526e315f43b0b382df683b4f38": {
+    "idx": 397,
+    "skills": {
+      "Apache Spark": 1.0,
+      "Docker": 1.0,
+      "Kotlin": 1.0,
+      "NumPy": 1.0
+    }
+  },
+  "7c331a9ded2d79647811ae0868ed9b35": {
+    "idx": 398,
+    "skills": {
+      "Apache Spark": 1.0,
+      "FastAPI": 1.0,
+      "Vue.js": 1.0
+    }
+  },
+  "31921ed599b91b75db95a2bb5bc25b26": {
+    "idx": 399,
+    "skills": {
+      "Kafka": 1.0,
+      "Rust": 1.0,
+      "Kotlin": 1.0
+    }
+  },
+  "c2d70796c592aa38bceceb15b0cba2d3": {
+    "idx": 400,
+    "skills": {
+      "Nginx": 1.0,
+      "Load Balancing": 1.0,
+      "Avro": 1.0,
+      "Kotlin": 1.0,
+      "Bash": 1.0
+    }
+  },
+  "c19298915a6b473d154cf9a2773f8611": {
+    "idx": 401,
+    "skills": {
+      "Machine Learning": 1.0,
+      "scikit-learn": 1.0
+    }
+  },
+  "cc667484023d0e8a0e4a21a1778c501c": {
+    "idx": 402,
+    "skills": {
+      "BigQuery": 1.0,
+      "Kubernetes": 1.0,
+      "scikit-learn": 1.0
+    }
+  },
+  "49f24181a391fb7acb486c6e9f050c22": {
+    "idx": 403,
+    "skills": {
+      "MySQL": 1.0,
+      "Google Cloud": 1.0,
+      "Docker": 1.0,
+      "InfluxDB": 1.0
+    }
+  },
+  "75fd5c441db5d3bc82da16080783ffae": {
+    "idx": 404,
+    "skills": {
+      "Bash": 1.0,
+      "InfluxDB": 1.0,
+      "JavaScript": 1.0,
+      "Nginx": 1.0
+    }
+  },
+  "424f304a02a8710b677008d19e81b58c": {
+    "idx": 405,
+    "skills": {
+      "Pandas": 1.0,
+      "Parquet": 1.0,
+      "Machine Learning": 1.0,
+      "GitHub": 1.0,
+      "scikit-learn": 1.0,
+      "Svelte": 1.0
+    }
+  },
+  "db214218aef924061727fc26ccb6c042": {
+    "idx": 406,
+    "skills": {
+      "Nginx": 1.0
+    }
+  },
+  "d9cdbabf536072ed466a01a8ed035be6": {
+    "idx": 407,
+    "skills": {
+      "NumPy": 1.0,
+      "PyTorch": 1.0,
+      "Swift": 1.0
+    }
+  },
+  "67968ecdc0727e67b155e3fa88d86d6c": {
+    "idx": 408,
+    "skills": {
+      "Google Cloud": 1.0,
+      "MongoDB": 1.0,
+      "Helm": 1.0,
+      "Keras": 1.0
+    }
+  },
+  "27e746ba0a9c3f78cff6811138a24592": {
+    "idx": 409,
+    "skills": {
+      "Flask": 1.0,
+      "Nginx": 1.0,
+      "Cassandra": 1.0
+    }
+  },
+  "e9913ea1ba594e7d19db7fd24878397f": {
+    "idx": 410,
+    "skills": {
+      "CSS": 1.0,
+      "SQL": 1.0,
+      "Keras": 1.0
+    }
+  },
+  "79e28cf650fb2e5656438e7068a3493c": {
+    "idx": 411,
+    "skills": {
+      "Django": 1.0,
+      "CSS": 1.0,
+      "Tailwind CSS": 1.0,
+      "Pandas": 1.0,
+      "Flutter": 1.0
+    }
+  },
+  "a81f01e70d7636eb9956f7e392d0d731": {
+    "idx": 412,
+    "skills": {
+      "Terraform": 1.0,
+      "AWS": 1.0,
+      "REST APIs": 1.0,
+      "Express.js": 1.0
+    }
+  },
+  "420a322579492bc27335ee16c1140d14": {
+    "idx": 413,
+    "skills": {
+      "JUnit": 1.0
+    }
+  },
+  "dfa780aa5f9242c10df2a781909b2def": {
+    "idx": 414,
+    "skills": {
+      "Python": 1.0,
+      "Parquet": 1.0,
+      "Unit Testing": 0.5
+    }
+  },
+  "78b4f8ade1825737dcfee08c4b1469b1": {
+    "idx": 415,
+    "skills": {
+      "Terraform": 1.0,
+      "BigQuery": 1.0,
+      "Google Cloud": 1.0,
+      "Swift": 1.0
+    }
+  },
+  "13409264a46bf54b842c76a2292b01a9": {
+    "idx": 416,
+    "skills": {
+      "Neo4j": 1.0,
+      "Git": 1.0,
+      "PyTorch": 1.0
+    }
+  },
+  "cb7a68bcdeaa837cded927e11a48bdaf": {
+    "idx": 417,
+    "skills": {
+      "AWS": 1.0,
+      "Bash": 1.0,
+      "CSS": 1.0,
+      "Git": 1.0,
+      "JavaScript": 1.0,
+      "Swift": 1.0
+    }
+  },
+  "033b89f3be0a57a5c6ca0a69fe1392cc": {
+    "idx": 418,
+    "skills": {
+      "Kubernetes": 1.0,
+      "TypeScript": 1.0,
+      "Flask": 1.0,
+      "Distributed Systems": 0.5
+    }
+  },
+  "df0ba301d9f29f1e4668d8557ee3dee0": {
+    "idx": 419,
+    "skills": {
+      "Spring Boot": 1.0,
+      "Helm": 1.0,
+      "TensorFlow": 1.0
+    }
+  },
+  "5a50761d9193cd6e35ebe0588bbc4c32": {
+    "idx": 420,
+    "skills": {
+      "PostgreSQL": 1.0,
+      "Google Cloud": 1.0,
+      "Ansible": 1.0,
+      "Pandas": 1.0,
+      "GitHub": 1.0
+    }
+  },
+  "0d2a46c5cc173ea8b58c47c50b7c69c7": {
+    "idx": 421,
+    "skills": {
+      "React": 1.0,
+      "Tailwind CSS": 1.0,
+      "ArgoCD": 1.0
+    }
+  },
+  "21fb63b46e365a6df143a4b9c82d9513": {
+    "idx": 422,
+    "skills": {
+      "Airflow": 1.0
+    }
+  },
+  "b8654960060327dd385aae0643c3fa88": {
+    "idx": 423,
+    "skills": {
+      "TensorFlow": 1.0,
+      "GitLab CI": 1.0,
+      "CSS": 1.0,
+      "Android SDK": 1.0,
+      "Bash": 1.0
+    }
+  },
+  "74a51280950aca13e2f9f60eb89fdbfc": {
+    "idx": 424,
+    "skills": {
+      "Pandas": 1.0,
+      "InfluxDB": 1.0
+    }
+  },
+  "d81e411e300c51873bded07f1280545b": {
+    "idx": 425,
+    "skills": {
+      "GitLab CI": 1.0,
+      "C#": 1.0,
+      "ArgoCD": 1.0
+    }
+  },
+  "1f3b851999abecf9b2ac4cbb78c136a2": {
+    "idx": 426,
+    "skills": {
+      "SQL": 1.0,
+      "PostgreSQL": 1.0,
+      "Kafka": 1.0
+    }
+  },
+  "0c445bc35b54ebc1ddb405da25a23759": {
+    "idx": 427,
+    "skills": {
+      "Caching": 1.0,
+      "Load Balancing": 1.0
+    }
+  },
+  "12eea243dad631cdb32989b792745072": {
+    "idx": 428,
+    "skills": {
+      "Bash": 1.0,
+      "GitHub": 1.0,
+      "Azure": 1.0,
+      "Neo4j": 1.0
+    }
+  },
+  "edb49ea05ff8205b22c4e1c75b9b747d": {
+    "idx": 429,
+    "skills": {
+      "Kotlin": 1.0,
+      "PostgreSQL": 1.0,
+      "JavaScript": 1.0
+    }
+  },
+  "83a6da6a183620c441f008035026995c": {
+    "idx": 430,
+    "skills": {
+      "Laravel": 1.0,
+      "Tailwind CSS": 1.0,
+      "Bash": 1.0,
+      "Hugging Face": 1.0
+    }
+  },
+  "4414398650ccfffe9a42f77a0ecabd5e": {
+    "idx": 431,
+    "skills": {
+      "Elasticsearch": 1.0,
+      "AWS": 1.0,
+      "Tailwind CSS": 1.0,
+      "Vault": 1.0
+    }
+  },
+  "9cf0a669c10d6f36f0e63c011f3b90b3": {
+    "idx": 432,
+    "skills": {
+      "Agile": 1.0,
+      "GitHub": 1.0,
+      "Vue.js": 1.0
+    }
+  },
+  "91f4c778250f62bc68beafd9da2bd90b": {
+    "idx": 433,
+    "skills": {
+      "Machine Learning": 1.0,
+      "Caching": 1.0,
+      "Python": 1.0,
+      "Transformers": 1.0,
+      "C#": 1.0
+    }
+  },
+  "b965fedfdcb2ecec151af10f08a13f18": {
+    "idx": 434,
+    "skills": {
+      "Flask": 1.0,
+      "Google Cloud": 1.0
+    }
+  },
+  "8057e876f23f7143421ceac9c4b16434": {
+    "idx": 435,
+    "skills": {
+      "Swift": 1.0,
+      "NumPy": 1.0
+    }
+  },
+  "f012aef966cc306d2a37874b18baa6fc": {
+    "idx": 436,
+    "skills": {
+      "Vue.js": 1.0,
+      "Spring Boot": 1.0,
+      "Git": 1.0,
+      "Neo4j": 1.0,
+      "C#": 1.0
+    }
+  },
+  "56550e05b7e3954dd300a2728968f7b3": {
+    "idx": 437,
+    "skills": {
+      "Secrets Management": 1.0,
+      "Flask": 1.0
+    }
+  },
+  "ab9e170afcdaf47e57a8228c81e95f47": {
+    "idx": 438,
+    "skills": {
+      "Agile": 1.0,
+      "Android SDK": 1.0,
+      "Machine Learning": 1.0,
+      "NumPy": 1.0,
+      "React": 1.0
+    }
+  },
+  "173ca32282ffd56d30c80bfa9c956e28": {
+    "idx": 439,
+    "skills": {
+      "Agile": 1.0,
+      "Confluence": 1.0,
+      "Google Cloud": 1.0,
+      "Swift": 1.0
+    }
+  },
+  "8fa34c103a69815efe55032c2e28a5dd": {
+    "idx": 440,
+    "skills": {
+      "React": 1.0,
+      "Flask": 1.0,
+      "Load Balancing": 1.0,
+      "ArgoCD": 1.0
+    }
+  },
+  "82a4aeae30e412826ac16ebe6013ef4e": {
+    "idx": 441,
+    "skills": {
+      "BigQuery": 1.0,
+      "Go": 1.0,
+      "Hugging Face": 1.0,
+      "Spring Boot": 1.0
+    }
+  },
+  "57c92da3e7c2ef4d6d5cb47aa04b05c5": {
+    "idx": 442,
+    "skills": {
+      "Go": 1.0,
+      "MongoDB": 1.0
+    }
+  },
+  "25fa5a445aceefaff7ae833c225ba84f": {
+    "idx": 443,
+    "skills": {
+      "Apache Spark": 1.0,
+      "MongoDB": 1.0,
+      "CSS": 1.0,
+      "JavaScript": 1.0,
+      "NumPy": 1.0
+    }
+  },
+  "37ce2798f65625f5212d45676f3b4782": {
+    "idx": 444,
+    "skills": {
+      "Laravel": 1.0,
+      "MongoDB": 1.0,
+      "Bash": 1.0
+    }
+  },
+  "7520d90c32913631c4aad3006085ccd1": {
+    "idx": 445,
+    "skills": {
+      "TensorFlow": 1.0,
+      "Spring Boot": 1.0,
+      "TypeScript": 1.0
+    }
+  },
+  "da11d2efeb437341832deea8f5c261e8": {
+    "idx": 446,
+    "skills": {
+      "MLflow": 1.0,
+      "InfluxDB": 1.0,
+      "Rust": 1.0
+    }
+  },
+  "b061ce5818b63d02dd7409f5b0772e6f": {
+    "idx": 447,
+    "skills": {
+      "ELK Stack": 1.0
+    }
+  },
+  "f7881af70d449cee03301239222b9cd1": {
+    "idx": 448,
+    "skills": {
+      "Spring Boot": 1.0,
+      "Go": 1.0,
+      "Caching": 1.0,
+      "Integration Testing": 0.5
+    }
+  },
+  "86bb74fc11cc6e2dfe70266c0603e553": {
+    "idx": 449,
+    "skills": {
+      "Angular": 1.0,
+      "NumPy": 1.0,
+      "Django": 1.0
+    }
+  },
+  "ae58a686f4202a9bdb70bf96ebd8d3a0": {
+    "idx": 450,
+    "skills": {
+      "Java": 1.0,
+      "MySQL": 1.0,
+      "Pandas": 1.0,
+      "Neo4j": 1.0,
+      "Vault": 1.0
+    }
+  },
+  "8eabbe0aeafab9eef7c3efdf06533783": {
+    "idx": 451,
+    "skills": {
+      "Vault": 1.0,
+      "Confluence": 1.0
+    }
+  },
+  "9fe6986b46097d690b6367c68a3506d0": {
+    "idx": 452,
+    "skills": {
+      "Git": 1.0,
+      "Elasticsearch": 1.0,
+      "Load Balancing": 1.0
+    }
+  },
+  "f695f220c52b5516a71036c37f40e8a2": {
+    "idx": 453,
+    "skills": {
+      "Tailwind CSS": 1.0
+    }
+  },
+  "4a96b0799379a9255e17efd04e93c8da": {
+    "idx": 454,
+    "skills": {
+      "Airflow": 1.0,
+      "Docker": 1.0,
+      "Integration Testing": 0.5,
+      "Vault": 1.0,
+      "Neo4j": 1.0
+    }
+  },
+  "fd906098b3f414da16d9a7446031907d": {
+    "idx": 455,
+    "skills": {
+      "Redis": 1.0
+    }
+  },
+  "cb12109fd470dd448f121b2d5e75fc8c": {
+    "idx": 456,
+    "skills": {
+      "Snowflake": 1.0,
+      "Parquet": 1.0,
+      "HTML": 1.0,
+      "Android SDK": 1.0,
+      "GitHub": 1.0
+    }
+  },
+  "c0b33893cc77004bf3152834c5d6faa2": {
+    "idx": 457,
+    "skills": {
+      "Keras": 1.0,
+      "Caching": 1.0,
+      "Flask": 1.0,
+      "scikit-learn": 1.0,
+      "Confluence": 1.0
+    }
+  },
+  "e7defd42fd6ea942c2938c10ca8d4cbd": {
+    "idx": 458,
+    "skills": {
+      "Node.js": 1.0,
+      "GitHub": 1.0,
+      "NumPy": 1.0
+    }
+  },
+  "7b2289c36eba387c155fe10d338ef7e7": {
+    "idx": 459,
+    "skills": {
+      "C#": 1.0,
+      "Laravel": 1.0
+    }
+  },
+  "3ebb55ef9010f501c75048cf27062d70": {
+    "idx": 460,
+    "skills": {
+      "GitHub": 1.0,
+      "CSS": 1.0
+    }
+  },
+  "877e44ad3645b13d1e4dc84e07fd56f8": {
+    "idx": 461,
+    "skills": {
+      "Agile": 1.0,
+      "Scrum": 1.0,
+      "Rust": 1.0
+    }
+  },
+  "d05a15db35b216698d942cf668daad33": {
+    "idx": 462,
+    "skills": {
+      "Python": 1.0,
+      "Terraform": 1.0,
+      "Kotlin": 1.0,
+      "C#": 1.0
+    }
+  },
+  "daadd377248137ea6126215aa7d69823": {
+    "idx": 463,
+    "skills": {
+      "Django": 1.0,
+      "GraphQL": 1.0,
+      "MLflow": 1.0,
+      "PyTorch": 1.0,
+      "scikit-learn": 1.0,
+      "Confluence": 1.0
+    }
+  },
+  "754ec7ee648df2b81857653c59d60669": {
+    "idx": 464,
+    "skills": {
+      "Docker": 1.0,
+      "Nginx": 1.0
+    }
+  },
+  "76e302e178a4b8b1ba53db6c5471081e": {
+    "idx": 465,
+    "skills": {
+      "GitLab CI": 1.0,
+      "SQL": 1.0,
+      "GraphQL": 1.0,
+      "Tailwind CSS": 1.0
+    }
+  },
+  "2e95c03eb231bea9038998dd1ba6a2b2": {
+    "idx": 466,
+    "skills": {
+      "Kubernetes": 1.0
+    }
+  },
+  "40e594cd621edf502ead3c6208ba10c9": {
+    "idx": 467,
+    "skills": {
+      "ArgoCD": 1.0,
+      "Redis": 1.0
+    }
+  },
+  "3dd6a56cc4aa9e5e6f50a2e14d9560ac": {
+    "idx": 468,
+    "skills": {
+      "Svelte": 1.0,
+      "Keras": 1.0,
+      "PyTorch": 1.0,
+      "Cassandra": 1.0
+    }
+  },
+  "21c81fde3ab5a0b2ad038d920ee15805": {
+    "idx": 469,
+    "skills": {
+      "BigQuery": 1.0,
+      "HTML": 1.0,
+      "PyTorch": 1.0
+    }
+  },
+  "2c2628388880a30d07d218d4ecc97745": {
+    "idx": 470,
+    "skills": {
+      "Snowflake": 1.0,
+      "Machine Learning": 1.0
+    }
+  },
+  "3b0f7ee1c08ffd42c712fa65cc736ab9": {
+    "idx": 471,
+    "skills": {
+      "Ansible": 1.0,
+      "Go": 1.0,
+      "Snowflake": 1.0,
+      "SQLite": 1.0
+    }
+  },
+  "ef1641f00f3b073bd5991d5158c15019": {
+    "idx": 472,
+    "skills": {
+      "Network Security": 1.0,
+      "End-to-End Testing": 1.0,
+      "Google Cloud": 1.0,
+      "REST APIs": 1.0,
+      "FastAPI": 1.0,
+      "Vue.js": 1.0
+    }
+  },
+  "f276835bd36c3de172060392e296e344": {
+    "idx": 473,
+    "skills": {
+      "Apache Spark": 1.0,
+      "Avro": 1.0,
+      "Cassandra": 1.0,
+      "MySQL": 1.0,
+      "Snowflake": 1.0
+    }
+  }
+}

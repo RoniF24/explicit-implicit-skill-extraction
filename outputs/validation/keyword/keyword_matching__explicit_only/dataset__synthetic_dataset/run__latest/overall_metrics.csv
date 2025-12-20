@@ -1,0 +1,4 @@
+mode,precision,recall,f1,tp,fp,fn
+explicit_only(1.0_positive),0.9988165680473373,1.0,0.9994079336885732,1688.0,2.0,0.0
+implicit_only(0.5_positive),0.0,0.0,0.0,0.0,0.0,630.0
+any_evidence(0.5_or_1.0_positive),1.0,0.729076790336497,0.843313373253493,1690.0,0.0,628.0

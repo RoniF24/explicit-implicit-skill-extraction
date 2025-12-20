@@ -1,0 +1,111 @@
+skill,f1,support
+Scrum,0.4761904761904762,14
+Unit Testing,0.3389830508474576,33
+Vue.js,0.25,1
+REST APIs,0.21212121212121213,29
+JWT,0.1904761904761905,19
+NLP,0.18181818181818182,19
+Integration Testing,0.13953488372093023,33
+Network Security,0.12903225806451613,25
+Agile,0.1111111111111111,16
+Jenkins,0.10526315789473684,18
+Prometheus,0.07999999999999999,24
+OAuth2,0.07407407407407407,25
+Distributed Systems,0.05555555555555556,28
+ASP.NET Core,0.0,0
+AWS,0.0,0
+Airflow,0.0,1
+Android SDK,0.0,0
+Angular,0.0,0
+Ansible,0.0,0
+Apache Spark,0.0,0
+ArgoCD,0.0,0
+Avro,0.0,0
+Azure,0.0,0
+Bash,0.0,0
+BigQuery,0.0,0
+C#,0.0,0
+C++,0.0,0
+CSS,0.0,0
+Caching,0.0,1
+Cassandra,0.0,0
+Confluence,0.0,0
+DAST,0.0,16
+Django,0.0,0
+Docker,0.0,0
+ELK Stack,0.0,21
+Elasticsearch,0.0,0
+End-to-End Testing,0.0,14
+Express.js,0.0,0
+FastAPI,0.0,0
+Flask,0.0,0
+Flutter,0.0,0
+Git,0.0,9
+GitHub,0.0,0
+GitHub Actions,0.0,0
+GitLab CI,0.0,0
+Go,0.0,0
+Google Cloud,0.0,0
+Grafana,0.0,22
+GraphQL,0.0,15
+HTML,0.0,0
+Helm,0.0,0
+Hugging Face,0.0,0
+IAM,0.0,17
+InfluxDB,0.0,0
+JUnit,0.0,19
+Java,0.0,0
+JavaScript,0.0,0
+Jira,0.0,16
+Kafka,0.0,0
+Keras,0.0,0
+Kotlin,0.0,0
+Kubernetes,0.0,0
+LLMs,0.0,12
+Laravel,0.0,0
+Load Balancing,0.0,4
+MLOps,0.0,18
+MLflow,0.0,0
+Machine Learning,0.0,15
+Microservices,0.0,17
+MongoDB,0.0,0
+MySQL,0.0,0
+Neo4j,0.0,0
+NestJS,0.0,0
+Next.js,0.0,0
+Nginx,0.0,0
+Node.js,0.0,0
+NumPy,0.0,0
+OWASP Top 10,0.0,16
+Pandas,0.0,0
+Parquet,0.0,0
+PostgreSQL,0.0,0
+Postman,0.0,19
+PyTest,0.0,14
+PyTorch,0.0,0
+Python,0.0,0
+React,0.0,0
+React Native,0.0,0
+Redis,0.0,0
+Ruby on Rails,0.0,0
+Rust,0.0,0
+SAST,0.0,24
+SQL,0.0,0
+SQLite,0.0,0
+Secrets Management,0.0,15
+Selenium,0.0,18
+Snowflake,0.0,0
+Spring Boot,0.0,0
+Svelte,0.0,0
+Swagger/OpenAPI,0.0,0
+Swift,0.0,0
+Tailwind CSS,0.0,0
+TensorFlow,0.0,0
+Terraform,0.0,0
+Transformers,0.0,4
+TypeScript,0.0,0
+Vault,0.0,0
+dbt,0.0,12
+gRPC,0.0,7
+iOS SDK,0.0,0
+scikit-learn,0.0,0

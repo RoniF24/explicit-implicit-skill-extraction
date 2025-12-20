@@ -1,0 +1,111 @@
+skill,f1,support
+ASP.NET Core,1.0,13
+AWS,1.0,18
+Android SDK,1.0,23
+Angular,1.0,16
+Ansible,1.0,23
+Apache Spark,1.0,17
+ArgoCD,1.0,22
+Avro,1.0,31
+Azure,1.0,19
+Bash,1.0,26
+BigQuery,1.0,20
+C#,1.0,31
+C++,1.0,10
+CSS,1.0,28
+Cassandra,1.0,17
+Confluence,1.0,15
+Django,1.0,24
+Docker,1.0,23
+Elasticsearch,1.0,17
+Express.js,1.0,11
+FastAPI,1.0,23
+Flask,1.0,24
+Flutter,1.0,26
+GitHub,1.0,27
+GitHub Actions,1.0,1
+GitLab CI,1.0,11
+Go,1.0,24
+Google Cloud,1.0,28
+HTML,1.0,18
+Helm,1.0,26
+Hugging Face,1.0,20
+InfluxDB,1.0,18
+Java,1.0,21
+JavaScript,1.0,18
+Kafka,1.0,17
+Keras,1.0,20
+Kotlin,1.0,31
+Kubernetes,1.0,9
+Laravel,1.0,23
+MLflow,1.0,23
+MongoDB,1.0,23
+MySQL,1.0,25
+Neo4j,1.0,26
+NestJS,1.0,13
+Nginx,1.0,15
+Node.js,1.0,15
+NumPy,1.0,25
+Pandas,1.0,27
+Parquet,1.0,22
+PostgreSQL,1.0,19
+PyTorch,1.0,17
+Python,1.0,18
+React,1.0,28
+React Native,1.0,1
+Redis,1.0,34
+Ruby on Rails,1.0,20
+Rust,1.0,21
+SQL,1.0,27
+SQLite,1.0,12
+Snowflake,1.0,14
+Spring Boot,1.0,32
+Svelte,1.0,27
+Swagger/OpenAPI,1.0,24
+Swift,1.0,22
+Tailwind CSS,1.0,22
+TensorFlow,1.0,22
+Terraform,1.0,17
+TypeScript,1.0,24
+Vault,1.0,32
+Vue.js,1.0,14
+iOS SDK,1.0,14
+scikit-learn,1.0,24
+Caching,0.9841269841269841,32
+Airflow,0.9811320754716981,27
+Load Balancing,0.9310344827586207,31
+Git,0.7906976744186047,26
+Transformers,0.7777777777777778,11
+Machine Learning,0.6956521739130436,30
+gRPC,0.6956521739130436,15
+LLMs,0.625,22
+GraphQL,0.5454545454545454,24
+Scrum,0.5333333333333333,22
+Agile,0.5,24
+REST APIs,0.35555555555555557,37
+JUnit,0.29629629629629634,23
+dbt,0.25,14
+Jira,0.19999999999999998,18
+Selenium,0.18181818181818182,20
+ELK Stack,0.16,23
+Network Security,0.13793103448275862,27
+End-to-End Testing,0.125,15
+Secrets Management,0.11764705882352941,16
+IAM,0.10526315789473684,18
+Microservices,0.10526315789473684,18
+Jenkins,0.1,19
+MLOps,0.1,19
+NLP,0.09523809523809523,20
+Postman,0.09523809523809523,20
+Prometheus,0.07692307692307693,25
+OAuth2,0.07407407407407407,26
+Distributed Systems,0.06666666666666667,29
+Integration Testing,0.05714285714285715,34
+Unit Testing,0.05714285714285715,34
+DAST,0.0,16
+Grafana,0.0,22
+JWT,0.0,19
+Next.js,0.0,0
+OWASP Top 10,0.0,16
+PyTest,0.0,14
+SAST,0.0,24

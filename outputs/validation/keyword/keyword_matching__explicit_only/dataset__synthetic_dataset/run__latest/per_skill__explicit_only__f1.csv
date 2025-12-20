@@ -1,0 +1,111 @@
+skill,f1,support
+ASP.NET Core,1.0,13
+AWS,1.0,18
+Agile,1.0,8
+Airflow,1.0,26
+Android SDK,1.0,23
+Angular,1.0,16
+Ansible,1.0,23
+Apache Spark,1.0,17
+ArgoCD,1.0,22
+Avro,1.0,31
+Azure,1.0,19
+Bash,1.0,26
+BigQuery,1.0,20
+C#,1.0,31
+C++,1.0,10
+CSS,1.0,28
+Caching,1.0,31
+Cassandra,1.0,17
+Confluence,1.0,15
+Distributed Systems,1.0,1
+Django,1.0,24
+Docker,1.0,23
+ELK Stack,1.0,2
+Elasticsearch,1.0,17
+End-to-End Testing,1.0,1
+Express.js,1.0,11
+FastAPI,1.0,23
+Flask,1.0,24
+Flutter,1.0,26
+Git,1.0,17
+GitHub,1.0,27
+GitHub Actions,1.0,1
+GitLab CI,1.0,11
+Go,1.0,24
+Google Cloud,1.0,28
+GraphQL,1.0,9
+HTML,1.0,18
+Helm,1.0,26
+Hugging Face,1.0,20
+IAM,1.0,1
+InfluxDB,1.0,18
+Integration Testing,1.0,1
+JUnit,1.0,4
+Java,1.0,21
+JavaScript,1.0,18
+Jenkins,1.0,1
+Jira,1.0,2
+Kafka,1.0,17
+Keras,1.0,20
+Kotlin,1.0,31
+Kubernetes,1.0,9
+LLMs,1.0,10
+Laravel,1.0,23
+Load Balancing,1.0,27
+MLOps,1.0,1
+MLflow,1.0,23
+Microservices,1.0,1
+MongoDB,1.0,23
+MySQL,1.0,25
+NLP,1.0,1
+Neo4j,1.0,26
+NestJS,1.0,13
+Network Security,1.0,2
+Nginx,1.0,15
+Node.js,1.0,15
+NumPy,1.0,25
+OAuth2,1.0,1
+Pandas,1.0,27
+Parquet,1.0,22
+PostgreSQL,1.0,19
+Postman,1.0,1
+Prometheus,1.0,1
+PyTorch,1.0,17
+Python,1.0,18
+REST APIs,1.0,8
+React,1.0,28
+React Native,1.0,1
+Redis,1.0,34
+Ruby on Rails,1.0,20
+Rust,1.0,21
+SQL,1.0,27
+SQLite,1.0,12
+Scrum,1.0,8
+Secrets Management,1.0,1
+Selenium,1.0,2
+Snowflake,1.0,14
+Spring Boot,1.0,32
+Svelte,1.0,27
+Swagger/OpenAPI,1.0,24
+Swift,1.0,22
+Tailwind CSS,1.0,22
+TensorFlow,1.0,22
+Terraform,1.0,17
+Transformers,1.0,7
+TypeScript,1.0,24
+Unit Testing,1.0,1
+Vault,1.0,32
+dbt,1.0,2
+gRPC,1.0,8
+iOS SDK,1.0,14
+scikit-learn,1.0,24
+Machine Learning,0.967741935483871,15
+Vue.js,0.962962962962963,13
+DAST,0.0,0
+Grafana,0.0,0
+JWT,0.0,0
+Next.js,0.0,0
+OWASP Top 10,0.0,0
+PyTest,0.0,0
+SAST,0.0,0
