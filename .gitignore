@@ -1,0 +1,53 @@
+# -------------------------
+# Python / env
+# -------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+install_log.txt
+install_log.txt)
+
+# -------------------------
+# Data (generated)
+# -------------------------
+data/raw/
+data/synthetic/
+data/processed/
+data/splits_v1/
+MODELV2/splits_v1/
+
+# -------------------------
+# Heavy ML artifacts (DON'T push)
+# -------------------------
+# V1 trained models + checkpoints (huge)
+models/
+
+# Big weight files anywhere
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# MODELV2 training output that is heavy
+MODELV2/**/hf_trainer_runs/
+MODELV2/**/checkpoint-*/
+MODELV2/**/model_best/
+
+# caches / temp
+outputs/cache/
+outputs/tmp/
+baselines_outputs/cache/
