@@ -1,0 +1,47 @@
+================================================================================
+RESUME SKILL EXTRACTION ANALYSIS
+================================================================================
+Generated: 2026-01-04 16:06:15
+Model(s): DeBERTa-Pairwise
+Output: analysis_deberta_pairwise_20260104_160615.txt
+================================================================================
+
+RESUME TEXT:
+--------------------------------------------------------------------------------
+I am a senior software engineer with 5 years of experience in Python and Django.
+I have built scalable REST APIs and deployed microservices using Docker and Kubernetes.
+Strong knowledge of SQL databases including PostgreSQL.
+Experience with AWS cloud services and CI/CD pipelines.
+Proficient in Git version control and Agile methodologies.
+
+--------------------------------------------------------------------------------
+
+================================================================================
+MODEL: DeBERTa-Pairwise
+Path: src\models\trained_models\deberta_v3_base
+================================================================================
+
+DETECTED SKILLS:
+
+  EXPLICIT (1.0) - 6 skills:
+    • AWS
+    • Django
+    • Docker
+    • Kubernetes
+    • PostgreSQL
+    • Python
+
+  IMPLICIT (0.5): None detected
+
+  TOTAL DETECTED: 6 skills
+
+STATISTICS:
+----------------------------------------
+  Total skills in vocabulary: 136
+  Skills detected: 6 (4.4% of vocabulary)
+  Explicit: 6 (100.0% of detected)
+  Implicit: 0 (0.0% of detected)
+
+================================================================================
+END OF ANALYSIS
+================================================================================

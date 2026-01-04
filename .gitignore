@@ -17,37 +17,39 @@ Thumbs.db
 # Logs
 *.log
 install_log.txt
-install_log.txt)
 
 # -------------------------
-# Data (generated)
+# Data (temporary/generated - not for repo)
 # -------------------------
 data/raw/
 data/synthetic/
 data/processed/
-data/splits_v1/
-MODELV2/splits_v1/
+# Note: data/splits_v1/ and data/plans/ SHOULD be tracked (small, important)
 
 # -------------------------
-# Heavy ML artifacts (DON'T push)
+# Heavy ML artifacts (DON'T push to GitHub)
 # -------------------------
-# V1 trained models + checkpoints (huge)
-models/
+# Root-level models folder (legacy)
+/models/
 
-# Big weight files anywhere
+# Big model weight files anywhere
 *.safetensors
-*.bin
 *.pt
 *.pth
 *.ckpt
 *.onnx
 
-# MODELV2 training output that is heavy
-MODELV2/**/hf_trainer_runs/
-MODELV2/**/checkpoint-*/
-MODELV2/**/model_best/
+# Training artifacts (heavy)
+**/hf_trainer_runs/
+**/checkpoint-*/
+training_args.bin
 
 # caches / temp
 outputs/cache/
 outputs/tmp/
 baselines_outputs/cache/
+
+# -------------------------
+# Members personal data (each member manages their own)
+# -------------------------
+members data/

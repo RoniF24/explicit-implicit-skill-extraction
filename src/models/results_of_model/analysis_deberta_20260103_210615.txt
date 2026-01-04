@@ -1,0 +1,63 @@
+================================================================================
+RESUME SKILL EXTRACTION ANALYSIS
+================================================================================
+Generated: 2026-01-03 21:06:15
+Model(s): DeBERTa
+Output: analysis_deberta_20260103_210615.txt
+================================================================================
+
+RESUME TEXT:
+--------------------------------------------------------------------------------
+During my day-to-day work on the backend, I focused on improving our incident response capabilities by implementing a robust SIEM solution. This involved developing SPL queries to analyze logs and identify anomalies, which significantly reduced our response time to incidents. I also ensured that encryption in transit was enforced across all data exchanges, enhancing our security posture. Additionally, I generated scan reports to identify potential vulnerabilities and worked on managing key pairs for secure communications. As a result of these efforts, we experienced a notable decrease in security incidents, leading to a more stable platform and increased customer trust in our e-commerce services.
+--------------------------------------------------------------------------------
+
+GROUND TRUTH (expected skills):
+--------------------------------------------------------------------------------
+  EXPLICIT (1.0): SIEM, Incident Response
+  IMPLICIT (0.5): Splunk, TLS, Vulnerability Scanning, PKI
+  Total: 6 skills
+--------------------------------------------------------------------------------
+
+================================================================================
+MODEL: DeBERTa
+Path: models\deberta_v3_base
+================================================================================
+
+DETECTED SKILLS:
+
+  EXPLICIT (1.0) - 2 skills:
+    • Incident Response
+    • SIEM
+
+  IMPLICIT (0.5) - 6 skills:
+    • Network Security
+    • PKI
+    • Splunk
+    • TLS
+    • Threat Modeling
+    • Vulnerability Scanning
+
+  TOTAL DETECTED: 8 skills
+
+STATISTICS:
+----------------------------------------
+  Total skills in vocabulary: 136
+  Skills detected: 8 (5.9% of vocabulary)
+  Explicit: 2 (25.0% of detected)
+  Implicit: 6 (75.0% of detected)
+
+ACCURACY ANALYSIS vs GROUND TRUTH:
+----------------------------------------
+  Precision: 75.0% (of detected, how many were correct)
+  Recall:    100.0% (of expected, how many were found)
+  F1 Score:  85.7% (harmonic mean)
+
+  True Positives (6): Incident Response, PKI, SIEM, Splunk, TLS, Vulnerability Scanning
+  False Positives (2): Network Security, Threat Modeling
+  False Negatives (0): 
+
+  Score Accuracy: 6/6 correct scores for true positives
+
+================================================================================
+END OF ANALYSIS
+================================================================================

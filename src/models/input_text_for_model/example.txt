@@ -1,0 +1,5 @@
+I am a senior software engineer with 5 years of experience in Python and Django.
+I have built scalable REST APIs and deployed microservices using Docker and Kubernetes.
+Strong knowledge of SQL databases including PostgreSQL.
+Experience with AWS cloud services and CI/CD pipelines.
+Proficient in Git version control and Agile methodologies.

@@ -1,0 +1,9 @@
+{
+  "seed": 42,
+  "source": "C:\\NLP\\SkillSight\\data\\synthetic_dataset.jsonl",
+  "counts": {
+    "train": 2450,
+    "val": 525,
+    "test": 525
+  }
+}

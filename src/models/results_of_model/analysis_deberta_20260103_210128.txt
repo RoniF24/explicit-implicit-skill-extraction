@@ -1,0 +1,41 @@
+================================================================================
+RESUME SKILL EXTRACTION ANALYSIS
+================================================================================
+Generated: 2026-01-03 21:01:28
+Model(s): DeBERTa
+Output: analysis_deberta_20260103_210128.txt
+================================================================================
+
+RESUME TEXT:
+--------------------------------------------------------------------------------
+At my last company, I built microservices using Python and FastAPI. I designed and maintained PostgreSQL databases, and containerized everything for seamless deployment.
+--------------------------------------------------------------------------------
+
+================================================================================
+MODEL: DeBERTa
+Path: models\deberta_v3_base
+================================================================================
+
+DETECTED SKILLS:
+
+  EXPLICIT (1.0) - 3 skills:
+    • FastAPI
+    • PostgreSQL
+    • Python
+
+  IMPLICIT (0.5) - 2 skills:
+    • Django
+    • Docker
+
+  TOTAL DETECTED: 5 skills
+
+STATISTICS:
+----------------------------------------
+  Total skills in vocabulary: 136
+  Skills detected: 5 (3.7% of vocabulary)
+  Explicit: 3 (60.0% of detected)
+  Implicit: 2 (40.0% of detected)
+
+================================================================================
+END OF ANALYSIS
+================================================================================

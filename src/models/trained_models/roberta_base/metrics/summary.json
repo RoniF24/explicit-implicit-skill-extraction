@@ -1,0 +1,12 @@
+{
+  "model": "roberta-base",
+  "out_dir": "C:\\NLP\\SkillSight\\models\\roberta_base",
+  "best_val_macro_f1": 0.9545677158288551,
+  "best_checkpoint": "C:\\NLP\\SkillSight\\models\\roberta_base\\checkpoint-20826",
+  "epochs": 3,
+  "lr": 2e-05,
+  "batch": 8,
+  "max_len": 384,
+  "cuda": true,
+  "gpu": "NVIDIA GeForce RTX 3060"
+}

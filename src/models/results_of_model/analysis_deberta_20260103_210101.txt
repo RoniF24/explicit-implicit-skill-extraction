@@ -1,0 +1,40 @@
+================================================================================
+RESUME SKILL EXTRACTION ANALYSIS
+================================================================================
+Generated: 2026-01-03 21:01:01
+Model(s): DeBERTa
+Output: analysis_deberta_20260103_210101.txt
+================================================================================
+
+RESUME TEXT:
+--------------------------------------------------------------------------------
+In my previous role, I developed backend services using Python and Django, building RESTful APIs that handled millions of requests. I also worked extensively with PostgreSQL databases and optimized complex queries for better performance.
+--------------------------------------------------------------------------------
+
+================================================================================
+MODEL: DeBERTa
+Path: models\deberta_v3_base
+================================================================================
+
+DETECTED SKILLS:
+
+  EXPLICIT (1.0) - 4 skills:
+    • Django
+    • PostgreSQL
+    • Python
+    • REST API Design
+
+  IMPLICIT (0.5): None detected
+
+  TOTAL DETECTED: 4 skills
+
+STATISTICS:
+----------------------------------------
+  Total skills in vocabulary: 136
+  Skills detected: 4 (2.9% of vocabulary)
+  Explicit: 4 (100.0% of detected)
+  Implicit: 0 (0.0% of detected)
+
+================================================================================
+END OF ANALYSIS
+================================================================================

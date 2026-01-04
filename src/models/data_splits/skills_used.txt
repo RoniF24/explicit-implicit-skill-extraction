@@ -1,0 +1,136 @@
+API Testing
+ASP.NET Core
+AWS
+Actix Web (Rust)
+Ansible
+Apache Airflow
+Apache Flink
+Apache Kafka
+Apache Spark
+Argo CD
+Automated Testing
+Avro
+Azure
+Bash
+BigQuery
+Burp Suite
+C
+C#
+C++
+CVE Analysis
+Caching
+Cassandra
+CircleCI
+Contract Testing
+Cypress
+DAST
+Data Modeling
+Data Warehousing
+Databricks
+Delta Lake
+Dimensional Modeling
+Django
+Docker
+ELK Stack
+Elasticsearch
+Elixir
+Encryption
+End-to-End Testing
+Event-Driven Architecture
+Express.js
+FastAPI
+Flask
+Gin (Go)
+GitHub Actions
+GitLab CI
+Go
+Google Cloud
+Grafana
+GraphQL
+Haskell
+Helm
+Identity and Access Management
+Incident Response
+InfluxDB
+Integration Testing
+JMeter
+JWT
+Jaeger
+Java
+JavaScript
+Jenkins
+Julia
+Key Management
+Kotlin
+Kubernetes
+Laravel
+Linux
+Load Testing
+Lua
+MATLAB
+Manual Testing
+Metasploit
+Microservices
+MongoDB
+Multi-Factor Authentication
+MySQL
+NATS
+Neo4j
+NestJS
+Network Security
+Nginx
+Nmap
+Node.js
+OAuth 2.0
+OWASP Top 10
+OpenAPI Specification
+OpenTelemetry
+PHP
+PKI
+Parquet
+Penetration Testing
+Performance Testing
+Perl
+Playwright
+PostgreSQL
+Postman
+PowerShell
+Prometheus
+Pulumi
+Python
+R
+REST API Design
+RabbitMQ
+Rate Limiting
+Redis
+Redshift
+Regression Testing
+Ruby
+Ruby on Rails
+Rust
+SAST
+SIEM
+SQL
+SQLite
+Scala
+Secure Code Review
+Selenium
+Smoke Testing
+Snowflake
+Splunk
+Spring Boot
+Stress Testing
+Swift
+TLS
+Terraform
+Test Case Design
+Test Planning
+Threat Modeling
+TypeScript
+UI Testing
+Unit Testing
+Vault
+Vulnerability Scanning
+Wireshark
+dbt
+gRPC
