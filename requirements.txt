@@ -8,6 +8,7 @@ transformers>=4.30.0
 scikit-learn>=1.0.0
 accelerate>=0.20.0
 sentencepiece>=0.1.99
+huggingface_hub>=0.20.0
 
 # --- Data Processing (required) ---
 numpy>=1.24.0

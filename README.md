@@ -2,7 +2,7 @@
 
 Synthetic dataset generator for the academic project **Explicit–Implicit Skill Extraction**.
 
-The system generates labeled examples from free-text job descriptions and assigns a score per skill:
+The system generates labeled examples from free-text job descriptions and assigns a score per skill:ס
 - `0` = NONE
 - `0.5` = IMPLICIT
 - `1.0` = EXPLICIT
@@ -58,6 +58,37 @@ Generated files during runs may be written to:
 - Windows 10/11
 - Python 3.10+ (added to PATH)
 - Git installed
+
+---
+
+## Quick Start - Using Pre-trained Models
+
+### 1. Clone and Setup
+
+```bash
+git clone https://github.com/RoniF24/SkillSight.git
+cd SkillSight
+setup_env.bat
+```
+
+### 2. Download Models from Hugging Face
+
+```bash
+python download_models.py
+```
+
+This downloads models from:
+- https://huggingface.co/YonatanEl/skillsight-deberta-v3
+- https://huggingface.co/YonatanEl/skillsight-roberta-base
+- https://huggingface.co/YonatanEl/skillsight-deberta-v3-onepass
+
+### 3. Analyze Text
+
+```bash
+python analyze_resume.py --text "I have 5 years of experience with Python and Django" --model deberta
+```
+
+For more details, see [MODELS_GUIDE.md](MODELS_GUIDE.md).
 
 ---
 

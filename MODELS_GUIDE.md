@@ -4,11 +4,25 @@
 
 הפרויקט כולל **3 מודלים** לזיהוי מיומנויות מטקסט:
 
-| מודל | דיוק (F1) | מהירות | המלצה |
-|------|-----------|---------|--------|
-| **DeBERTa Pairwise** | 97% | איטי | ✅ **מומלץ לשימוש** |
-| **RoBERTa Pairwise** | 95% | איטי | טוב |
-| **MODELV2 One-Pass** | 48% | מהיר | ❌ לא מומלץ |
+| מודל | דיוק (F1) | מהירות | Hugging Face |
+|------|-----------|---------|--------------|
+| **DeBERTa Pairwise** | 97% | איטי | [skillsight-deberta-v3](https://huggingface.co/YonatanEl/skillsight-deberta-v3) |
+| **RoBERTa Pairwise** | 95% | איטי | [skillsight-roberta-base](https://huggingface.co/YonatanEl/skillsight-roberta-base) |
+| **DeBERTa One-Pass** | 48% | מהיר | [skillsight-deberta-v3-onepass](https://huggingface.co/YonatanEl/skillsight-deberta-v3-onepass) |
+
+---
+
+## 📥 הורדת מודלים
+
+```powershell
+# הורדת כל המודלים
+python download_models.py
+
+# הורדת מודל ספציפי
+python download_models.py --model deberta
+python download_models.py --model roberta
+python download_models.py --model deberta-onepass
+```
 
 ---
 
